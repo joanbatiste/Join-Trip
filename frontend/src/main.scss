@@ -1,0 +1,14 @@
+/*Base*/
+@import './sass/base/fonts';
+@import './sass/base/reset';
+
+/*UTILITIES*/
+@import './sass/utilities/variables';
+@import './sass/utilities/mixins';
+
+/*COMPONENTS*/
+@import './components/Header/Header';
+
+/*VIEWS*/
+@import './views/Home/Home';
+

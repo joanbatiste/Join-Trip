@@ -1,0 +1,259 @@
+/*Base*/
+@font-face {
+  font-family: Pacifico-Regular;
+  src: url("../sass/fonts/Pacifico-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: Questrial-Regular;
+  src: url("../sass/fonts/Questrial-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*UTILITIES*/
+/*Fonts*/
+/*Colors*/
+/**/
+/*Gama de colores por definir - Yellows and Blues*/
+/*Botones*/
+/*Sizes*/
+/*Margin and Padding*/
+/*centenas*/
+/*Media-query*/
+/*Porcentjes*/
+/*Imagenes-Sizes*/
+/*--------------------------------------------------*/
+/*Ems*/
+/*For Grid*/
+#header.cell-1 > div {
+  width: 100%; }
+
+#footer.cell-1 > div {
+  width: 100%; }
+
+#header.cell-2 > div {
+  width: 50%; }
+
+#footer.cell-2 > div {
+  width: 50%; }
+
+#header.cell-3 > div {
+  width: 33.33333%; }
+
+#footer.cell-3 > div {
+  width: 33.33333%; }
+
+#header.cell-4 > div {
+  width: 25%; }
+
+#footer.cell-4 > div {
+  width: 25%; }
+
+#header.cell-5 > div {
+  width: 20%; }
+
+#footer.cell-5 > div {
+  width: 20%; }
+
+#header.cell-6 > div {
+  width: 16.66667%; }
+
+#footer.cell-6 > div {
+  width: 16.66667%; }
+
+/*--------------------------------------------------*/
+/*Funciones*/
+/*
+Se utiliza
+
+  .c-button {
+  color: #FF0000;
+  border: getBorderSize(2) solid #00FF00;
+}
+
+se transforma en
+
+.c-button {
+  color: #FF0000;
+  border: 20px solid #00FF00;
+}
+*/
+/*COMPONENTS*/
+.header-container {
+  width: 1440px;
+  height: 90px;
+  font-family: "Questrial-Regular"; }
+  .header-container .header-container-header {
+    width: 1440px;
+    height: 45px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
+    .header-container .header-container-header .header-container-header-logo {
+      margin-right: 400px; }
+      .header-container .header-container-header .header-container-header-logo .logo-link {
+        display: flex;
+        flex-direction: row;
+        font-size: 24px; }
+        .header-container .header-container-header .header-container-header-logo .logo-link .logo-first {
+          color: #000000; }
+        .header-container .header-container-header .header-container-header-logo .logo-link .logo-second {
+          color: #119FDC; }
+    .header-container .header-container-header .header-container-header-slogan {
+      color: #119FDC;
+      font-size: 18px; }
+    .header-container .header-container-header .header-container-header-login {
+      margin-left: 300px; }
+    .header-container .header-container-header .header-container-header-register {
+      margin-left: 30px; }
+  .header-container .header-container-links {
+    width: 1440px;
+    height: 45px;
+    background-color: #119FDC;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .header-container .header-container-links .header-container-links-titles {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 70px;
+      margin-left: 70px; }
+
+/*VIEWS*/
+.container-home {
+  width: 1400px;
+  margin-left: auto;
+  margin-right: auto; }

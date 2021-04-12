@@ -1,0 +1,242 @@
+.header-container{
+    width: $q-xl;
+    height: $size-v+$size-f;
+    font-family: $font-Questrial-Regular;
+   
+    .header-container-header{
+        width: $q-xl;
+        height: $size-t+$size-c+$size-a;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .header-container-header-logo{
+            margin-right: 400px;
+            
+            .logo-link{
+                display: flex;
+                flex-direction: row;
+                font-size: 24px;
+                .logo-first{
+                    color: #000000;
+                }
+                .logo-second{
+                    color: #119FDC;
+                }
+            }
+        }
+        .header-container-header-slogan{
+            color: #119FDC;
+            font-size: 18px;
+        }
+        .header-container-header-login{
+            margin-left: 300px;
+        }
+        .header-container-header-register{
+            margin-left: 30px;
+        }
+
+    };
+    .header-container-links{
+        width: $q-xl;
+        height: $size-t+$size-c+$size-a;
+        background-color: nth($fontColor , 3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .header-container-links-titles{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-right: 70px;
+            margin-left: 70px;
+            
+        }
+    }
+};
+// /* Frame 1 */
+
+// position: relative;
+// width: 1012px;
+// height: 43px;
+
+// background: #FFFFFF;
+
+
+// /* Travel Plan */
+
+// position: absolute;
+// width: 219px;
+// height: 43px;
+// left: 35px;
+// top: 4px;
+
+// font-family: Questrial;
+// font-style: normal;
+// font-weight: normal;
+// font-size: 24px;
+// line-height: 25px;
+// display: flex;
+// align-items: center;
+// text-align: center;
+
+// color: #000000;
+
+
+
+// /* Inicia sesión */
+
+// position: absolute;
+// width: 108px;
+// height: 30px;
+// left: 796px;
+// top: 10px;
+
+// font-family: Questrial;
+// font-style: normal;
+// font-weight: normal;
+// font-size: 16px;
+// line-height: 16px;
+// display: flex;
+// align-items: center;
+// text-align: center;
+
+// color: #000000;
+
+
+
+// /* Regístrate */
+
+// position: absolute;
+// width: 108px;
+// height: 30px;
+// left: 904px;
+// top: 10px;
+
+// font-family: Questrial;
+// font-style: normal;
+// font-weight: normal;
+// font-size: 16px;
+// line-height: 16px;
+// display: flex;
+// align-items: center;
+// text-align: center;
+
+// color: #000000;
+
+
+
+// /* viajes y escapadas para compartir */
+
+// position: absolute;
+// width: 235px;
+// height: 21px;
+// left: 388px;
+// top: 15px;
+
+// font-family: Questrial;
+// font-style: normal;
+// font-weight: normal;
+// font-size: 14px;
+// line-height: 14px;
+// display: flex;
+// align-items: center;
+// text-align: center;
+
+// color: #119FDC;
+
+
+
+// /* Frame 2 */
+
+// position: relative;
+// width: 1012px;
+// height: 45px;
+
+// background: #119FDC;
+
+
+// /* inicio */
+
+// position: absolute;
+// width: 101px;
+// height: 18px;
+// left: 304px;
+// top: 12px;
+
+// font-family: Questrial;
+// font-style: normal;
+// font-weight: normal;
+// font-size: 14px;
+// line-height: 14px;
+// display: flex;
+// align-items: center;
+// text-align: center;
+
+// color: #000000;
+
+
+
+// /* viajes */
+
+// position: absolute;
+// width: 89px;
+// height: 18px;
+// left: 400px;
+// top: 12px;
+
+// font-family: Questrial;
+// font-style: normal;
+// font-weight: normal;
+// font-size: 14px;
+// line-height: 14px;
+// display: flex;
+// align-items: center;
+// text-align: center;
+
+// color: #000000;
+
+
+
+// /* actividades */
+
+// position: absolute;
+// width: 97px;
+// height: 18px;
+// left: 516px;
+// top: 12px;
+
+// font-family: Questrial;
+// font-style: normal;
+// font-weight: normal;
+// font-size: 14px;
+// line-height: 14px;
+// display: flex;
+// align-items: center;
+// text-align: center;
+
+// color: #000000;
+
+
+
+// /* contacto */
+
+// position: absolute;
+// width: 114px;
+// height: 17px;
+// left: 621px;
+// top: 12px;
+
+// font-family: Questrial;
+// font-style: normal;
+// font-weight: normal;
+// font-size: 14px;
+// line-height: 14px;
+// display: flex;
+// align-items: center;
+// text-align: center;
+
+// color: #000000;
+
