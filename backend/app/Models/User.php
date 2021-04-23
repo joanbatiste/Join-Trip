@@ -18,8 +18,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'surname',
+        'birthday',
+        'city',
         'email',
         'password',
+        'token'
     ];
 
     /**
@@ -40,4 +44,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //Relación de propiedad de un usuario sobre una publicación
+    public function posts(){
+        return $this->hasMany('App\Models\Post', 'usderid');
+    }
+
+    //Relación de propiedad de un usuario sobre sus mensajes
+    public function messages(){
+        return $this->hasMany('App\Models\Message', 'userid');
+    }
 }
