@@ -21,7 +21,7 @@ class UserController extends Controller
         $city = $request->input('city');
         $email = $request->input('email');
         $password = $request->input('password');
-        
+
 
         //hasheo del password
         $password = Hash::make($password);
@@ -31,11 +31,11 @@ class UserController extends Controller
                 'name' => $name,
                 'surname' => $surname,
                 'username' => $username,
-                'birthday'=> $birthday,
-                'city'=> $city,
+                'birthday' => $birthday,
+                'city' => $city,
                 'email' => $email,
                 'password' => $password
-                
+
             ]);
         } catch (QueryException $error) {
             $eCode = $error->errorInfo[1];
@@ -77,7 +77,7 @@ class UserController extends Controller
 
                 //Guardamos el token en su campo correspondiente, esto es opcional si guardamos el token en la base de datos
                 User::where('username', $username)
-                    ->update(['token' => $token]);
+                    ->update(['api_token' => $token]);
 
                 //devolvemos la informacion del player logueado
                 return User::where('username', 'LIKE', $username)
@@ -89,6 +89,41 @@ class UserController extends Controller
             }
         } catch (QueryException $error) {
             return response()->$error;
+        }
+    }
+    //Funcion para actualizar datos de usuario
+    public function userUpdate(Request $request, $id)
+    {
+        $user = $request->user();
+
+        if ($user['id'] != $id) {
+            return response()->json([
+                'error' => "No estas autorizado a  modificar estos datos."
+            ]);
+        }
+
+        try {
+            $name = $request->input('name');
+            $surname = $request->input('surname');
+            $username = $request->input('username');
+            $birthday = $request->input('birthday');
+            $city = $request->input('city');
+            $email = $request->input('email');
+            $password = $request->input('password');
+
+            $password = Hash::make($password);
+
+            return User::find($id)->update([
+                'name' => $name,
+                'surname' => $surname,
+                'username' => $username,
+                'birthday' => $birthday,
+                'city' => $city,
+                'email' => $email,
+                'password' => $password
+            ]);
+        } catch (QueryException $error) {
+            return $error;
         }
     }
 }
