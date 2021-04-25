@@ -211,46 +211,53 @@ se transforma en
 /*COMPONENTS*/
 .header-container {
   width: 1440px;
-  height: 90px;
-  font-family: "Questrial-Regular"; }
+  height: 128px;
+  font-family: "Questrial-Regular";
+  position: absolute;
+  background-color: transparent; }
   .header-container .header-container-header {
     width: 1440px;
     height: 45px;
-    background-color: #ffffff;
+    background-color: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    margin-top: 25px; }
     .header-container .header-container-header .header-container-header-logo {
-      margin-right: 400px; }
+      align-items: flex-start;
+      margin-right: 270px;
+      text-decoration: none; }
       .header-container .header-container-header .header-container-header-logo .logo-link {
         display: flex;
         flex-direction: row;
-        font-size: 24px; }
+        font-size: 38px;
+        text-decoration: none; }
         .header-container .header-container-header .header-container-header-logo .logo-link .logo-first {
           color: #000000; }
         .header-container .header-container-header .header-container-header-logo .logo-link .logo-second {
           color: #119FDC; }
     .header-container .header-container-header .header-container-header-slogan {
-      color: #119FDC;
-      font-size: 18px; }
+      color: #16191C;
+      font-size: 24px;
+      margin-right: 250px; }
+    .header-container .header-container-header .header-container-header-register #register {
+      background-color: red;
+      width: 100px;
+      height: 35px;
+      font-size: 18px;
+      border-radius: 6px;
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); }
     .header-container .header-container-header .header-container-header-login {
-      margin-left: 300px; }
-    .header-container .header-container-header .header-container-header-register {
-      margin-left: 30px; }
-  .header-container .header-container-links {
-    width: 1440px;
-    height: 45px;
-    background-color: #119FDC;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    .header-container .header-container-links .header-container-links-titles {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-right: 70px;
-      margin-left: 70px; }
+      margin-left: 20px;
+      margin-right: 100px; }
+      .header-container .header-container-header .header-container-header-login #login {
+        background-color: #0077db;
+        width: 100px;
+        height: 35px;
+        font-size: 15px;
+        border-radius: 6px;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); }
 
 /*VIEWS*/
 .container-home {
