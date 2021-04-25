@@ -16,7 +16,7 @@
         margin-top: 25px;
         .header-container-header-logo{
             align-items: flex-start;
-            margin-right: 270px;
+            margin-right: 350px;
             text-decoration:none;
             
             .logo-link{
@@ -35,7 +35,7 @@
         .header-container-header-slogan{
             color: #16191C;
             font-size: $size-m;
-            margin-right: 250px;
+            margin-right: 300px;
             
         }
         
@@ -51,7 +51,7 @@
         }
         .header-container-header-login{
             margin-left: 20px;
-            margin-right: 100px;
+            // margin-right: 100px;
             #login{
                 background-color: rgb(0,119,219);
                 width: 100px;
@@ -63,23 +63,20 @@
         }
 
     };
-    // .header-container-links{
-    //     width: $q-xl;
-    //     height: $size-t+$size-c+$size-a;
-    //     background-color: nth($fontColor , 3);
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: center;
-        
-    //     .header-container-links-titles{
-    //         display: flex;
-    //         flex-direction: row;
-    //         align-items: center;
-    //         margin-right: 70px;
-    //         margin-left: 70px;
+    .modal-register{
+        display: flex;
+        flex-direction: column;
+        .modal-register-header{
+
+        }
+        .modal-register-body{
+
+        }
+        .modal-register-footer{
             
-    //     }
-    // }
+        }
+    }
+    
 };
 // /* Frame 1 */
 

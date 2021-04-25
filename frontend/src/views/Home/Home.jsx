@@ -2,7 +2,10 @@ import React from 'react';
 import Header from '../../components/Header/Header.jsx';
 import cabecera from '../../img/cabecera.jpeg';
 
+
+
 const Home =()=>{
+    
     return(
         <div className="container-home">
             <div className="header-image">

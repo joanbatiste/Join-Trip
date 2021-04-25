@@ -1,14 +1,26 @@
 .container-home{
-    width: 1400px;
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
     margin-left: auto;
     margin-right: auto;
 
     .header-image{
         width: $q-xl;
-        height: 925px;
-        margin-left: auto;
-        margin-right: auto;
+        height: 959px;
+        object-fit: cover;   
+    }
+
+    .last-trips{
+        width: $q-xl;
+        height: 400px;
+        background-color: lightblue;
         
+    }
+    .suggestions{
+        width: $q-xl;
+        height: 400px;
+        background-color: lightgreen;
     }
     
 }

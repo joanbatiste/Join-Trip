@@ -226,7 +226,7 @@ se transforma en
     margin-top: 25px; }
     .header-container .header-container-header .header-container-header-logo {
       align-items: flex-start;
-      margin-right: 270px;
+      margin-right: 350px;
       text-decoration: none; }
       .header-container .header-container-header .header-container-header-logo .logo-link {
         display: flex;
@@ -240,7 +240,7 @@ se transforma en
     .header-container .header-container-header .header-container-header-slogan {
       color: #16191C;
       font-size: 24px;
-      margin-right: 250px; }
+      margin-right: 300px; }
     .header-container .header-container-header .header-container-header-register #register {
       background-color: red;
       width: 100px;
@@ -249,8 +249,7 @@ se transforma en
       border-radius: 6px;
       box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); }
     .header-container .header-container-header .header-container-header-login {
-      margin-left: 20px;
-      margin-right: 100px; }
+      margin-left: 20px; }
       .header-container .header-container-header .header-container-header-login #login {
         background-color: #0077db;
         width: 100px;
@@ -258,14 +257,26 @@ se transforma en
         font-size: 15px;
         border-radius: 6px;
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); }
+  .header-container .modal-register {
+    display: flex;
+    flex-direction: column; }
 
 /*VIEWS*/
 .container-home {
-  width: 1400px;
+  width: 1440px;
+  display: flex;
+  flex-direction: column;
   margin-left: auto;
   margin-right: auto; }
   .container-home .header-image {
     width: 1440px;
-    height: 925px;
-    margin-left: auto;
-    margin-right: auto; }
+    height: 959px;
+    object-fit: cover; }
+  .container-home .last-trips {
+    width: 1440px;
+    height: 400px;
+    background-color: lightblue; }
+  .container-home .suggestions {
+    width: 1440px;
+    height: 400px;
+    background-color: lightgreen; }
