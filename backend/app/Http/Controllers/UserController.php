@@ -27,6 +27,18 @@ class UserController extends Controller
         $password = Hash::make($password);
 
         try {
+            $validate_username = User::select('username')
+                ->where('username', 'LIKE', $username)
+                ->first();
+            $validate_email = User::select('email')
+                ->where('username', 'LIKE', $username)
+                ->first();
+
+            if($validate_username || $validate_email){
+                return response()->json([
+                    'error' => 'Username o email ya existen'
+                ]);
+            }
             return User::create([
                 'name' => $name,
                 'surname' => $surname,
@@ -37,14 +49,10 @@ class UserController extends Controller
                 'password' => $password
 
             ]);
+            
+            
         } catch (QueryException $error) {
-            $eCode = $error->errorInfo[1];
-
-            if ($eCode == 1062) {
-                return response()->json([
-                    'error' => "Usuario ya registrado"
-                ]);
-            }
+            return response()->$error;
         }
     }
     //Funcion para el logueo de usuarios
@@ -55,17 +63,17 @@ class UserController extends Controller
         $password = $request->input('password');
 
         try {
-            $validate_player = User::select('password')
+            $validate_user = User::select('password')
                 ->where('username', 'LIKE', $username)
                 ->first();
 
-            if (!$validate_player) {
+            if (!$validate_user) {
                 return response()->json([
                     'error' => 'Username o password inválido'
                 ]);
             }
 
-            $hashed = $validate_player->password;
+            $hashed = $validate_user->password;
 
             //Comprobamos que el password corresponde con el username
 

@@ -260,6 +260,9 @@ se transforma en
   .header-container .modal-register {
     display: flex;
     flex-direction: column; }
+  .header-container .modal-login {
+    display: flex;
+    flex-direction: column; }
 
 /*VIEWS*/
 .container-home {
