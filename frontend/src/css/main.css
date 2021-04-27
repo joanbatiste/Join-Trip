@@ -264,6 +264,62 @@ se transforma en
     display: flex;
     flex-direction: column; }
 
+.header-container {
+  width: 1440px;
+  height: 128px;
+  font-family: "Questrial-Regular";
+  position: absolute;
+  background-color: transparent; }
+  .header-container .header-container-header {
+    width: 1440px;
+    height: 45px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px; }
+    .header-container .header-container-header .header-container-header-logo {
+      align-items: flex-start;
+      margin-right: 350px;
+      text-decoration: none; }
+      .header-container .header-container-header .header-container-header-logo .logo-link {
+        display: flex;
+        flex-direction: row;
+        font-size: 38px;
+        text-decoration: none; }
+        .header-container .header-container-header .header-container-header-logo .logo-link .logo-first {
+          color: #000000; }
+        .header-container .header-container-header .header-container-header-logo .logo-link .logo-second {
+          color: #119FDC; }
+    .header-container .header-container-header .header-container-header-links {
+      color: #16191C;
+      font-size: 24px;
+      margin-right: 250px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly; }
+      .header-container .header-container-header .header-container-header-links .header-container-header-links-inicio {
+        margin-right: 50px;
+        cursor: pointer; }
+      .header-container .header-container-header .header-container-header-links .header-container-header-links-viajes {
+        margin-right: 50px;
+        cursor: pointer; }
+      .header-container .header-container-header .header-container-header-links .header-container-header-links-actividades {
+        margin-right: 50px;
+        cursor: pointer; }
+      .header-container .header-container-header .header-container-header-links .header-container-header-links-contacto {
+        margin-right: 50px;
+        cursor: pointer; }
+    .header-container .header-container-header .header-container-header-userdata {
+      color: #16191C;
+      font-size: 24px;
+      cursor: pointer; }
+    .header-container .header-container-header .header-container-header-logout {
+      margin-left: 20px;
+      color: orangered;
+      cursor: pointer; }
+
 /*VIEWS*/
 .container-home {
   width: 1440px;

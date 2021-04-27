@@ -1,0 +1,77 @@
+.header-container{
+    width: $q-xl;
+    height: $mp-o;
+    font-family: $font-Questrial-Regular;
+    position: absolute;
+    background-color: transparent;
+   
+    .header-container-header{
+        width: $q-xl;
+        height: $size-t+$size-c+$size-a;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+        .header-container-header-logo{
+            align-items: flex-start;
+            margin-right: 350px;
+            text-decoration:none;
+            
+            .logo-link{
+                display: flex;
+                flex-direction: row;
+                font-size: $size-s;
+                text-decoration:none;
+                .logo-first{
+                    color: #000000;
+                }
+                .logo-second{
+                    color: #119FDC;
+                }
+            }
+        }
+        .header-container-header-links{
+            color: #16191C;
+            font-size: $size-m;
+            margin-right: 250px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            .header-container-header-links-inicio{
+                margin-right:50px ;
+                cursor: pointer;
+            }
+            .header-container-header-links-viajes{
+                margin-right:50px ;
+                cursor: pointer;
+            }
+            .header-container-header-links-actividades{
+                margin-right:50px ;
+                cursor: pointer;
+            }
+            .header-container-header-links-contacto{
+                margin-right:50px ;
+                cursor: pointer;
+            }
+            
+        }
+        .header-container-header-userdata{
+            color: #16191C;
+            font-size: $size-m;
+            cursor: pointer;
+        }
+        .header-container-header-logout{
+            margin-left: 20px;
+            color: orangered;
+            cursor: pointer;
+            // margin-right: 100px;
+            
+        }
+
+    };
+    
+    
+};

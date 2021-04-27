@@ -3,6 +3,8 @@ import { Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input, Label } f
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from "axios";
 import chechError from '../../utiles/utiles';
+import { connect } from 'react-redux';
+import { LOGIN } from '../../redux/types/userTypes';
 
 
 const Header = (props) => {
@@ -81,7 +83,7 @@ const Header = (props) => {
         let endpointUserRegister = 'http://127.0.0.1:8000/api/users';
 
         let response =  await axios.post(endpointUserRegister, userData);
-        console.log(response);
+        
         
         if (!response.data.name) {
             alert('Lo sentimos, no se ha podido completar el registro. Inténtalo más tarde');
@@ -112,7 +114,9 @@ const Header = (props) => {
         //Endpoin para login
         let login_url = 'http://127.0.0.1:8000/api/users/login';
         let response = await axios.post(login_url, loginData);
-        // console.log("soy el login", response);
+        console.log(response);
+        props.dispatch({type: LOGIN, payload: response.data[0]});
+        
         
         if(response.data.error){
             alert('Nombre de usuario o contraseña incorrectos');
@@ -217,4 +221,5 @@ const Header = (props) => {
     )
 };
 
-export default Header;
+
+export default connect()(Header);
