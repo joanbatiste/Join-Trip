@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { LOGOUT } from '../../redux/types/userTypes';
@@ -29,8 +29,8 @@ const LoguedHeader = (props) =>{
   
     return(
         <div className="header-container">
-            <div className="header-container-header">
-                <div className="header-container-header-logo">
+            <div className="header-container-logued">
+                <div className="header-container-logued-logo">
                     <a href="/" className="logo-link">
                         <div className="logo-first">Join</div>
                         <div className="logo-second">Trip</div>
@@ -44,7 +44,7 @@ const LoguedHeader = (props) =>{
 
                 </div>
                 <div className="header-container-header-userdata" onClick={()=>goToProfile()}>
-                    {props.user?.name}
+                    {props.user?.username}
                 </div>
                 <div className="header-container-header-logout"onClick={() => logout()}>
                     <FontAwesomeIcon icon={faUserTimes} />

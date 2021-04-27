@@ -5,7 +5,7 @@
     position: absolute;
     background-color: transparent;
    
-    .header-container-header{
+    .header-container-logued{
         width: $q-xl;
         height: $size-t+$size-c+$size-a;
         background-color: transparent;
@@ -14,9 +14,9 @@
         align-items: center;
         justify-content: center;
         margin-top: 25px;
-        .header-container-header-logo{
+        .header-container-logued-logo{
             align-items: flex-start;
-            margin-right: 350px;
+            margin-right: 270px;
             text-decoration:none;
             
             .logo-link{
