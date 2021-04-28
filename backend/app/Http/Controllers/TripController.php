@@ -9,13 +9,19 @@ use Illuminate\Database\QueryException;
 class TripController extends Controller
 {
     //Crear un trip
-    public function tripCreate(Request $request){
+    public function tripCreate(Request $request, $userId){
         
         $title = $request->input('title');
         $destination = $request->input('destination');
         $description = $request->input('description');
         $link = $request->input('link');
-        $userId = $request->input('userId');
+        $userid = $request->input('userId');
+
+        if($userid != $userId){
+            return response()->json([
+                'error'=> 'No estas autorizado a crear este viaje'
+            ]);
+        }
 
         try{
             return Trip::create([
@@ -23,7 +29,7 @@ class TripController extends Controller
                 'destination' => $destination,
                 'description' => $description,
                 'link' => $link,
-                'userId' => $userId
+                'userId' => $userid
             ]);
         }catch(QueryException $error){
             $eCode = $error->errorInfo[1];

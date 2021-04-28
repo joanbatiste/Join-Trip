@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TripController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\MembershipController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,7 +33,14 @@ Route::middleware('auth:api')->group(function(){
     Route::put('/users/{userid}/trips/{tripid}', [TripController::class, 'tripUpdate']);
     Route::delete('/users/{userid}/trips/{tripid}', [TripController::class, 'deleteTrip']);
 
+    //Rutas que requieren autenticación de Messages
+    Route::post('/users/{userid}/messages', [MessageController::class, 'createMessage']);
+    Route::get('/users/{userid}/messages', [MessageController::class, 'findMessagesByUserId']);
+    Route::put('/users/{userid}/messages/{messageid}', [MessageController::class, 'messageUpdate']);
+    Route::delete('/users/{userid}/messages/{messageid}', [MessageController::class, 'messageDelete']);
 
-
+    //Rutas que requieren autenticación de Membership
+    Route::post('/trips/login',[MembershipController::class, 'joinTrip']);
+    Route::delete('/trips/logout',[MembershipController::class, 'cancelTrip']);
 
 });
