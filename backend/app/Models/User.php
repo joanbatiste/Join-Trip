@@ -46,13 +46,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    //Relación de propiedad de un usuario sobre una publicación
-    public function posts(){
-        return $this->hasMany('App\Models\Post', 'usderid');
+    //Relación de propiedad de un usuario sobre muchas publicaciones
+    public function trips(){
+        return $this->hasMany('App\Models\Trip', 'usderId');
     }
 
     //Relación de propiedad de un usuario sobre sus mensajes
     public function messages(){
-        return $this->hasMany('App\Models\Message', 'userid');
+        return $this->hasMany('App\Models\Message', 'userId');
     }
 }
