@@ -1,75 +1,53 @@
 import axios from 'axios';
-import React , { useState } from 'react';
+import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
-import checkError from '../../utiles/utiles';
-import {UPDATE_USER} from '../../redux/types/userTypes';
+import {SAVING} from '../../redux/types/tripTypes';
+import cabecera_profile from '../../img/Hombre-paisaje-Panoramica.jpeg';
+import TripCard from '../../components/TripCard/TripCard.jsx';
 
-const Profile = (props) =>{
 
-    const [user, setUser] = useState(props.user);
-    const [message, setMessageUpdateData] = useState('');
+const Profile = (props) => {
 
-    // Manejador de estado para actualizar datos de usuario
-    const handleState = (e) => {
-        setUser({ ...user, [e.target.name]: e.target.value });
-    };
-    const updateData = async () =>{
-
-        //chequeamos errores del formulario
-        setMessageUpdateData('');
-
-        let notValidated = checkError(user)
-        setMessageUpdateData(notValidated);
-
-        if(notValidated){
-            alert('No se pueden actualizar tus datos');
-            return;
-        };
-        let endpointUserUpdate = `http://127.0.0.1:8000/api/users/${props.user?.id}`
-        let response = await axios.put(endpointUserUpdate, user,{headers: {authorization:props.user.api_token}});
-        
-        console.log("respuesta de actualizar datos", response);
-
-        if (!response.data.error){
-            props.dispatch({type:UPDATE_USER, payload: user})
-            alert('Datos actualizados con éxito');
-        }else{
-            alert('Lo sentimos, no se han podido actualizar tus datos');
-        };
-        
-
-        
+    //funcion para traerse los viajes publicados por el usuario
+    const getTrips = async () => {
+        let endPointTrips = `http://127.0.0.1:8000/api/users/${props.user.id}/trips`;
+        let tripsResponse = await axios.get(endPointTrips,{headers: {authorization:`Bearer ${props.user.api_token}`}});
+        props.dispatch({type:SAVING, payload: tripsResponse.data});
     }
+    //USEEFFECTS
+    useEffect(() => {
+        getTrips();
+    }, []);
+
     return (
         <div className="container-profile">
             <div className="profile-image">
-                <LoguedHeader/>
-                {/* <img src={} alt=""></img> */}
+                <LoguedHeader />
+                <img src={cabecera_profile} alt=""></img>
             </div>
-            <div className="data-profile">
-                <div className="data-profile-content">
-                    <p className='data-profile-content-title'>Datos de perfil</p>
-                    <label htmlFor="" className='form-update-data-label'>Nombre</label>
-                    <input type='name' placeholder={props.name} name='name' className='form-update-data-input' value={user.name} onChange={handleState}></input>
-                    <label htmlFor="" className='form-update-data-label'>Apellido</label>
-                    <input type='name' placeholder={props.surname} name='surname' className='form-update-data-input' value={user.surname} onChange={handleState}></input>
-                    <label htmlFor="" className='form-update-data-label'>Nombre de usuario</label>
-                    <input type='name' placeholder={props.username} name='username' className='form-update-data-input' value={user.username} onChange={handleState}></input>
-                    <label htmlFor="" className='form-update-data-label'>Fecha de nacimiento</label>
-                    <input type='name' placeholder={props.birthday} name='birthday' className='form-update-data-input' value={user.birthday} onChange={handleState}></input>
-                    <label htmlFor="" className='form-update-data-label'>Ciudad</label>
-                    <input type='name' placeholder={props.username} name='city' className='form-update-data-input' value={user.city} onChange={handleState}></input>
-                    <label htmlFor="" className='form-update-data-label'>Email</label>
-                    <input type='name' placeholder={props.username} name='email' className='form-update-data-input' value={user.email} onChange={handleState}></input>
-                    {/* <label htmlFor="" className='form-update-data-label'>Nombre de usuario</label>
-                    <input type='name' placeholder={props.username} name='username' className='form-update-data-input' value={user.username} onChange={handleState}></input> */}
-                    {message}
-                    <input type="button" value="Actualizar datos" className='form-update-data-button' onClick={updateData}/>
+            <div className="profile-my-trips">
+                <div className="profile-my-trips-title">Mis viajes publicados</div>
+                <div className="profile-my-trips-resum">
+                    {props.trip.map(mytrips =>{
+                        return(
+                            <TripCard 
+                                title={mytrips.title}
+                                destination={mytrips.destination}
+                                description ={mytrips.description} 
+                                link={mytrips.link}
+                                
+                            />
+                            
+                        )
+                    })}
                 </div>
-            </div>
-            
 
+            </div>
+            <div className="profile-my-jointrips">
+                <div className="profile-my-jointrips-title">Viajes a los que me he unido</div>
+                <div className="profile-my-jointrips-resum"></div>
+            </div>
 
         </div>
     )
@@ -77,8 +55,8 @@ const Profile = (props) =>{
 }
 const mapStateToProps = state => {
     return {
-        user: state.userReducer.user
-
+        user: state.userReducer.user,
+        trip: state.tripReducer.trip
     }
 };
-export default connect (mapStateToProps)(Profile);
+export default connect(mapStateToProps)(Profile);

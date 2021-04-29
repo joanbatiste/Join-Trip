@@ -1,0 +1,45 @@
+.container-datauser{
+    width: 1440px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: $font-Questrial-Regular;
+
+    .datauser-image{
+        width: 1440px;
+        height: 150px;
+        object-fit: cover;
+        
+    }
+    .data-profile{
+        width: 1440px;
+        display: flex;
+        flex-direction: column;
+        .data-profile-content{
+            display: flex;
+            flex-direction: column;
+            width: 600px;
+            margin-left: 700px;
+            
+
+            .data-profile-content-title{
+                font-size: 25px;
+            }
+            .form-update-data-label{
+                font-size: 25px;
+                margin-top: 20px;
+            }
+            .form-update-data-input{
+                color:blue;
+            }
+            .form-update-data-button{
+                margin-top: 30px;
+                background-color: #119FDC;
+                font-size: 25px;
+            }
+
+        }
+    }
+}

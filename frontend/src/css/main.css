@@ -317,8 +317,57 @@ se transforma en
       cursor: pointer; }
     .header-container .header-container-logued .header-container-header-logout {
       margin-left: 20px;
+      font-size: 25px;
       color: orangered;
       cursor: pointer; }
+
+.container-datauser {
+  width: 1440px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Questrial-Regular"; }
+  .container-datauser .datauser-image {
+    width: 1440px;
+    height: 150px;
+    object-fit: cover; }
+  .container-datauser .data-profile {
+    width: 1440px;
+    display: flex;
+    flex-direction: column; }
+    .container-datauser .data-profile .data-profile-content {
+      display: flex;
+      flex-direction: column;
+      width: 600px;
+      margin-left: 700px; }
+      .container-datauser .data-profile .data-profile-content .data-profile-content-title {
+        font-size: 25px; }
+      .container-datauser .data-profile .data-profile-content .form-update-data-label {
+        font-size: 25px;
+        margin-top: 20px; }
+      .container-datauser .data-profile .data-profile-content .form-update-data-input {
+        color: blue; }
+      .container-datauser .data-profile .data-profile-content .form-update-data-button {
+        margin-top: 30px;
+        background-color: #119FDC;
+        font-size: 25px; }
+
+.container-card {
+  width: 300px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px; }
+  .container-card .image.card {
+    width: 200px;
+    height: 200px; }
+  .container-card #avatar {
+    border-radius: 50%; }
 
 /*VIEWS*/
 .container-home {
@@ -350,14 +399,24 @@ se transforma en
   font-family: "Questrial-Regular"; }
   .container-profile .profile-image {
     width: 1440px;
-    height: 300px; }
-  .container-profile .data-profile {
+    height: 443px;
+    object-fit: cover; }
+  .container-profile .profile-my-trips {
     width: 1440px;
-    display: flex;
-    flex-direction: column; }
-    .container-profile .data-profile .data-profile-content {
+    height: 443px; }
+    .container-profile .profile-my-trips .profile-my-trips-title {
+      margin-top: 40px;
+      margin-left: 80px;
+      font-size: 25px; }
+    .container-profile .profile-my-trips .profile-my-trips-resum {
       display: flex;
-      flex-direction: column;
-      width: 600px;
-      margin-left: auto;
-      margin-right: auto; }
+      flex-direction: row;
+      justify-content: space-evenly; }
+  .container-profile .profile-my-jointrips {
+    width: 1440px;
+    height: 443px;
+    background-color: #94def5; }
+    .container-profile .profile-my-jointrips .profile-my-jointrips-title {
+      margin-top: 40px;
+      margin-left: 80px;
+      font-size: 25px; }

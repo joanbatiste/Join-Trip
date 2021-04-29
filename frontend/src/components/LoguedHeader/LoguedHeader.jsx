@@ -26,6 +26,12 @@ const LoguedHeader = (props) =>{
             history.push('/profile');
         },1000);
     };
+    //Funcion para ir datos perfil
+    const goToDataUser = ()=>{
+        setTimeout(()=>{
+            history.push('/profile/datauser');
+        },1000);
+    };
   
     return(
         <div className="header-container">
@@ -40,7 +46,7 @@ const LoguedHeader = (props) =>{
                     <div className="header-container-header-links-inicio">inicio</div>
                     <div className="header-container-header-links-viajes">viajes</div>
                     <div className="header-container-header-links-actividades">actividades</div>
-                    <div className="header-container-header-links-contacto">contacto</div>
+                    <div className="header-container-header-links-contacto" onClick={()=>goToDataUser()}>mis datos</div>
 
                 </div>
                 <div className="header-container-header-userdata" onClick={()=>goToProfile()}>
