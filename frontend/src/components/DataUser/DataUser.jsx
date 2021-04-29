@@ -70,7 +70,9 @@ const ProfileHeader = (props) =>{
                 <label htmlFor="" className='form-update-data-label'>Ciudad</label>
                 <input type='name' placeholder={props.username} name='city' className='form-update-data-input' value={user.city} onChange={handleState}></input>
                 <label htmlFor="" className='form-update-data-label'>Email</label>
-                <input type='name' placeholder={props.username} name='email' className='form-update-data-input' value={user.email} onChange={handleState}></input>
+                <input type='name' placeholder={props.email} name='email' className='form-update-data-input' value={user.email} onChange={handleState}></input>
+                <label htmlFor="" className='form-update-data-label'>Password</label>
+                <input type='password' name='password' className='form-update-data-input' value={user.password} onChange={handleState}></input>
                 {message}
                 <input type="button" value="Actualizar datos" className='form-update-data-button' onClick={updateData}/>
             </div>

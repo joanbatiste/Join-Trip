@@ -16,7 +16,7 @@ const userReducer = (state = initialState, action) => {
         case LOGOUT :
             return {
                 ...state,
-                user: initialState
+                user: action.payload
             }
 
         case UPDATE_USER :

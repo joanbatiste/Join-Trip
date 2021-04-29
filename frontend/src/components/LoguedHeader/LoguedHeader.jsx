@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { LOGOUT } from '../../redux/types/userTypes';
@@ -10,12 +11,16 @@ const LoguedHeader = (props) =>{
     let history = useHistory();
 
     //Funcion para logout,
-    const logout = () =>{
+    const logout = async() =>{
         let confirmation = window.confirm('¿Seguro que quieres irte?');
+        
         if(confirmation){
+            
             setTimeout(()=>{
+                
                 props.dispatch({type:LOGOUT, payload: {}});
                 history.push('/');
+                
             },1000);
         }
     };
