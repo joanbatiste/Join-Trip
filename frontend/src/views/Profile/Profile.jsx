@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {useEffect} from 'react';
+
 import { connect } from 'react-redux';
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
 import {SAVING} from '../../redux/types/tripTypes';
@@ -8,13 +9,15 @@ import TripCard from '../../components/TripCard/TripCard.jsx';
 
 
 const Profile = (props) => {
-
+    
     //funcion para traerse los viajes publicados por el usuario
     const getTrips = async () => {
         let endPointTrips = `http://127.0.0.1:8000/api/users/${props.user.id}/trips`;
         let tripsResponse = await axios.get(endPointTrips,{headers: {authorization:`Bearer ${props.user.api_token}`}});
         props.dispatch({type:SAVING, payload: tripsResponse.data});
+        
     }
+    
     //USEEFFECTS
     useEffect(() => {
         getTrips();
@@ -28,7 +31,7 @@ const Profile = (props) => {
             </div>
             <div className="profile-my-trips">
                 <div className="profile-my-trips-title">Mis viajes publicados</div>
-                <div className="profile-my-trips-resum">
+                <div className="profile-my-trips-resum" >
                     {props.trip.map(mytrips =>{
                         return(
                             <TripCard 
