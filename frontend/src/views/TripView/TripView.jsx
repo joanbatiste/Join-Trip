@@ -29,6 +29,9 @@ function TripView(props) {
                 <img src={cabecera_viaje} alt=""></img>
             </div>
             <div className="trip-content">
+                <div className="trip-content-intro">
+                    <h1>Información del viaje</h1>
+                </div>
                 <div className="trip-content-global">
                     <div className="trip-owner">
                         <div className="trip-owner-description">
@@ -37,12 +40,8 @@ function TripView(props) {
                                 <div className="user-name">{dataTrip.user.name}</div>
                                 <div className="avatar"><FontAwesomeIcon icon={faUser} /></div>
                             </div>
-
-
                         </div>
                     </div>
-
-
                     <div className="trip-info">
                         <div className="trip-info-field">
                             <p className="">Título:</p>
@@ -67,19 +66,32 @@ function TripView(props) {
                             <p className="">Viajeros que se han unido:</p>
                             {dataTrip.user.name}
                         </div>
+                        <button className="join-button">Unirme al viaje</button>
 
                     </div>
 
                 </div>
-
+                <div className="trip-content-dude">
+                    <h1>¿Todavía con dudas?</h1>
+                    <h4>Pregunta al usuario que ha publicado el viaje y aclara fechas, lugares a visitar, actividades.... </h4>
+                </div>
+                <div className="trip-messages-box">
+                    <div className="trip-messages-owner">
+                        <p className="">Publicado por:</p>
+                    </div>
+                    <div className="trip-message-text">
+                        <p className="">Mensaje:</p>
+                    </div>
+                    <div className="trip-message-button">
+                        <button className="publish-message">Publicar</button>
+                    </div>
+                    
+                </div>
 
 
 
             </div>
-            <div className="trip-messages-box">
-                <div className="trip-messages-owner"></div>
-                <div className="trip-message-text"></div>
-            </div>
+
         </div>
     )
 }

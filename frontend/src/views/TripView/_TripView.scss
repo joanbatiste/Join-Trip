@@ -12,6 +12,14 @@
         height: auto;
         background-color: blanchedalmond;
         
+        .trip-content-intro{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+        }
 
         .trip-content-global{
             display: flex;
@@ -22,6 +30,8 @@
             border: rgb(163, 160, 160) solid 2px;
             margin-left: auto;
             margin-right: auto;
+            margin-top: 40px;
+            margin-bottom: 40px;
 
             .trip-owner{
                 width: 20%;
@@ -72,11 +82,62 @@
                 flex-direction: column;
                 justify-content: space-evenly;
                 .trip-joined-users-content{
-                    height: 500px;
+                    height: 400px;
                     border: rgb(163, 160, 160) solid 2px;
                 }
+                .join-button{
+                    height: 75px;
+                    background-color:#119FDC;
+                    font-size: 25px;
+                }
             }
+        }
+        .trip-content-dude{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+        .trip-messages-box{
+            width: 1000px;
+            height: 280px;
+            border: rgb(163, 160, 160) solid 2px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
 
+            .trip-messages-owner{
+                border: rgb(163, 160, 160) solid 2px;
+                width: 95%;
+                height: 35px;
+
+            }
+            .trip-message-text{
+                border: rgb(163, 160, 160) solid 2px;
+                width: 95%;
+                height: 130px;
+            }
+            .trip-message-button{
+                display: flex;
+                flex-direction: row;
+                
+                
+                .publish-message{
+                    width: 130px;
+                    height: 35px;
+                    align-items: flex-end;
+                    margin-left: 815px;
+                    background-color:#119FDC;
+                    font-size: 20px;
+                }
+            }
             
         }
         
