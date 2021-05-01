@@ -2,14 +2,24 @@ import React, { useEffect } from 'react'
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
 import cabecera_viaje from '../../img/Pareja-en-coche.jpeg';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+// import axios from 'axios';
 
 function TripView(props) {
-    console.log(props);
+
     let dataTrip = JSON.parse(localStorage.getItem('trip'));
-    console.log("soy el data trip", dataTrip);
+    console.log('soy los datos de data', dataTrip);
+    //Funcion para traer el nombre del usuario que ha publicado el viaje
+    // const getUserName = async()=>{
+    //     let endPointFindById = `http://127.0.0.1:8000/api/users/${dataTrip.user.id}`;
+    //     console.log(endPointFindById);
+    //     let response = await axios.get(endPointFindById);
+    //     console.log(response);
+    // }
     //USEEFFECTS
     useEffect(() => {
-
+        // getUserName()
     }, []);
     return (
         <div className="container-tripview">
@@ -19,20 +29,56 @@ function TripView(props) {
                 <img src={cabecera_viaje} alt=""></img>
             </div>
             <div className="trip-content">
-                <div className="trip-info">
-                    <div className="trip-info-title">
-                        <p className="">Título</p>
-                        {dataTrip.title}
-                        
+                <div className="trip-content-global">
+                    <div className="trip-owner">
+                        <div className="trip-owner-description">
+                            <p className="">Publicado por:</p>
+                            <div className="name-and-avatar">
+                                <div className="user-name">{dataTrip.user.name}</div>
+                                <div className="avatar"><FontAwesomeIcon icon={faUser} /></div>
+                            </div>
+
+
+                        </div>
                     </div>
-                    <div className="trip-info-destination"></div>
-                    <div className="trip-info-description"></div>
-                    <div className="trip-info-link"></div>
+
+
+                    <div className="trip-info">
+                        <div className="trip-info-field">
+                            <p className="">Título:</p>
+                            {dataTrip.title}
+                        </div>
+                        <div className="trip-info-field">
+                            <p className="">Destino</p>
+                            {dataTrip.destination}
+                        </div>
+                        <div className="trip-info-field-description">
+                            <p className="">Descripción</p>
+                            {dataTrip.description}
+                        </div>
+                        <div className="trip-info-field">
+                            <p className="">Links de interés</p>
+                            {dataTrip.link}
+
+                        </div>
+                    </div>
+                    <div className="trip-joined-users">
+                        <div className="trip-joined-users-content">
+                            <p className="">Viajeros que se han unido:</p>
+                            {dataTrip.user.name}
+                        </div>
+
+                    </div>
+
                 </div>
-                <div className="trip-messages-box">
-                    <div className="trip-messages-owner"></div>
-                    <div className="trip-message-text"></div>
-                </div>
+
+
+
+
+            </div>
+            <div className="trip-messages-box">
+                <div className="trip-messages-owner"></div>
+                <div className="trip-message-text"></div>
             </div>
         </div>
     )

@@ -134,4 +134,38 @@ class UserController extends Controller
             return $error;
         }
     }
+    //Funcion para desloguearse un usuario
+    public function userLogout(Request $request, $id)
+    {
+
+        $user = $request->user();
+        if ($user['id'] != $id) {
+            return response()->json([
+                'error' => "No puedes desloguearte."
+            ]);
+        }
+
+        try {
+
+            return User::where('id', '=', $id)
+                ->update(['api_token' => '']);
+        } catch (QueryException $error) {
+            return $error;
+        }
+    }
+    //Traer usuario por ID
+    public function getUser(Request $request, $id)
+    {
+        // $user = $request->user();
+        // if ($user['id'] != $id) {
+        //     return response()->json([
+        //         'error' => "No existen datos"
+        //     ]);
+        // }
+        try {
+            return User::find($id);
+        } catch (QueryException $error) {
+            return $error;
+        }
+    }
 }

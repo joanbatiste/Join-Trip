@@ -4,13 +4,15 @@ import user_image from '../../img/icono_user.png';
 import { useHistory} from 'react-router-dom';
 import { connect } from 'react-redux';
 
+
+
 const TripCard = (props) => {
 
     let history = useHistory();
     
-    localStorage.setItem('trip', JSON.stringify(props));
+    
     const goToTripView = () =>{
-        
+        localStorage.setItem('trip', JSON.stringify(props));
         setTimeout(() => {
             history.push('/trips/view');
 

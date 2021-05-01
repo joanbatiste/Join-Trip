@@ -22,10 +22,12 @@ use Illuminate\Support\Facades\Route;
 //Rutas controladoras para el registro y login Users
 Route::post('/users', [UserController::class, 'userRegister']);
 Route::post('/users/login', [UserController::class, 'userLogin']);
+Route::get('/users/{id}', [UserController::class, 'getUser']);
 
 Route::middleware('auth:api')->group(function(){
     //Rutas que requieren autenticación de Users
     Route::put('/users/{id}', [UserController::class, 'userUpdate']);
+    Route::post('/users/{id}', [UserController::class, 'userLogout']);
 
     //Rutas que requieren autenticación de Trips
     Route::post('/users/{userid}/trips', [TripController::class, 'tripCreate']);
