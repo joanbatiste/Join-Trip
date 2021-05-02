@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header/Header.jsx';
-
+import axios from 'axios';
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
 import cabecera from '../../img/cabecera.jpeg';
 import { connect } from 'react-redux';
-
+import TripCard from '../../components/TripCard/TripCard';
+import trip1 from '../../img/trip1.jpeg'
+import trip2 from '../../img/granada.jpg';
+import trip3 from '../../img/rioja.jpeg';
 
 const Home = (props) => {
+    const [trip, setTrips] = useState({ trips: [] });
+    const getTrips = async () => {
+        let endPointTrips = "http://127.0.0.1:8000/api/trips";
+        let tripsResponse = await axios.get(endPointTrips);
+        // props.dispatch({type:SAVING, payload: tripsResponse.data});
+        console.log("soy el response.data", tripsResponse.data);
+        setTrips({
+            ...trip, trips: tripsResponse.data
+        })
+    }
 
-    
-
-    
+    //USEEFFECTS
+    useEffect(() => {
+        getTrips();
+        // eslint-disable-next-line
+    }, []);
 
     if (!props.user?.api_token) {
 
@@ -52,21 +67,56 @@ const Home = (props) => {
 
                 </div>
                 <div className="last-trips">
-                    <div className="last-trips-description"></div>
+                    <div className="last-trips-description">
+                        <h2>Últimos viajes publicados</h2>
+                        <p className="home-texts">Publica tu viaje y déjate acompañar por otros usuarios de JoinTrip.
+Conoce todos los rincones de España y conecta con viajeros como tu. </p>
+                    </div>
                     <div className="last-trips-publications">
-                        <div className="last-trips-publications-1"></div>
+                        {trip.trips.map(mytrips => {
+                            return (
+                                <TripCard
+                                    title={mytrips.title}
+                                    destination={mytrips.destination}
+                                    description={mytrips.description}
+                                    link={mytrips.link}
+
+                                />
+                            )
+                        })}
+                        {/* <div className="last-trips-publications-1"></div>
                         <div className="last-trips-publications-2"></div>
                         <div className="last-trips-publications-3"></div>
-                        <div className="last-trips-publications-4"></div>
+                        <div className="last-trips-publications-4"></div> */}
                     </div>
 
                 </div>
                 <div className="suggestions">
-                    <div className="suggestions-descriptions"></div>
+                    <div className="suggestions-descriptions">
+                        <h2>Sugerencias del mes</h2>
+                        <p className="home-texts">¿Nos permites sugerencias?
+Te mostramos algunos de los destinos de nuestro país que seguro te sorprenderán.</p>
+                    </div>
                     <div className="suggestions-trips">
-                        <div className="suggestions-trips-1"></div>
-                        <div className="suggestions-trips-2"></div>
-                        <div className="suggestions-trips-3"></div>
+
+                        <div className="suggestions-trips-1">
+                            <div className="suggestions-trips-1-image">
+                                <img src={trip1} alt=""></img>
+                            </div>
+                            <div className="suggestions-trips-1-description"></div>
+                        </div>
+                        <div className="suggestions-trips-2">
+                            <div className="suggestions-trips-2-image">
+                                <img src={trip2} alt=""></img>
+                            </div>
+                            <div className="suggestions-trips-2-description"></div>
+                        </div>
+                        <div className="suggestions-trips-3">
+                            <div className="suggestions-trips-3-image">
+                                <img src={trip3} alt=""></img>
+                            </div>
+                            <div className="suggestions-trips-3-description"></div>
+                        </div>
                     </div>
                 </div>
 

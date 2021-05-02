@@ -375,19 +375,82 @@ se transforma en
   display: flex;
   flex-direction: column;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  font-family: "Questrial-Regular"; }
+  .container-home .home-texts {
+    font-size: 22px; }
   .container-home .header-image {
     width: 1440px;
     height: 959px;
     object-fit: cover; }
   .container-home .last-trips {
     width: 1440px;
-    height: 400px;
+    height: 500px;
     background-color: lightblue; }
+    .container-home .last-trips .last-trips-description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 80%;
+      height: auto;
+      margin-top: 50px;
+      margin-left: auto;
+      margin-right: auto; }
+    .container-home .last-trips .last-trips-publications {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; }
   .container-home .suggestions {
     width: 1440px;
-    height: 400px;
-    background-color: lightgreen; }
+    height: 500px;
+    background-color: #119FDC; }
+    .container-home .suggestions .suggestions-descriptions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 80%;
+      height: auto;
+      margin-top: 50px;
+      margin-left: auto;
+      margin-right: auto; }
+    .container-home .suggestions .suggestions-trips {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly; }
+      .container-home .suggestions .suggestions-trips .suggestions-trips-1 {
+        display: flex;
+        flex-direction: column; }
+        .container-home .suggestions .suggestions-trips .suggestions-trips-1 .suggestions-trips-1-image {
+          width: 300px;
+          height: 300px; }
+          .container-home .suggestions .suggestions-trips .suggestions-trips-1 .suggestions-trips-1-image .suggestions-trips-1-image img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%; }
+      .container-home .suggestions .suggestions-trips .suggestions-trips-2 {
+        display: flex;
+        flex-direction: column; }
+        .container-home .suggestions .suggestions-trips .suggestions-trips-2 .suggestions-trips-2-image {
+          width: 300px;
+          height: 300px; }
+          .container-home .suggestions .suggestions-trips .suggestions-trips-2 .suggestions-trips-2-image .suggestions-trips-2-image img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%; }
+      .container-home .suggestions .suggestions-trips .suggestions-trips-3 {
+        display: flex;
+        flex-direction: column; }
+        .container-home .suggestions .suggestions-trips .suggestions-trips-3 .suggestions-trips-3-image {
+          width: 300px;
+          height: 300px; }
+          .container-home .suggestions .suggestions-trips .suggestions-trips-3 .suggestions-trips-3-image .suggestions-trips-3-image img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%; }
 
 .container-profile {
   width: 1440px;

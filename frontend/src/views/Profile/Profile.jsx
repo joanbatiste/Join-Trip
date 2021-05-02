@@ -26,6 +26,7 @@ const Profile = (props) => {
     //USEEFFECTS
     useEffect(() => {
         getTrips();
+        // eslint-disable-next-line
     }, []);
 
     return (

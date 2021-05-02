@@ -4,6 +4,8 @@ import cabecera_viaje from '../../img/Pareja-en-coche.jpeg';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+
+
 // import axios from 'axios';
 
 function TripView(props) {
@@ -87,7 +89,7 @@ function TripView(props) {
                     </div>
                     
                 </div>
-
+                
 
 
             </div>

@@ -5,7 +5,7 @@ import axios from "axios";
 import chechError from '../../utiles/utiles';
 import { connect } from 'react-redux';
 import { LOGIN } from '../../redux/types/userTypes';
-
+// import LocationSearchInput from '../../components/InputLocation/InputLocation';
 
 const Header = (props) => {
 
@@ -176,6 +176,7 @@ const Header = (props) => {
                     <FormGroup>
                         <Label for="city">Ciudad</Label>
                         <Input type="text" name="city" onChange={handleStateRegister}></Input>
+                        {/* <LocationSearchInput type="text" name="city" onChange={handleStateRegister}></LocationSearchInput> */}
                     </FormGroup>
                     <FormGroup>
                         <Label for="email">Email</Label>
