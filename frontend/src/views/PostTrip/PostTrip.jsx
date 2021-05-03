@@ -78,7 +78,10 @@ function PostTrip(props) {
                     <label htmlFor="" className='post-form-container-content-label'>Días</label>
                     <input type='text' name='days' className='post-form-container-content-input' onChange={handleStatePostTrip}></input>
                     <label htmlFor="" className='post-form-container-content-label-description' >Descripción</label>
-                    <input type='text' name='description' className='post-form-container-content-input' onChange={handleStatePostTrip}></input>
+                    <div className="description-input">
+                        <textarea type='text' name='description' className='post-form-container-content-input-description' onChange={handleStatePostTrip}></textarea>
+                    </div>
+                    
                     <label htmlFor="" className='post-form-container-content-label'>Links de interés</label>
                     <input type='text'  name='link' className='post-form-container-content-input' onChange={handleStatePostTrip}></input>
                     {/* {message} */}
