@@ -662,3 +662,7 @@ se transforma en
   margin-left: auto;
   margin-right: auto;
   font-family: "Questrial-Regular"; }
+  .container-post-trip .post-form-container {
+    width: 1440px;
+    height: 600px;
+    background-color: #119FDC; }
