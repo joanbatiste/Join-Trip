@@ -19,6 +19,12 @@ function TripView(props) {
     //     let response = await axios.get(endPointFindById);
     //     console.log(response);
     // }
+
+    //Función para transformar la fecha a DD/MM/AAAA
+    function convertDateFormat(string) {
+        return string.split('-').reverse().join('/');
+   }
+
     //USEEFFECTS
     useEffect(() => {
         // getUserName()
@@ -37,7 +43,7 @@ function TripView(props) {
                 <div className="trip-content-global">
                     <div className="trip-owner">
                         <div className="trip-owner-description">
-                            <p className="">Publicado por:</p>
+                            <p className="p-trips-titles">Publicado por:</p>
                             <div className="name-and-avatar">
                                 <div className="user-name">{dataTrip.user.name}</div>
                                 <div className="avatar"><FontAwesomeIcon icon={faUser} /></div>
@@ -45,27 +51,41 @@ function TripView(props) {
                         </div>
                     </div>
                     <div className="trip-info">
-                        <div className="trip-info-field">
-                            <p className="">Título:</p>
-                            {dataTrip.title}
+                        <div className="trip-info-field-first">
+                            <div className="trip-info-field-title">
+                                <p className="p-trips-titles">Título:</p>
+                                {dataTrip.title}
+                            </div>
+                            <div className="trip-info-field-date">
+                                <p className="p-trips-titles">Fecha:</p>
+                                {convertDateFormat(dataTrip.date)}
+                            </div>
+                            <div className="trip-info-field-days">
+                                <p className="days">Días:</p>
+                                <div className="trip-info-field-days-days">
+                                    {dataTrip.days}
+                                </div>
+                                
+                            </div>
+
                         </div>
                         <div className="trip-info-field">
-                            <p className="">Destino</p>
+                            <p className="p-trips-titles">Destino</p>
                             {dataTrip.destination}
                         </div>
                         <div className="trip-info-field-description">
-                            <p className="">Descripción</p>
+                            <p className="p-trips-titles">Descripción</p>
                             {dataTrip.description}
                         </div>
                         <div className="trip-info-field">
-                            <p className="">Links de interés</p>
+                            <p className="p-trips-titles">Links de interés</p>
                             {dataTrip.link}
 
                         </div>
                     </div>
                     <div className="trip-joined-users">
                         <div className="trip-joined-users-content">
-                            <p className="">Viajeros que se han unido:</p>
+                            <p className="p-trips-titles">Viajeros que se han unido:</p>
                             {dataTrip.user.name}
                         </div>
                         <button className="join-button">Unirme al viaje</button>
@@ -79,17 +99,17 @@ function TripView(props) {
                 </div>
                 <div className="trip-messages-box">
                     <div className="trip-messages-owner">
-                        <p className="">Publicado por:</p>
+                        <p className="p-trips-titles">Publicado por:</p>
                     </div>
                     <div className="trip-message-text">
-                        <p className="">Mensaje:</p>
+                        <p className="p-trips-titles">Mensaje:</p>
                     </div>
                     <div className="trip-message-button">
                         <button className="publish-message">Publicar</button>
                     </div>
-                    
+
                 </div>
-                
+
 
 
             </div>

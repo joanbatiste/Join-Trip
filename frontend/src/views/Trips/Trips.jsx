@@ -1,8 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import cabecera_profile from '../../img/Hombre-paisaje-Panoramica.jpeg';
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
 
-function Trips() {
+function Trips(props) {
+
+    //Funcion para traer todos los trips de BD
+    const [trip, setTrips] = useState({ trips: [] });
+    const getTrips = async () => {
+        let endPointTrips = "http://127.0.0.1:8000/api/trips";
+        let tripsResponse = await axios.get(endPointTrips);
+        // props.dispatch({type:SAVING, payload: tripsResponse.data});
+        setTrips({
+            ...trip, trips: tripsResponse.data
+        })
+    }
+
+    //USEEFFECTS
+    useEffect(() => {
+        getTrips();
+        // eslint-disable-next-line
+    }, []);
+
+
     return (
         <div className="container-trips">
             <div className="trips-image">

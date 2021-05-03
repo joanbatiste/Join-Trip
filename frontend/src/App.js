@@ -7,6 +7,7 @@ import Profile from './views/Profile/Profile';
 import DataUser from './components/DataUser/DataUser';
 import TripView from './views/TripView/TripView';
 import Trips from './views/Trips/Trips';
+import PostTrip from './views/PostTrip/PostTrip';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/profile/datauser" exact component={DataUser}/>
           <Route path="/trips/view" exact component={TripView}/>
           <Route path="/trips" exact component={Trips}/>
+          <Route path="/trips/post" exact component={PostTrip}/>
         </Switch>
       </BrowserRouter>
       

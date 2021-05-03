@@ -10,12 +10,12 @@ import trip2 from '../../img/granada.jpg';
 import trip3 from '../../img/rioja.jpeg';
 
 const Home = (props) => {
+    //Funcion para traerse todos los trips de la BD
     const [trip, setTrips] = useState({ trips: [] });
     const getTrips = async () => {
         let endPointTrips = "http://127.0.0.1:8000/api/trips";
         let tripsResponse = await axios.get(endPointTrips);
         // props.dispatch({type:SAVING, payload: tripsResponse.data});
-        console.log("soy el response.data", tripsResponse.data);
         setTrips({
             ...trip, trips: tripsResponse.data
         })
@@ -79,6 +79,8 @@ Conoce todos los rincones de España y conecta con viajeros como tu. </p>
                                     title={mytrips.title}
                                     destination={mytrips.destination}
                                     description={mytrips.description}
+                                    date = {mytrips.date}
+                                    days = {mytrips.days}
                                     link={mytrips.link}
 
                                 />

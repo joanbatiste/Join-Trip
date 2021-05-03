@@ -43,7 +43,9 @@ const Profile = (props) => {
                             <TripCard 
                                 title={mytrips.title}
                                 destination={mytrips.destination}
-                                description ={mytrips.description} 
+                                description ={mytrips.description}
+                                date = {mytrips.date}
+                                days = {mytrips.days}
                                 link={mytrips.link}
                                 
                             />

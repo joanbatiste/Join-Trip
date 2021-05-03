@@ -43,6 +43,12 @@ const LoguedHeader = (props) =>{
             history.push('/trips');
         },1000);
     };
+    //Funcion para ir a vista viajes
+    const goToPostTrip = ()=>{
+        setTimeout(()=>{
+            history.push('/trips/post');
+        },1000);
+    };
   
     return(
         <div className="header-container">
@@ -56,7 +62,7 @@ const LoguedHeader = (props) =>{
                 <div className="header-container-header-links">
                     <div className="header-container-header-links-inicio">inicio</div>
                     <div className="header-container-header-links-viajes" onClick={()=>goToTrips()}>viajes</div>
-                    <div className="header-container-header-links-actividades">actividades</div>
+                    <div className="header-container-header-links-actividades" onClick={()=>goToPostTrip()}>publicar viaje</div>
                     <div className="header-container-header-links-contacto" onClick={()=>goToDataUser()}>mis datos</div>
 
                 </div>
