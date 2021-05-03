@@ -591,3 +591,32 @@ se transforma en
           margin-left: 815px;
           background-color: #119FDC;
           font-size: 20px; }
+
+.container-trips {
+  width: 1440px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Questrial-Regular"; }
+  .container-trips .available-trips .trips-added-content {
+    margin-top: 30px; }
+  .container-trips .available-trips .last-trips-added {
+    width: 1440px;
+    height: 500px;
+    background-color: #b5b7b4;
+    display: flex;
+    justify-content: center; }
+  .container-trips .available-trips .next-trips-to-be-done {
+    width: 1440px;
+    height: 500px;
+    background-color: #1ec0ff;
+    display: flex;
+    justify-content: center; }
+  .container-trips .available-trips .all-trips {
+    width: 1440px;
+    height: 500px;
+    background-color: #0080ff;
+    display: flex;
+    justify-content: center; }

@@ -68,6 +68,7 @@ const Header = (props) => {
         if (notValidated) {
             return;
         }
+        
         //Datos de usuario a enviar al backend
         let userData = {
             name: user.name,
@@ -78,6 +79,7 @@ const Header = (props) => {
             email: user.email,
             password: user.password
         }
+        
         
         //Endpoint para el registro de usuario
         let endpointUserRegister = 'http://127.0.0.1:8000/api/users';

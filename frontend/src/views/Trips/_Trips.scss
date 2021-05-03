@@ -1,0 +1,37 @@
+.container-trips{
+    width: 1440px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: $font-Questrial-Regular;
+
+    .available-trips{
+        .trips-added-content{
+            margin-top: 30px;
+        }
+        .last-trips-added{
+            width: 1440px;
+            height: 500px;
+            background-color: #b5b7b4;
+            display: flex;
+            justify-content: center;
+        }
+        .next-trips-to-be-done{
+            width: 1440px;
+            height: 500px;
+            background-color: #1ec0ff;
+            display: flex;
+            justify-content: center;
+        }
+        .all-trips{
+            width: 1440px;
+            height: 500px;
+            background-color: #0080ff;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+}

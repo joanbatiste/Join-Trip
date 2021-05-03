@@ -48,6 +48,24 @@ const checkError = (datosCheck) => {
 
             break;
 
+            case 'birthday' :
+                function ageCalculator(bornDate){
+                    let birthday = new Date(bornDate) 
+                    let today = new Date();
+                    let age = today.getFullYear() - birthday.getFullYear();
+                    let month = today.getMonth() - birthday.getMonth();
+
+                    if (month < 0 || (month === 0 && today.getDate() < birthday.getDate())){
+                    age--;
+                    }
+                    return age;
+                }
+                let age = ageCalculator(datosCheck[field]);
+                if(age < 18){
+                    return "Debes de ser mayor de edad para poder registrarte"
+                }
+                
+            break;    
 
             case 'dni' : 
 
