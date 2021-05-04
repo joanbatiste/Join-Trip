@@ -1,0 +1,38 @@
+.container-message-box{
+    width: 1000px;
+    height: 250px;
+    border: rgb(163, 160, 160) solid 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .message-box-owner{
+        display: flex;
+        flex-direction: row;
+        border: rgb(163, 160, 160) solid 2px;
+        width: 95%;
+        height: 35px;
+
+        .message-box-owner-title{
+            color: rgb(10, 10, 163);
+        }
+        .message-box-owner-name{
+            margin-left: 20px;
+        }
+    }
+    .message-box-content{
+        border: rgb(163, 160, 160) solid 2px;
+        width: 95%;
+        height: 130px;
+        display: flex;
+        flex-direction: column;
+        .message-box-content-title{
+            color: rgb(10, 10, 163);
+        }
+    }
+}

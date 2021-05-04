@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
 import cabecera_viaje from '../../img/Pareja-en-coche.jpeg';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
+import MessageBox from '../../components/MessageBox/MessageBox';
 
 
 // import axios from 'axios';
@@ -11,7 +13,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 function TripView(props) {
 
     let dataTrip = JSON.parse(localStorage.getItem('trip'));
-    console.log('soy los datos de data', dataTrip);
+    // console.log('soy los datos de data', dataTrip);
     //Funcion para traer el nombre del usuario que ha publicado el viaje
     // const getUserName = async()=>{
     //     let endPointFindById = `http://127.0.0.1:8000/api/users/${dataTrip.user.id}`;
@@ -20,15 +22,79 @@ function TripView(props) {
     //     console.log(response);
     // }
 
+    //Hook para traer mensajes ya publicados
+    const [postedMessages, setPostedMessages] = useState([]);
+    
+    //Hook de message a publicar
+    const [message, setMessage] = useState('')
+
+    //Manejador de estado publicar mensajes
+    const handleStateMessage = (e) => {
+        setMessage({ ...setMessage, [e.target.name]: e.target.value });
+    }
+
+    //Funcion para traer los mensajes del viaje
+    const getMessagesPosted = async () => {
+        let endPointGetMessages = `http://127.0.0.1:8000/api/messages/${dataTrip.tripId}`;
+        let responseMessages = await axios.get(endPointGetMessages);
+        setPostedMessages(responseMessages.data);
+    }
+
+    //Funcion para enviar mensaje al back
+    const sendMessage = async () => {
+        let messagePost = {
+            message: message.message,
+            userId: props.user.id,
+            tripId: dataTrip.tripId
+        }
+
+        //EndPoint para crear el mensaje en bd
+        let endPointMessage = `http://127.0.0.1:8000/api/users/${props.user.id}/messages`;
+        let response = await axios.post(endPointMessage, messagePost, { headers: { authorization: `Bearer ${props.user.api_token}` } })
+        
+        if (!response.data) {
+            alert('Lo sentimos, el mensaje no ha podido publicarse');
+        } else {
+            alert('Tu mensaje se ha publicado correctamente');
+
+        }
+    }
+
     //Función para transformar la fecha a DD/MM/AAAA
     function convertDateFormat(string) {
         return string.split('-').reverse().join('/');
-   }
+    }
 
     //USEEFFECTS
     useEffect(() => {
-        // getUserName()
+        getMessagesPosted()
+        // eslint-disable-next-line
     }, []);
+
+    //Visualizar Mensajes posteados si los hay
+    const messageTest = () => {
+        if (postedMessages.length !== 0) {
+            return (
+                <div id="box-posted-messages">
+                    <h1>Preguntas de los viajeros</h1>
+                    {postedMessages?.map(message => {
+                        return (
+                            <MessageBox
+                                message={message}
+                            />
+                        )
+                    })}
+                </div>
+            )
+
+        } else {
+            return (
+                <div></div>
+            )
+        }
+    }
+
+    //Renderizado
     return (
         <div className="container-tripview">
 
@@ -65,7 +131,7 @@ function TripView(props) {
                                 <div className="trip-info-field-days-days">
                                     {dataTrip.days}
                                 </div>
-                                
+
                             </div>
 
                         </div>
@@ -93,6 +159,8 @@ function TripView(props) {
                     </div>
 
                 </div>
+                {messageTest()}
+
                 <div className="trip-content-dude">
                     <h1>¿Todavía con dudas?</h1>
                     <h4>Pregunta al usuario que ha publicado el viaje y aclara fechas, lugares a visitar, actividades.... </h4>
@@ -103,9 +171,10 @@ function TripView(props) {
                     </div>
                     <div className="trip-message-text">
                         <p className="p-trips-titles">Mensaje:</p>
+                        <textarea type="text" name="message" className="trip-message-text-content" onChange={handleStateMessage}></textarea>
                     </div>
                     <div className="trip-message-button">
-                        <button className="publish-message">Publicar</button>
+                        <button className="publish-message" onClick={sendMessage}>Publicar</button>
                     </div>
 
                 </div>

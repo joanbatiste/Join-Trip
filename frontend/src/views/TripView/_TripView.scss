@@ -134,6 +134,12 @@
                 }
             }
         }
+        #box-posted-messages{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
         .trip-content-dude{
             display: flex;
             align-items: center;
@@ -165,6 +171,15 @@
                 border: rgb(163, 160, 160) solid 2px;
                 width: 95%;
                 height: 130px;
+                display: flex;
+                flex-direction: column;
+                .p-trips-titles{
+                    height: 10%;
+                }
+                .trip-message-text-content{
+                    width: 100%;
+                    height: 90%;
+                }
             }
             .trip-message-button{
                 display: flex;

@@ -14,6 +14,8 @@ class TripController extends Controller
         $title = $request->input('title');
         $destination = $request->input('destination');
         $description = $request->input('description');
+        $date = $request->input('date');
+        $days = $request->input('days');
         $link = $request->input('link');
         $userid = $request->input('userId');
 
@@ -28,6 +30,8 @@ class TripController extends Controller
                 'title' => $title,
                 'destination' => $destination,
                 'description' => $description,
+                'date' => $date,
+                'days' => $days,
                 'link' => $link,
                 'userId' => $userid
             ]);
@@ -46,6 +50,17 @@ class TripController extends Controller
     public function findTripsByUserId($userid){
         try{
             return Trip::all()->where('userId', '=', $userid);
+            
+        }catch(QueryException $error){
+            return $error;
+
+        }
+    }
+    //Traer todos los trips 
+    public function findAllTrips(){
+        try{
+            return Trip::all();
+
 
         }catch(QueryException $error){
             return $error;
@@ -75,6 +90,8 @@ class TripController extends Controller
                 'title'=>$request->title,
                 'destination'=>$request->destination,
                 'description'=>$request->description,
+                'date' => $request->date,
+                'days' => $request->days,
                 'link'=>$request->link
             ]);
         }catch(QueryException $error){

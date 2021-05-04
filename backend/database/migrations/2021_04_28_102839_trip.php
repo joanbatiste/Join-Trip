@@ -18,6 +18,8 @@ class Trip extends Migration
             $table->string('title');
             $table->string('destination');
             $table->string('description',1000);
+            $table->date('date');
+            $table->string('days');
             $table->string('link')->nullable();
             $table->unsignedBigInteger('userId');
             $table->foreign('userId', 'fk_trips_users')

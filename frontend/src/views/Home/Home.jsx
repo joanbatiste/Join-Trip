@@ -15,7 +15,7 @@ const Home = (props) => {
     const getTrips = async () => {
         let endPointTrips = "http://127.0.0.1:8000/api/trips";
         let tripsResponse = await axios.get(endPointTrips);
-        // props.dispatch({type:SAVING, payload: tripsResponse.data});
+        console.log(tripsResponse, "a ver si hago otro join");
         setTrips({
             ...trip, trips: tripsResponse.data
         })
@@ -82,6 +82,7 @@ Conoce todos los rincones de España y conecta con viajeros como tu. </p>
                                     date = {mytrips.date}
                                     days = {mytrips.days}
                                     link={mytrips.link}
+                                    tripId = {mytrips.id}
 
                                 />
                             )

@@ -47,6 +47,19 @@ class MessageController extends Controller
 
         }
     }
+    //Traer todos los mensajes de un viaje
+    public function findMessagesByTripId($tripId){
+        try{
+            return Message::select()
+            ->where('tripId','=', $tripId)
+            ->with('users')
+            ->get();
+            
+
+        }catch(QueryException $error){
+            return $error;
+        }
+    }
 
     //Editar un message creado
     public function messageUpdate(Request $request, $userid, $messageid){

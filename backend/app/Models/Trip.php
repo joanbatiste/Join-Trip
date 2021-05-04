@@ -13,6 +13,8 @@ class Trip extends Model
         'title',
         'destination',
         'description',
+        'date',
+        'days',
         'link',
         'userId'
     ];

@@ -19,10 +19,13 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-//Rutas controladoras para el registro y login Users
+//Rutas controladoras para el registro y login Users que no requieren auth
 Route::post('/users', [UserController::class, 'userRegister']);
 Route::post('/users/login', [UserController::class, 'userLogin']);
+
 Route::get('/users/{id}', [UserController::class, 'getUser']);
+Route::get('/trips', [TripController::class, 'findAllTrips']);
+Route::get('messages/{tripid}',[MessageController::class, 'findMessagesByTripId']);
 
 Route::middleware('auth:api')->group(function(){
     //Rutas que requieren autenticación de Users

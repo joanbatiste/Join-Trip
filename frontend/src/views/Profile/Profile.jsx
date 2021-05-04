@@ -47,6 +47,7 @@ const Profile = (props) => {
                                 date = {mytrips.date}
                                 days = {mytrips.days}
                                 link={mytrips.link}
+                                id={mytrips.id}
                                 
                             />
                             
