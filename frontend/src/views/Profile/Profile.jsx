@@ -48,7 +48,7 @@ const Profile = (props) => {
                                 days = {mytrips.days}
                                 link={mytrips.link}
                                 id={mytrips.id}
-                                
+                                username = {mytrips.username}
                             />
                             
                         )
