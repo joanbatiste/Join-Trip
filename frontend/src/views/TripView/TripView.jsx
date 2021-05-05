@@ -28,10 +28,17 @@ function TripView(props) {
 
     //Funcion para traer los mensajes del viaje
     const getMessagesPosted = async () => {
-        let endPointGetMessages = `http://127.0.0.1:8000/api/messages/${dataTrip.tripId}`;
+        let endPointGetMessages = `http://127.0.0.1:8000/api/messages/${dataTrip.id}`;
         let responseMessages = await axios.get(endPointGetMessages);
         console.log(responseMessages.data, "looooooooooool")
         setPostedMessages(responseMessages.data);
+    }
+
+    //Funcion para traerse los usuarios que se han unido al viaje
+    const getUsersJoined = async ()=>{
+        let endPointUsersJoined = `http://127.0.0.1:8000/api/memberships/${dataTrip.id}`;
+        let response = await axios.get(endPointUsersJoined);
+        console.log("soy los viajeros unidos", response);
     }
 
     //Funcion para enviar mensaje al back
@@ -59,9 +66,28 @@ function TripView(props) {
         return string.split('-').reverse().join('/');
     }
 
+    //Función para unirse a un trip
+    const joinTrip = async () =>{
+        let membership ={
+            userId: props.user.id,
+            tripId: dataTrip.id
+        }
+
+        //endpoint para unirse al viaje
+        let endPointMembership = 'http://127.0.0.1:8000/api/trips/login';
+        let response = await axios.post(endPointMembership,membership,{headers: { authorization: `Bearer ${props.user.api_token}` }})
+        if (!response.data) {
+            alert('Lo sentimos, el mensaje no te has podido unir al viaje');
+        } else {
+            alert('¡Enhorabuena! Te has unido a este viaje. ¡Disfrútalo!');
+
+        }
+    }
+
     //USEEFFECTS
     useEffect(() => {
         getMessagesPosted()
+        getUsersJoined()
         // eslint-disable-next-line
     }, []);
 
@@ -149,7 +175,7 @@ function TripView(props) {
                             <p className="p-trips-titles">Viajeros que se han unido:</p>
                             {dataTrip.user.name}
                         </div>
-                        <button className="join-button">Unirme al viaje</button>
+                        <button className="join-button" onClick={joinTrip}>Unirme al viaje</button>
 
                     </div>
 
