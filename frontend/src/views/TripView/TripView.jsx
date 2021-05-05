@@ -17,6 +17,9 @@ function TripView(props) {
 
     //Hook para traer mensajes ya publicados
     const [postedMessages, setPostedMessages] = useState([]);
+
+    //Hook para traer usuarios ya unidos
+    const [joinedUsers, setJoinedUsers] = useState([]);
     
     //Hook de message a publicar
     const [message, setMessage] = useState('')
@@ -38,7 +41,8 @@ function TripView(props) {
     const getUsersJoined = async ()=>{
         let endPointUsersJoined = `http://127.0.0.1:8000/api/memberships/${dataTrip.id}`;
         let response = await axios.get(endPointUsersJoined);
-        console.log("soy los viajeros unidos", response);
+        setJoinedUsers (response.data)
+        console.log("soy los viajeros unidos", response.data);
     }
 
     //Funcion para enviar mensaje al back
@@ -173,7 +177,11 @@ function TripView(props) {
                     <div className="trip-joined-users">
                         <div className="trip-joined-users-content">
                             <p className="p-trips-titles">Viajeros que se han unido:</p>
-                            {dataTrip.user.name}
+                            {joinedUsers.map(joined=>{
+                                return(
+                                    <div className="joined-users-content">{joined.username}</div>
+                                )
+                            })}
                         </div>
                         <button className="join-button" onClick={joinTrip}>Unirme al viaje</button>
 
