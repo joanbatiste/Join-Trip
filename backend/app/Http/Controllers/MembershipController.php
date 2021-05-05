@@ -58,4 +58,37 @@ class MembershipController extends Controller
     
         }
     }
+    //funcion para obtener los usuarios unidos a un trip por idTrip
+    public function findJoinedByTrip($tripId){
+        try{
+            return Membership::select()
+            ->where('tripId', '=', $tripId)
+            ->join('users','memberships.userId','=','users.id')
+            ->select('users.username')
+            ->get();
+            
+            
+
+        }catch(QueryException $error){
+            return $error;
+
+        }
+    }
+
+    //Funcion para obtener los trips a los que se ha unido un usuario
+    public function findJoinedByUser($userId){
+        try{
+            return Membership::select()
+            ->where('userId', '=', $userId)
+            // ->join('trips','memberships.tripId','=','trips.id')
+            // ->select('trips.*')
+            ->get();
+            
+            
+
+        }catch(QueryException $error){
+            return $error;
+
+        }
+    }
 }

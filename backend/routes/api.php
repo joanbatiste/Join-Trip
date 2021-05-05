@@ -25,7 +25,10 @@ Route::post('/users/login', [UserController::class, 'userLogin']);
 
 Route::get('/users/{id}', [UserController::class, 'getUser']);
 Route::get('/trips', [TripController::class, 'findAllTrips']);
-Route::get('messages/{tripid}',[MessageController::class, 'findMessagesByTripId']);
+Route::get('/messages/{tripid}',[MessageController::class, 'findMessagesByTripId']);
+Route::get('/memberships/{tripid}',[MembershipController::class, 'findJoinedByTrip']);
+
+
 
 Route::middleware('auth:api')->group(function(){
     //Rutas que requieren autenticación de Users
@@ -47,5 +50,6 @@ Route::middleware('auth:api')->group(function(){
     //Rutas que requieren autenticación de Membership
     Route::post('/trips/login',[MembershipController::class, 'joinTrip']);
     Route::delete('/trips/logout',[MembershipController::class, 'cancelTrip']);
+    Route::get('/memberships/{userid}',[MembershipController::class, 'findJoinedByUser']);
 
 });

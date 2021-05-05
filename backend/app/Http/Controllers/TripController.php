@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Trip;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\DB;
 
 class TripController extends Controller
 {
@@ -59,8 +60,12 @@ class TripController extends Controller
     //Traer todos los trips 
     public function findAllTrips(){
         try{
-            return Trip::all();
-
+            return Trip::select()
+            ->join('users','trips.userId', '=','users.id')
+            ->select('trips.*', 'users.username')
+            ->get();
+            
+            
 
         }catch(QueryException $error){
             return $error;
