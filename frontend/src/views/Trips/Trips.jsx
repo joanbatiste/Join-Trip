@@ -1,24 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import cabecera_profile from '../../img/Hombre-paisaje-Panoramica.jpeg';
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
+import TripCard from '../../components/TripCard/TripCard';
 
 function Trips(props) {
+    //Reordenamos los viajes por fecha más próxima a realizarse
+    let nextTrips = props.trip;
 
-    //Funcion para traer todos los trips de BD
-    const [trip, setTrips] = useState({ trips: [] });
-    const getTrips = async () => {
-        let endPointTrips = "http://127.0.0.1:8000/api/trips";
-        let tripsResponse = await axios.get(endPointTrips);
-        // props.dispatch({type:SAVING, payload: tripsResponse.data});
-        setTrips({
-            ...trip, trips: tripsResponse.data
-        })
-    }
+    nextTrips.sort((a, b) => {
+        if (a.date < b.date) {
+            return -1;
+        }
+        if (a.date > b.date) {
+            return 1;
+        }
+        return 0;
+    });
+    console.log(nextTrips);
+    //Reordenamos los viajes por última fecha de creación
+    let lastTripsCreated = props.trip;
+
 
     //USEEFFECTS
     useEffect(() => {
-        getTrips();
+
         // eslint-disable-next-line
     }, []);
 
@@ -33,12 +39,32 @@ function Trips(props) {
                 <div className="last-trips-added">
                     <div className="trips-added-content">
                         <h2>Estos son los últimos viajes añadidos por viajeros</h2>
+                        <div className="trips-added-content-cards">
+
+                        </div>
                     </div>
 
                 </div>
                 <div className="next-trips-to-be-done">
                     <div className="trips-added-content">
                         <h2>¡Corre que nos vamos! No te pierdas los viajes proximos a realizarse</h2>
+                        <div className="trips-added-content-cards">
+                            {nextTrips.map(mytrips => {
+                                return (
+                                    <TripCard
+                                        title={mytrips.title}
+                                        destination={mytrips.destination}
+                                        description={mytrips.description}
+                                        date={mytrips.date}
+                                        days={mytrips.days}
+                                        link={mytrips.link}
+                                        id={mytrips.id}
+                                        username={mytrips.username}
+                                    />
+                                )
+                            })}
+                        </div>
+
                     </div>
 
                 </div>
@@ -53,5 +79,10 @@ function Trips(props) {
         </div>
     )
 }
-
-export default Trips
+const mapStateToProps = state => {
+    return {
+        user: state.userReducer.user,
+        trip: state.tripReducer.trip
+    }
+};
+export default connect(mapStateToProps)(Trips)

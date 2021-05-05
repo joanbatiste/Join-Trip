@@ -22,12 +22,21 @@ const Profile = (props) => {
             ...trip, trips:tripsResponse.data
         })
     }
+
+    //Renderizar si se ha apuntado a viajes o no
+    const joinedTripsQuery = async () =>{
+        let endPointJoinedTrips = `http://127.0.0.1:8000/api/memberships/${props.user.id}`;
+        let joinedResponse = await axios.get(endPointJoinedTrips,{headers: {authorization:`Bearer ${props.user.api_token}`}});
+        console.log("a ver si vienen los viajes que voy a hacer",joinedResponse)
+    }
     
     //USEEFFECTS
     useEffect(() => {
         getTrips();
+        joinedTripsQuery();
         // eslint-disable-next-line
     }, []);
+
 
     return (
         <div className="container-profile">
@@ -58,7 +67,9 @@ const Profile = (props) => {
             </div>
             <div className="profile-my-jointrips">
                 <div className="profile-my-jointrips-title">Viajes a los que me he unido</div>
-                <div className="profile-my-jointrips-resum"></div>
+                <div className="profile-my-jointrips-resum">
+                    
+                </div>
             </div>
 
         </div>

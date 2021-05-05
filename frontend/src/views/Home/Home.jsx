@@ -4,6 +4,7 @@ import axios from 'axios';
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
 import cabecera from '../../img/cabecera.jpeg';
 import { connect } from 'react-redux';
+import {SAVING} from '../../redux/types/tripTypes';
 import TripCard from '../../components/TripCard/TripCard';
 import trip1 from '../../img/trip1.jpeg'
 import trip2 from '../../img/granada.jpg';
@@ -12,9 +13,14 @@ import trip3 from '../../img/rioja.jpeg';
 const Home = (props) => {
     //Funcion para traerse todos los trips de la BD
     const [trip, setTrips] = useState([]);
+    //Guardamos los datos de viajes en redux
+    props.dispatch({type: SAVING, payload:trip});
+    
+
     const getTrips = async () => {
         let endPointTrips = "http://127.0.0.1:8000/api/trips";
         let tripsResponse = await axios.get(endPointTrips);
+        
         console.log(tripsResponse.data, "a ver si hago otro join");
         setTrips (tripsResponse.data)
     }

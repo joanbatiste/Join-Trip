@@ -8,8 +8,6 @@ import axios from 'axios';
 import MessageBox from '../../components/MessageBox/MessageBox';
 
 
-// import axios from 'axios';
-
 function TripView(props) {
 
     let dataTrip = JSON.parse(localStorage.getItem('trip'));

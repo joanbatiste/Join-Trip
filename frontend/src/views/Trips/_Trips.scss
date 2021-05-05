@@ -25,6 +25,19 @@
             background-color: #1ec0ff;
             display: flex;
             justify-content: center;
+            .trips-added-content{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                .trips-added-content-cards{
+                    display: flex;
+                    flex-direction: row;
+                    width: 90%;
+
+                }
+            }
         }
         .all-trips{
             width: 1440px;

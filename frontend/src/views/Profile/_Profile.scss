@@ -16,26 +16,31 @@
     .profile-my-trips{
         width: 1440px;
         height: 443px;
-        // background-color: yellowgreen;
+        background-color: lightblue;
         .profile-my-trips-title{
             margin-top: 40px;
             margin-left: 80px;
             font-size: 25px;
+            display: flex;
+            justify-content: center;
         }
         .profile-my-trips-resum{
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
+            
         }
     }
     .profile-my-jointrips{
         width: 1440px;
         height: 443px;
-        background-color: rgb(148, 222, 245);
+        background-color: #1ec0ff;
         .profile-my-jointrips-title{
             margin-top: 40px;
             margin-left: 80px;
             font-size: 25px;
+            display: flex;
+            justify-content: center;
         }
     }
 
