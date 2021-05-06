@@ -28,7 +28,24 @@
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
-            
+            .profile-my-trips-resum-show{
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+            .no-trips-to-show{
+                margin-top: 40px;
+                font-size: 25px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .no-trips-to-show-button{
+                    width: 200px;
+                    margin-top: 40px;
+                    background-color: #119FDC;
+                }
+            }
         }
     }
     .profile-my-jointrips{
@@ -41,6 +58,28 @@
             font-size: 25px;
             display: flex;
             justify-content: center;
+        }
+        .profile-my-jointrips-resum{
+            display: flex;
+            justify-content: center;
+            .profile-my-jointrips-resum-show{
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+            .no-joinedtrips-to-show{
+                margin-top: 40px;
+                font-size: 25px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .no-joinedtrips-to-show-button{
+                width: 230px;
+                margin-top: 40px;
+                background-color: #119FDC;
+            }
         }
     }
 

@@ -1,17 +1,18 @@
 import React from 'react';
-import ubicacion from '../../img/ubicacion2.png';
-import user_image from '../../img/icono_user.png';
-import { useHistory} from 'react-router-dom';
+
+import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt, faSuitcaseRolling } from '@fortawesome/free-solid-svg-icons';
 
 
 
 const TripCard = (props) => {
 
     let history = useHistory();
-    
+
     console.log("soy las props de tripCard", props);
-    const goToTripView = () =>{
+    const goToTripView = () => {
         localStorage.setItem('trip', JSON.stringify(props));
         setTimeout(() => {
             history.push('/trips/view');
@@ -19,18 +20,25 @@ const TripCard = (props) => {
         }, 1000);
     }
 
-    
+
 
     return (
         <div className="container-card" onClick={goToTripView}>
 
             <div className="image-card">
-                <img id="avatar" src={user_image} alt=''></img>
+                <FontAwesomeIcon icon={faSuitcaseRolling}></FontAwesomeIcon>
+                
             </div>
             <div className="title-card">{props.title}</div>
             <div className="destination">
-                <img src={ubicacion} alt=''></img>
-                {props.destination}
+                <div className="destination-icon">
+                    <FontAwesomeIcon icon={faMapMarkerAlt}></FontAwesomeIcon>
+                </div>
+                <div className="destination-place">
+                    {props.destination}
+                </div>
+
+
             </div>
         </div>
     )
@@ -41,4 +49,4 @@ const mapStateToProps = state => {
         trip: state.tripReducer.trip
     }
 };
-export default connect(mapStateToProps) (TripCard)
+export default connect(mapStateToProps)(TripCard)

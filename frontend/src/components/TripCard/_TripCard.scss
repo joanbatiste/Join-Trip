@@ -1,5 +1,5 @@
 .container-card{
-    width: 300px;
+    width: 250px;
     height: 320px;
     display: flex;
     flex-direction: column;
@@ -8,17 +8,25 @@
     justify-content: center;
     font-size: 18px;
 
-    .image.card{
-        width: 200px;
-        height: 200px;   
+    .image-card{
+        color: midnightblue;
+        font-size: 100px;
     }
-    #avatar{
-        border-radius: 50%;
-    }
+    
     .title-card{
-
+        justify-content: center;
     }
     .destination{
-
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 80%;
+        margin-top: 20px;
+        .destination-icon{
+            color: red;
+        }
+        .destination-place{
+            margin-left: 10px;   
+        }
     }
 }

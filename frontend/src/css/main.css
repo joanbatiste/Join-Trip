@@ -355,7 +355,7 @@ se transforma en
         font-size: 25px; }
 
 .container-card {
-  width: 300px;
+  width: 250px;
   height: 320px;
   display: flex;
   flex-direction: column;
@@ -363,11 +363,21 @@ se transforma en
   align-items: center;
   justify-content: center;
   font-size: 18px; }
-  .container-card .image.card {
-    width: 200px;
-    height: 200px; }
-  .container-card #avatar {
-    border-radius: 50%; }
+  .container-card .image-card {
+    color: midnightblue;
+    font-size: 100px; }
+  .container-card .title-card {
+    justify-content: center; }
+  .container-card .destination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin-top: 20px; }
+    .container-card .destination .destination-icon {
+      color: red; }
+    .container-card .destination .destination-place {
+      margin-left: 10px; }
 
 .container-message-box {
   width: 1000px;
@@ -432,7 +442,7 @@ se transforma en
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: center; }
+      justify-content: space-between; }
   .container-home .suggestions {
     width: 1440px;
     height: 500px;
@@ -509,6 +519,21 @@ se transforma en
       display: flex;
       flex-direction: row;
       justify-content: space-evenly; }
+      .container-profile .profile-my-trips .profile-my-trips-resum .profile-my-trips-resum-show {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly; }
+      .container-profile .profile-my-trips .profile-my-trips-resum .no-trips-to-show {
+        margin-top: 40px;
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        .container-profile .profile-my-trips .profile-my-trips-resum .no-trips-to-show .no-trips-to-show-button {
+          width: 200px;
+          margin-top: 40px;
+          background-color: #119FDC; }
   .container-profile .profile-my-jointrips {
     width: 1440px;
     height: 443px;
@@ -519,6 +544,24 @@ se transforma en
       font-size: 25px;
       display: flex;
       justify-content: center; }
+    .container-profile .profile-my-jointrips .profile-my-jointrips-resum {
+      display: flex;
+      justify-content: center; }
+      .container-profile .profile-my-jointrips .profile-my-jointrips-resum .profile-my-jointrips-resum-show {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly; }
+      .container-profile .profile-my-jointrips .profile-my-jointrips-resum .no-joinedtrips-to-show {
+        margin-top: 40px;
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+      .container-profile .profile-my-jointrips .profile-my-jointrips-resum .no-joinedtrips-to-show-button {
+        width: 230px;
+        margin-top: 40px;
+        background-color: #119FDC; }
 
 .container-tripview {
   width: 1440px;
@@ -689,6 +732,16 @@ se transforma en
     background-color: lightblue;
     display: flex;
     justify-content: center; }
+    .container-trips .available-trips .last-trips-added .trips-added-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%; }
+      .container-trips .available-trips .last-trips-added .trips-added-content .trips-added-content-cards {
+        display: flex;
+        flex-direction: row;
+        width: 90%; }
   .container-trips .available-trips .next-trips-to-be-done {
     width: 1440px;
     height: 500px;
@@ -711,6 +764,16 @@ se transforma en
     background-color: #0080ff;
     display: flex;
     justify-content: center; }
+    .container-trips .available-trips .all-trips .trips-added-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%; }
+      .container-trips .available-trips .all-trips .trips-added-content .trips-added-content-cards {
+        display: flex;
+        flex-direction: row;
+        width: 90%; }
 
 .container-post-trip {
   width: 1440px;

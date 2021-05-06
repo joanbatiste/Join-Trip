@@ -24,7 +24,7 @@ const Home = (props) => {
         console.log(tripsResponse.data, "a ver si hago otro join");
         setTrips (tripsResponse.data)
     }
-
+    
     //USEEFFECTS
     useEffect(() => {
         getTrips();
@@ -77,7 +77,7 @@ const Home = (props) => {
 Conoce todos los rincones de España y conecta con viajeros como tu. </p>
                     </div>
                     <div className="last-trips-publications">
-                        {trip.map(mytrips => {
+                        {trip.slice(0,5).map(mytrips => {
                             return (
                                 <TripCard
                                     title={mytrips.title}
