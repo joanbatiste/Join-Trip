@@ -410,6 +410,13 @@ se transforma en
     .container-message-box .message-box-content .message-box-content-title {
       color: #0a0aa3; }
 
+.swiper-container {
+  width: 90%; }
+  .swiper-container .swiper-button-next {
+    color: red; }
+  .swiper-container .swiper-button-prev {
+    color: red; }
+
 /*VIEWS*/
 .container-home {
   width: 1440px;
@@ -763,6 +770,7 @@ se transforma en
     height: 500px;
     background-color: #0080ff;
     display: flex;
+    flex-direction: column;
     justify-content: center; }
     .container-trips .available-trips .all-trips .trips-added-content {
       display: flex;

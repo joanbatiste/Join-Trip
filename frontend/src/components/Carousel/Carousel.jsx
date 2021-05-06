@@ -1,8 +1,9 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import Swiper core and required modules
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-
+import SwiperCore, { A11y, Navigation, Pagination, Scrollbar } from 'swiper/core';
+import { connect } from 'react-redux';
+import TripCard from '../TripCard/TripCard';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
@@ -12,22 +13,42 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
-export default () => {
+function Carousel(props) {
   return (
-    <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
-    >
-      <SwiperSlide>
-          
-      </SwiperSlide>
-      
+    <div className="swiper-container">
+      <Swiper
+        spaceBetween={20}
+        slidesPerView={3}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
 
-    </Swiper>
+      >
+        {props.trip.map(mytrips =>
+          <SwiperSlide key={mytrips.id}>
+            <div className="swiper-slide">
+              <TripCard
+                title={mytrips.title}
+                destination={mytrips.destination}
+                description={mytrips.description}
+                date={mytrips.date}
+                days={mytrips.days}
+                link={mytrips.link}
+                id={mytrips.id}
+                username={mytrips.username}
+              />
+            </div>
+          </SwiperSlide>
+        )}
+      </Swiper>
+    </div>
+
   );
 };
+const mapStateToProps = state => {
+  return {
+    user: state.userReducer.user,
+    trip: state.tripReducer.trip
+  }
+};
+export default connect(mapStateToProps)(Carousel);

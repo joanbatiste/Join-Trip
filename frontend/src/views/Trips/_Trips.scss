@@ -58,6 +58,7 @@
             height: 500px;
             background-color: #0080ff;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             .trips-added-content{
                 display: flex;

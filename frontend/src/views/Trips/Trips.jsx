@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import cabecera_profile from '../../img/Hombre-paisaje-Panoramica.jpeg';
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
 import TripCard from '../../components/TripCard/TripCard';
-import SwiperSlide from '../../components/Carousel/Carousel';
-import Swiper from '../../components/Carousel/Carousel';
+import Carousel from '../../components/Carousel/Carousel';
 function Trips(props) {
 
     //Función para reordenar los viajes por fecha más próxima a realizarse
@@ -103,27 +102,9 @@ function Trips(props) {
                     <div className="trips-added-content">
                         <h2>¿No tienes prisa? Te mostramos todos los viajes disponibles</h2>
                     </div>
-                    <Swiper>
-                        <SwiperSlide>
-                            <div className="trips-added-content-cards">
-                                {props.trip.map(mytrips => {
-                                    return (
-                                        <TripCard
-                                            title={mytrips.title}
-                                            destination={mytrips.destination}
-                                            description={mytrips.description}
-                                            date={mytrips.date}
-                                            days={mytrips.days}
-                                            link={mytrips.link}
-                                            id={mytrips.id}
-                                            username={mytrips.username}
-                                        />
-                                    )
-                                })}
-                            </div>
-                        </SwiperSlide>
-                    </Swiper>
 
+                    <Carousel/>
+                    
 
                 </div>
             </div>
