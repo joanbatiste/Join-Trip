@@ -78,14 +78,12 @@ class MembershipController extends Controller
     //Funcion para obtener los trips a los que se ha unido un usuario
     public function findJoinedByUser($userId){
         try{
-            return Membership::select()
-            ->where('userId', '=', $userId)
-            // ->join('trips','memberships.tripId','=','trips.id')
-            // ->select('trips.*')
+            return Membership::select('trips.*','users.username')
+            ->where('memberships.userId', '=', $userId)
+            ->join('trips','memberships.tripId','=','trips.id')
+            ->join('users', 'trips.userId','=','users.id')
             ->get();
             
-            
-
         }catch(QueryException $error){
             return $error;
 

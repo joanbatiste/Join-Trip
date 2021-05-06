@@ -50,6 +50,6 @@ Route::middleware('auth:api')->group(function(){
     //Rutas que requieren autenticación de Membership
     Route::post('/trips/login',[MembershipController::class, 'joinTrip']);
     Route::delete('/trips/logout',[MembershipController::class, 'cancelTrip']);
-    Route::get('/memberships/{userid}',[MembershipController::class, 'findJoinedByUser']);
+    Route::get('/users/{userid}/memberships',[MembershipController::class, 'findJoinedByUser']);
 
 });
