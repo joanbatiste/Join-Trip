@@ -3,7 +3,7 @@ import cabecera_profile from '../../img/Hombre-paisaje-Panoramica.jpeg';
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-// import chechError from '../../utiles/utiles';
+import chechError from '../../utiles/utiles';
 import axios from "axios";
 
 function PostTrip(props) {
@@ -23,17 +23,17 @@ function PostTrip(props) {
         setPostTrip({ ...postTrip, [e.target.name]: e.target.value });
     };
     //Estado de mensajes de error
-    // const [message, setMessage] = useState('');
+    const [message, setMessage] = useState('');
 
     //Funcion para enviar datos al back y crear el trip
     const sendDataTrip = async()=>{
-        // setMessage('');
-        // let notValidated = chechError(user);
-        // setMessage(notValidated);
+        setMessage('');
+        let notValidated = chechError(postTrip);
+        setMessage(notValidated);
 
-        // if (notValidated) {
-        //     return;
-        // }
+        if (notValidated) {
+            return;
+        }
         //Datos a enviar
         let postTripData = {
             title: postTrip.title,
@@ -84,7 +84,7 @@ function PostTrip(props) {
                     
                     <label htmlFor="" className='post-form-container-content-label'>Links de interés</label>
                     <input type='text'  name='link' className='post-form-container-content-input' onChange={handleStatePostTrip}></input>
-                    {/* {message} */}
+                    {message}
                     <input type="button" value="Publicar viaje" className='post-form-container-content-button' onClick={sendDataTrip} />
                 </div>
 

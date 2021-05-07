@@ -28,6 +28,26 @@ const checkError = (datosCheck) => {
 
             break;
 
+            case 'title' : 
+
+                // eslint-disable-next-line
+                if(! /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/.test(datosCheck[field])){
+
+                    return "El campo título solo puede contener letras";
+                }
+
+            break;
+
+            case 'description' : 
+
+                // eslint-disable-next-line
+                if(! /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/.test(datosCheck[field])){
+
+                    return "El campo descripción solo puede contener letras";
+                }
+
+            break;
+
             case 'city' : 
 
                 // eslint-disable-next-line
@@ -65,8 +85,21 @@ const checkError = (datosCheck) => {
                     return "Debes de ser mayor de edad para poder registrarte"
                 }
                 
-            break;    
+            break;
 
+            case 'date':
+                function testDate(date){
+                    let today = new Date().setHours(0,0,0,0);
+                    let formDate = new Date(date).setHours(0,0,0,0);
+                    return (today-formDate);
+                }
+                testDate(datosCheck[field]);
+                
+                if(testDate(datosCheck[field]) >= 0){
+                    return 'Debes indicar una fecha futura para tu viaje'
+                };
+            break;
+                
             case 'dni' : 
 
                 // eslint-disable-next-line
@@ -83,6 +116,16 @@ const checkError = (datosCheck) => {
                 if(! /^[0-9]{9,11}$/.test(datosCheck[field])){
 
                     return "El telefono introducido solo puede contener números";
+                }
+
+            break;
+
+            case 'days' : 
+
+                // eslint-disable-next-line
+                if(! /^[0-9]{0,2}$/.test(datosCheck[field])){
+
+                    return "El campo días solo puede tener 2 dígitos";
                 }
 
             break;
