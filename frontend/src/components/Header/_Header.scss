@@ -73,8 +73,19 @@
         .modal-register-body{
 
         }
-        .modal-register-footer{
-            
+        
+    
+        .modal-footer{
+            display: flex;
+            justify-content: flex-end;
+            .modal-register-footer-bt-register {
+                background-color: #119FDC ;
+                border-radius: 6px;
+            }
+            .modal-register-footer-bt-exit{
+                background-color: #b8bcbe ;
+                border-radius: 6px;
+            }
         }
     }
     .modal-login{

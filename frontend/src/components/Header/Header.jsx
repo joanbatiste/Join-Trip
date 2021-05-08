@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input, Label } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input, Label, FormFeedback} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from "axios";
-import chechError from '../../utiles/utiles';
+import {checkField, validateFields, isValid} from '../../utiles/utiles';
 import { connect } from 'react-redux';
 import { LOGIN } from '../../redux/types/userTypes';
-
 // import LocationSearchInput from '../../components/InputLocation/InputLocation';
 
 const Header = (props) => {
@@ -13,6 +12,12 @@ const Header = (props) => {
     //Definimos el estado de la ventana modal para el registro y para el login
     const [openModal, setOpenModal] = useState(false);
     const [openLoginModal, setOpenLoginModal] = useState(false);
+
+    //Estado de valicación de los componentes del form
+    const [validationResult, setValidationResult] = useState({
+        validated: false,
+        name: null
+    });
 
     //Función para cambiar el estado y abrir la ventana modal del registro
     const openingModal = () => {
@@ -47,26 +52,32 @@ const Header = (props) => {
         username:"",
         password:""
     })
-    //Estado de mensajes de error
-    const [message, setMessage] = useState('');
 
     //Manejador de estado de registro
     const handleStateRegister = (e) => {
+        setValidationResult({
+            ...validationResult, [e.target.name]: checkField(e.target.name, e.target.value)
+        });
         setUser({ ...user, [e.target.name]: e.target.value });
     };
     //Manejador de estado de login
     const handleStateLogin = (e) => {
+        setValidationResult({
+            ...validationResult, [e.target.name]: checkField(e.target.name, e.target.value)
+        });
         setLogin({ ...login_user, [e.target.name]: e.target.value });
     };
 
     //Envío de datos de registro
     const sendData = async () => {
 
-        setMessage('');
-        let notValidated = chechError(user);
-        setMessage(notValidated);
+        let validationResult = validateFields(user);
 
-        if (notValidated) {
+        //Seteamos el estado de la validación
+        setValidationResult({...validationResult, validated: true});
+
+        //Comprobampos que podemos continuar con el post
+        if(!isValid(validationResult)){
             return;
         }
         
@@ -103,13 +114,16 @@ const Header = (props) => {
     }
     //Envío de datos de login
     const sendLoginData = async () =>{
-        setMessage('');
-        let notValidated = chechError(login_user);
-        setMessage(notValidated);
+        let validationResult = validateFields(login_user);
 
-        if (notValidated) {
+        //Seteamos el estado de la validación
+        setValidationResult({...validationResult, validated: true});
+
+        //Comprobampos que podemos continuar con el post
+        if(!isValid(validationResult)){
             return;
         }
+        
         let loginData ={
             username: login_user.username,
             password: login_user.password
@@ -162,40 +176,46 @@ const Header = (props) => {
                 <ModalBody className="modal-register-body">
                     <FormGroup>
                         <Label for="name">Nombre</Label>
-                        <Input type="text" name="name" onChange={handleStateRegister}></Input>
+                        <Input type="text" name="name" onChange={handleStateRegister} valid={validationResult.validated && !validationResult.name} invalid={validationResult.validated && validationResult.name}></Input>
+                        <FormFeedback>{validationResult.name}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for="surname">Apellido</Label>
-                        <Input type="text" name="surname" onChange={handleStateRegister}></Input>
+                        <Input type="text" name="surname" onChange={handleStateRegister} valid={validationResult.validated && !validationResult.surname} invalid={validationResult.validated && validationResult.surname}></Input>
+                        <FormFeedback>{validationResult.surname}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for="username">Nombre de usuario</Label>
-                        <Input type="text" name="username" onChange={handleStateRegister}></Input>
+                        <Input type="text" name="username" onChange={handleStateRegister} valid={validationResult.validated && !validationResult.username} invalid={validationResult.validated && validationResult.username}></Input>
+                        <FormFeedback>{validationResult.username}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for="birthday">Fecha nacimiento</Label>
-                        <Input type="date" name="birthday" onChange={handleStateRegister}></Input>
+                        <Input type="date" name="birthday" onChange={handleStateRegister} valid={validationResult.validated && !validationResult.birthday} invalid={validationResult.validated && validationResult.birthday}></Input>
+                        <FormFeedback>{validationResult.birthday}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for="city">Ciudad</Label>
-                        <Input type="text" name="city" onChange={handleStateRegister}></Input>
+                        <Input type="text" name="city" onChange={handleStateRegister} valid={validationResult.validated && !validationResult.city} invalid={validationResult.validated && validationResult.city}></Input>
+                        <FormFeedback>{validationResult.city}</FormFeedback>
                         {/* <LocationSearchInput type="text" name="city" onChange={handleStateRegister}></LocationSearchInput> */}
                     </FormGroup>
                     <FormGroup>
                         <Label for="email">Email</Label>
-                        <Input type="text" name="email" onChange={handleStateRegister}></Input>
+                        <Input type="text" name="email" onChange={handleStateRegister} valid={validationResult.validated && !validationResult.email} invalid={validationResult.validated && validationResult.email}></Input>
+                        <FormFeedback>{validationResult.email}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">Contraseña</Label>
-                        <Input type="password" name="password" onChange={handleStateRegister}></Input>
+                        <Input type="password" name="password" onChange={handleStateRegister} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password}></Input>
+                        <FormFeedback>{validationResult.password}</FormFeedback>
                     </FormGroup>
-                    {message}
 
                 </ModalBody>
 
                 <ModalFooter className="modal-register-footer">
-                    <button id="confirm-register" onClick={sendData} >Registrarse</button>
-                    <button id="cancel-register" onClick={closingModal}>Cerrar</button>
+                    <button className="modal-register-footer-bt-register" onClick={sendData} >Registrarse</button>
+                    <button className="modal-register-footer-bt-exit" onClick={closingModal}>Cerrar</button>
                 </ModalFooter>
             </Modal>
             <Modal className="modal-login" isOpen={openLoginModal}>
@@ -205,13 +225,14 @@ const Header = (props) => {
                 <ModalBody className="modal-login-body">
                     <FormGroup>
                         <Label for="username">Nombre de usuario</Label>
-                        <Input type="text" name="username" onChange={handleStateLogin}></Input>
+                        <Input type="text" name="username" onChange={handleStateLogin}valid={validationResult.validated && !validationResult.username} invalid={validationResult.validated && validationResult.username}></Input>
+                        <FormFeedback>{validationResult.username}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">Contraseña</Label>
-                        <Input type="password" name="password" onChange={handleStateLogin}></Input>
+                        <Input type="password" name="password" onChange={handleStateLogin}valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password}></Input>
+                        <FormFeedback>{validationResult.password}</FormFeedback>
                     </FormGroup>
-                    {message}
                 </ModalBody>
 
                 <ModalFooter className="modal-login-footer">
@@ -224,6 +245,4 @@ const Header = (props) => {
         </div>
     )
 };
-
-
-export default connect()(Header);
+export default connect()(Header)

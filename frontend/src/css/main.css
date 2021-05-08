@@ -260,6 +260,15 @@ se transforma en
   .header-container .modal-register {
     display: flex;
     flex-direction: column; }
+    .header-container .modal-register .modal-footer {
+      display: flex;
+      justify-content: flex-end; }
+      .header-container .modal-register .modal-footer .modal-register-footer-bt-register {
+        background-color: #119FDC;
+        border-radius: 6px; }
+      .header-container .modal-register .modal-footer .modal-register-footer-bt-exit {
+        background-color: #b8bcbe;
+        border-radius: 6px; }
   .header-container .modal-login {
     display: flex;
     flex-direction: column; }
@@ -341,7 +350,7 @@ se transforma en
       display: flex;
       flex-direction: column;
       width: 600px;
-      margin-left: 700px; }
+      margin-left: 750px; }
       .container-datauser .data-profile .data-profile-content .data-profile-content-title {
         font-size: 25px; }
       .container-datauser .data-profile .data-profile-content .form-update-data-label {
@@ -794,7 +803,7 @@ se transforma en
   .container-post-trip .post-form-container {
     width: 1440px;
     height: 900px;
-    background-color: #119FDC; }
+    background-color: lightblue; }
     .container-post-trip .post-form-container .post-form-container-content {
       display: flex;
       flex-direction: column;
@@ -803,7 +812,10 @@ se transforma en
       margin-left: auto;
       margin-right: auto; }
       .container-post-trip .post-form-container .post-form-container-content .post-form-container-content-title {
-        font-size: 25px; }
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
       .container-post-trip .post-form-container .post-form-container-content .post-form-container-content-input {
         width: 100%;
         height: 30px; }
@@ -813,3 +825,7 @@ se transforma en
         .container-post-trip .post-form-container .post-form-container-content .description-input .post-form-container-content-input-description {
           width: 100%;
           height: 100%; }
+      .container-post-trip .post-form-container .post-form-container-content .post-form-container-content-button {
+        margin-top: 30px;
+        background-color: #119FDC;
+        font-size: 25px; }

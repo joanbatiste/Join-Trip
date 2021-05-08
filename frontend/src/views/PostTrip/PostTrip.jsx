@@ -3,12 +3,14 @@ import cabecera_profile from '../../img/Hombre-paisaje-Panoramica.jpeg';
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import chechError from '../../utiles/utiles';
+import {checkField, validateFields, isValid} from '../../utiles/utiles';
 import axios from "axios";
+import { FormGroup, Input, Label, FormFeedback } from 'reactstrap';
 
 function PostTrip(props) {
     let history = useHistory();
 
+    //Estado del contenido de los campos del form para postear un trip
     const [postTrip, setPostTrip] = useState({
         title: "",
         destination: "",
@@ -18,22 +20,34 @@ function PostTrip(props) {
         link: "",
     });
 
+    //Estado de valicación de los componentes del form
+    const [validationResult, setValidationResult] = useState({
+        validated: false,
+        name: null
+    });
+
     //Manejador de estado de la publicacion de un trip
     const handleStatePostTrip = (e) => {
+        setValidationResult({
+            ...validationResult, [e.target.name]: checkField(e.target.name, e.target.value)
+        });
+        
         setPostTrip({ ...postTrip, [e.target.name]: e.target.value });
-    };
-    //Estado de mensajes de error
-    const [message, setMessage] = useState('');
+   
+    }
 
     //Funcion para enviar datos al back y crear el trip
     const sendDataTrip = async()=>{
-        setMessage('');
-        let notValidated = chechError(postTrip);
-        setMessage(notValidated);
+        let validationResult = validateFields(postTrip);
 
-        if (notValidated) {
+        //Seteamos el estado de la validación
+        setValidationResult({...validationResult, validated: true});
+
+        //Comprobampos que podemos continuar con el post
+        if(!isValid(validationResult)){
             return;
         }
+        
         //Datos a enviar
         let postTripData = {
             title: postTrip.title,
@@ -69,22 +83,31 @@ function PostTrip(props) {
             <div className="post-form-container">
                 <div className="post-form-container-content">
                     <p className='post-form-container-content-title'>Rellena los datos de tu viaje</p>
-                    <label htmlFor="" className='post-form-container-content-label'>Título</label>
-                    <input type='text' name='title' className='post-form-container-content-input' onChange={handleStatePostTrip}></input>
-                    <label htmlFor="" className='post-form-container-content-label'>Destino</label>
-                    <input type='text' name='destination' className='post-form-container-content-input' onChange={handleStatePostTrip}></input>
-                    <label htmlFor="" className='post-form-container-content-label'>Fecha</label>
-                    <input type='date' name='date' className='post-form-container-content-input'  onChange={handleStatePostTrip}></input>
-                    <label htmlFor="" className='post-form-container-content-label'>Días</label>
-                    <input type='text' name='days' className='post-form-container-content-input' onChange={handleStatePostTrip}></input>
-                    <label htmlFor="" className='post-form-container-content-label-description' >Descripción</label>
-                    <div className="description-input">
-                        <textarea type='text' name='description' className='post-form-container-content-input-description' onChange={handleStatePostTrip}></textarea>
-                    </div>
-                    
-                    <label htmlFor="" className='post-form-container-content-label'>Links de interés</label>
-                    <input type='text'  name='link' className='post-form-container-content-input' onChange={handleStatePostTrip}></input>
-                    {message}
+                    <FormGroup>
+                        <Label for='title'>Título</Label>
+                        <Input type='text' name='title' className='post-form-container-content-input' onChange={handleStatePostTrip} valid={validationResult.validated && !validationResult.title} invalid={validationResult.validated && validationResult.title}></Input>
+                        <FormFeedback>{validationResult.title}</FormFeedback>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for='destination'>Destino</Label>
+                        <Input type='text' name='destination' className='post-form-container-content-input' onChange={handleStatePostTrip} valid={validationResult.validated && !validationResult.destination} invalid={validationResult.validated && validationResult.destination}></Input>
+                        <FormFeedback>{validationResult.destination}</FormFeedback>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for='date'>Fecha</Label>
+                        <Input type='date' name='date' className='post-form-container-content-input' onChange={handleStatePostTrip} valid={validationResult.validated && !validationResult.date} invalid={validationResult.validated && validationResult.date}></Input>
+                        <FormFeedback>{validationResult.date}</FormFeedback>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for='days'>Días</Label>
+                        <Input type='text' name='days' className='post-form-container-content-input' onChange={handleStatePostTrip} valid={validationResult.validated && !validationResult.days} invalid={validationResult.validated && validationResult.days}></Input>
+                        <FormFeedback>{validationResult.title}</FormFeedback>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for='description'>Descripción</Label>
+                        <Input type='textarea' name='description' className='post-form-container-content-input' onChange={handleStatePostTrip} valid={validationResult.validated && !validationResult.description} invalid={validationResult.validated && validationResult.description}></Input>
+                        <FormFeedback>{validationResult.description}</FormFeedback>
+                    </FormGroup>
                     <input type="button" value="Publicar viaje" className='post-form-container-content-button' onClick={sendDataTrip} />
                 </div>
 
