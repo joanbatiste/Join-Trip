@@ -4,9 +4,10 @@
     font-family: $font-Questrial-Regular;
     position: absolute;
     background-color: transparent;
+    display: flex;
    
     .header-container-header{
-        width: $q-xl;
+        width: 100%;
         height: $size-t+$size-c+$size-a;
         background-color: transparent;
         display: flex;
@@ -15,8 +16,9 @@
         justify-content: center;
         margin-top: 25px;
         .header-container-header-logo{
-            align-items: flex-start;
-            margin-right: 350px;
+            width: 20%;
+            display: flex;
+            justify-content: flex-end;
             text-decoration:none;
             
             .logo-link{
@@ -33,14 +35,20 @@
             }
         }
         .header-container-header-slogan{
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: #16191C;
             font-size: $size-m;
-            margin-right: 300px;
+            
             
         }
         
         .header-container-header-register{
-            
+            width: 10%;
+            display: flex;
+            justify-content: center;
             #register{
                 background-color: red;
                 width: 100px;
@@ -51,8 +59,9 @@
             }
         }
         .header-container-header-login{
-            margin-left: 20px;
-            // margin-right: 100px;
+            width: 10%;
+            display: flex;
+            justify-content: center;
             #login{
                 background-color: rgb(0,119,219);
                 width: 100px;
