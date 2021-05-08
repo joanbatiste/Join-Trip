@@ -10,8 +10,12 @@ import { LOGIN } from '../../redux/types/userTypes';
 const Header = (props) => {
 
     //Definimos el estado de la ventana modal para el registro y para el login
-    const [openModal, setOpenModal] = useState(false);
-    const [openLoginModal, setOpenLoginModal] = useState(false);
+    const [registerModal, setRegisterModal] = useState({
+        open: false,
+    });
+    const [loginModal, setLoginModal] = useState({
+        open: false,
+    });
 
     //Estado de valicación de los componentes del form
     const [validationResult, setValidationResult] = useState({
@@ -21,20 +25,14 @@ const Header = (props) => {
 
     //Función para cambiar el estado y abrir la ventana modal del registro
     const openingModal = () => {
-        return setOpenModal(true);
+        setRegisterModal({open: !registerModal.open});
     }
-    const closingModal = () => {
-        return setOpenModal(false);
-    }
-
+    
     //Función para cambiar el estado y abrir la ventana modal del registro
     const openingLoginModal = () => {
-        return setOpenLoginModal(true);
+        setLoginModal({open: !loginModal.open});
     }
-    const closingLoginModal = () => {
-        return setOpenLoginModal(false);
-    }
-
+    
     //Funcion para recoger datos de registro
     const [user, setUser] = useState({
         name: "",
@@ -106,7 +104,7 @@ const Header = (props) => {
         } else {
             alert('Usuario registrado con éxito');
             setTimeout(() => {
-                closingModal();
+                setRegisterModal({open: false});
 
             }, 1000)
         }
@@ -141,7 +139,7 @@ const Header = (props) => {
         } else {
             alert('Usuario logueado con éxito');
             setTimeout(() => {
-                closingLoginModal();
+                setLoginModal({open: false});
 
             }, 1000)
         }
@@ -167,7 +165,7 @@ const Header = (props) => {
 
             </div>
 
-            <Modal className="modal-register" isOpen={openModal}>
+            <Modal className="modal-register" isOpen={registerModal.open}>
 
                 <ModalHeader className="modal-register-header">
                     Registro de Usuario
@@ -213,12 +211,12 @@ const Header = (props) => {
 
                 </ModalBody>
 
-                <ModalFooter className="modal-register-footer">
+                <ModalFooter >
                     <button className="modal-register-footer-bt-register" onClick={sendData} >Registrarse</button>
-                    <button className="modal-register-footer-bt-exit" onClick={closingModal}>Cerrar</button>
+                    <button className="modal-register-footer-bt-exit" onClick={openingModal}>Cerrar</button>
                 </ModalFooter>
             </Modal>
-            <Modal className="modal-login" isOpen={openLoginModal}>
+            <Modal className="modal-login" isOpen={loginModal.open}>
                 <ModalHeader className="modal-login-header">
                     Login de Usuario
                 </ModalHeader>
@@ -236,8 +234,8 @@ const Header = (props) => {
                 </ModalBody>
 
                 <ModalFooter className="modal-login-footer">
-                    <button id="confirm-login" onClick={sendLoginData} >Login</button>
-                    <button id="cancel-login" onClick={closingLoginModal}>Cerrar</button>
+                    <button className="modal-register-footer-bt-register" onClick={sendLoginData} >Login</button>
+                    <button className="modal-register-footer-bt-exit" onClick={openingLoginModal}>Cerrar</button>
                 </ModalFooter>
 
             </Modal>

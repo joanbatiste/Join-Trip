@@ -62,45 +62,16 @@
                 box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
             }
         }
+        
 
     };
-    .modal-register{
-        display: flex;
-        flex-direction: column;
-        .modal-register-header{
-
-        }
-        .modal-register-body{
-
-        }
-        
-    
-        .modal-footer{
-            display: flex;
-            justify-content: flex-end;
-            .modal-register-footer-bt-register {
-                background-color: #119FDC ;
-                border-radius: 6px;
-            }
-            .modal-register-footer-bt-exit{
-                background-color: #b8bcbe ;
-                border-radius: 6px;
-            }
-        }
-    }
-    .modal-login{
-        display: flex;
-        flex-direction: column;
-        
-        .modal-login-header{
-
-        }
-        .modal-login-body{
-
-        }
-        .modal-login-footer{
-            
-        }
-    }
     
 };
+.modal-register-footer-bt-register {
+    background-color: #119FDC ;
+    border-radius: 4px;
+}
+.modal-register-footer-bt-exit{
+    background-color: #b8bcbe ;
+    border-radius: 4px;
+}
