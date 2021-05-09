@@ -61,7 +61,7 @@ function PostTrip(props) {
         //Endpoint para crear trip
         let endPoitCreateTrip = `http://127.0.0.1:8000/api/users/${props.user.id}/trips`;
         let response = await axios.post(endPoitCreateTrip, postTripData,{headers: {authorization:`Bearer ${props.user.api_token}`}});
-        console.log("soy el response del trip", response);
+        
         if(!response.data){
             alert('Lo sentimos. Tu viaje no se ha podido publicar')
         }else{

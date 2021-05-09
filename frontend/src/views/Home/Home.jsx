@@ -25,7 +25,7 @@ const Home = (props) => {
         let endPointTrips = "http://127.0.0.1:8000/api/trips";
         let tripsResponse = await axios.get(endPointTrips);
 
-        console.log(tripsResponse.data, "a ver si hago otro join");
+        
         setTrips(tripsResponse.data)
     }
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
 import TripCard from '../../components/TripCard/TripCard';
 import Carousel from '../../components/Carousel/Carousel';
+
 function Trips(props) {
 
     //Función para reordenar los viajes por fecha más próxima a realizarse

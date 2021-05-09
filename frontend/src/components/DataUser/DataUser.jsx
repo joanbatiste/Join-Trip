@@ -41,8 +41,6 @@ const ProfileHeader = (props) => {
         let endpointUserUpdate = `http://127.0.0.1:8000/api/users/${props.user?.id}`
         let response = await axios.put(endpointUserUpdate, user, { headers: { authorization: props.user.api_token } });
 
-        console.log("respuesta de actualizar datos", response);
-
         if (!response.data.error) {
             props.dispatch({ type: UPDATE_USER, payload: user })
             alert('Datos actualizados con éxito');

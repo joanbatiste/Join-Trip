@@ -13,7 +13,6 @@ const Profile = (props) => {
 
     //hook de los viajes publicados por el usuario
     const [trip, setTrips] = useState([]);
-    console.log("soy el response.data", trip);
 
     //funcion para traerse los viajes publicados por el usuario
     const getTrips = async () => {
@@ -24,12 +23,10 @@ const Profile = (props) => {
 
     //hook de los viajes a los que se ha unido el usuario
     const [joinedtrips, setJoinedtrips] = useState([]);
-    console.log("a ver si vienen los viajes que voy a hacer", joinedtrips)
     //Renderizar si se ha apuntado a viajes o no
     const joinedTripsQuery = async () => {
         let endPointJoinedTrips = `http://127.0.0.1:8000/api/users/${props.user.id}/memberships`;
         let joinedResponse = await axios.get(endPointJoinedTrips, { headers: { authorization: `Bearer ${props.user.api_token}` } });
-        console.log("a ver si vienen los viajes que voy a hacer", joinedResponse)
         setJoinedtrips(joinedResponse.data)
     }
 

@@ -11,8 +11,7 @@ import MessageBox from '../../components/MessageBox/MessageBox';
 function TripView(props) {
 
     let dataTrip = JSON.parse(localStorage.getItem('trip'));
-    console.log(dataTrip, "soy lo que viene del localstorage");
-
+    
     //Hook para traer mensajes ya publicados
     const [postedMessages, setPostedMessages] = useState([]);
 
@@ -31,7 +30,6 @@ function TripView(props) {
     const getMessagesPosted = async () => {
         let endPointGetMessages = `http://127.0.0.1:8000/api/messages/${dataTrip.id}`;
         let responseMessages = await axios.get(endPointGetMessages);
-        console.log(responseMessages.data, "looooooooooool")
         setPostedMessages(responseMessages.data);
     }
 
@@ -40,7 +38,6 @@ function TripView(props) {
         let endPointUsersJoined = `http://127.0.0.1:8000/api/memberships/${dataTrip.id}`;
         let response = await axios.get(endPointUsersJoined);
         setJoinedUsers (response.data)
-        console.log("soy los viajeros unidos", response.data);
     }
 
     //Funcion para enviar mensaje al back
@@ -94,7 +91,6 @@ function TripView(props) {
     }, []);
 
     //Visualizar Mensajes posteados si los hay
-    console.log(postedMessages.length, "la longitud del array")
     const messageTest = () => {
         if (postedMessages.length === 0) {
             return (
