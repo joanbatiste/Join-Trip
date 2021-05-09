@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import cabecera_profile from '../../img/Hombre-paisaje-Panoramica.jpeg';
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
 import TripCard from '../../components/TripCard/TripCard';
 import Carousel from '../../components/Carousel/Carousel';
@@ -76,7 +75,6 @@ function Trips(props) {
         <div className="container-trips">
             <div className="trips-image">
                 <LoguedHeader />
-                <img src={cabecera_profile} alt=""></img>
             </div>
             <div className="available-trips">
                 <div className="last-trips-added">

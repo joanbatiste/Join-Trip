@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
-import cabecera_viaje from '../../img/Pareja-en-coche.jpeg';
+
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -123,7 +123,7 @@ function TripView(props) {
 
             <div className="tripview-image">
                 <LoguedHeader />
-                <img src={cabecera_viaje} alt=""></img>
+                
             </div>
             <div className="trip-content">
                 <div className="trip-content-intro">

@@ -1,5 +1,4 @@
 import React,{ useState } from 'react'
-import cabecera_profile from '../../img/Hombre-paisaje-Panoramica.jpeg';
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -78,7 +77,6 @@ function PostTrip(props) {
         <div className="container-post-trip">
             <div className="post-trip-image">
                 <LoguedHeader />
-                <img src={cabecera_profile} alt=""></img>
             </div>
             <div className="post-form-container">
                 <div className="post-form-container-content">

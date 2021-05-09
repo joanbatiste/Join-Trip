@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
-// import {SAVING} from '../../redux/types/tripTypes';
 import cabecera_profile from '../../img/Hombre-paisaje-Panoramica.jpeg';
 import TripCard from '../../components/TripCard/TripCard.jsx';
 

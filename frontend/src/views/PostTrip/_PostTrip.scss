@@ -7,6 +7,14 @@
     margin-right: auto;
     font-family: $font-Questrial-Regular;
 
+    .post-trip-image{
+        width: 1440px;
+        height: 400px;
+        background: url('../img/panoramica2.jpeg');
+        background-size: 100% 100%;
+        background-repeat:no-repeat;
+        background-size: cover;
+    }
     .post-form-container{
         width: 1440px;
         height: 900px;

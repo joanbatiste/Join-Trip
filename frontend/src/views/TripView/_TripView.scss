@@ -6,11 +6,19 @@
     margin-left: auto;
     margin-right: auto;
     font-family: $font-Questrial-Regular;
-
+    .tripview-image{
+        width: 1440px;
+        height: 400px;
+        background: url('../img/fotos-panoramicas.jpeg');
+        background-size: 100% 100%;
+        background-repeat:no-repeat;
+        background-size: cover;
+    }
+      
     .trip-content{
         width: 1440px;
         height: auto;
-        background-color: blanchedalmond;
+        background-color: lightblue;
         
         .p-trips-titles{
             color: rgb(10, 10, 163);
