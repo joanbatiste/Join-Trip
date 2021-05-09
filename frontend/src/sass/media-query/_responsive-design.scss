@@ -1,4 +1,4 @@
-@media (max-width: 400px){
+@media screen and (max-width: 600px){
     .container-home{
         width: 400px;
         .header-image{
@@ -12,6 +12,8 @@
     }
     .header-container{
         width: 400px;
+        display: flex;
+        flex-direction: column;
         .header-container-header{
             width: 400px;
             .header-container-header-slogan{

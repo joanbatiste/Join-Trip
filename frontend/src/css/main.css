@@ -377,7 +377,7 @@ se transforma en
   justify-content: center;
   font-size: 18px; }
   .container-card .image-card {
-    color: midnightblue;
+    color: #1616c9;
     font-size: 100px; }
   .container-card .title-card {
     justify-content: center; }
@@ -443,11 +443,30 @@ se transforma en
   .container-home .header-image {
     width: 100%;
     height: 959px;
-    object-fit: cover; }
+    object-fit: none; }
   .container-home .last-trips {
     width: 1440px;
     height: 500px;
     background-color: lightblue; }
+    .container-home .last-trips .last-trips-instructions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px; }
+      .container-home .last-trips .last-trips-instructions .last-trips-instructions-steps {
+        width: 1000px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 20px; }
+        .container-home .last-trips .last-trips-instructions .last-trips-instructions-steps .last-trips-instructions-steps {
+          display: flex;
+          flex-direction: column;
+          width: 160px; }
+          .container-home .last-trips .last-trips-instructions .last-trips-instructions-steps .last-trips-instructions-steps .step-icon {
+            font-size: 120px;
+            color: #1616c9; }
     .container-home .last-trips .last-trips-description {
       display: flex;
       flex-direction: column;
@@ -835,7 +854,7 @@ se transforma en
         font-size: 25px; }
 
 /*RESPONSIVE DESIGN*/
-@media (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .container-home {
     width: 400px; }
     .container-home .header-image {
@@ -845,7 +864,9 @@ se transforma en
       .container-home .header-image .header-image img {
         width: 400px; }
   .header-container {
-    width: 400px; }
+    width: 400px;
+    display: flex;
+    flex-direction: column; }
     .header-container .header-container-header {
       width: 400px; }
       .header-container .header-container-header .header-container-header-slogan {
