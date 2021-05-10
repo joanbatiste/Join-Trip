@@ -51,7 +51,7 @@ const Home = (props) => {
                         <h5>Encontrar compañer@s de viaje es mut fácil:</h5>
 
                         <div className="last-trips-instructions-steps">
-                            <div className="last-trips-instructions-steps">
+                            <div className="last-trips-instructions-steps-content">
                                 <div className="step-icon">
                                     <FontAwesomeIcon icon={faIdCard} />
                                 </div>
@@ -59,7 +59,7 @@ const Home = (props) => {
                                     <h5>Regístrate en nuestro sitio e inicia sesión</h5>
                                 </div>
                             </div>
-                            <div className="last-trips-instructions-steps">
+                            <div className="last-trips-instructions-steps-content">
                                 <div className="step-icon">
                                     <FontAwesomeIcon icon={faSearchLocation} />
                                 </div>
@@ -67,7 +67,7 @@ const Home = (props) => {
                                     <h5>Publica tu plan o encuentra el viaje que más te guste</h5>
                                 </div>
                             </div>
-                            <div className="last-trips-instructions-steps">
+                            <div className="last-trips-instructions-steps-content">
                                 <div className="step-icon">
                                     <FontAwesomeIcon icon={faComments} />
                                 </div>
@@ -75,7 +75,7 @@ const Home = (props) => {
                                     <h5>Resuelve todas tus dudas preguntando al resto de viajeros</h5>
                                 </div>
                             </div>
-                            <div className="last-trips-instructions-steps">
+                            <div className="last-trips-instructions-steps-content">
                                 <div className="step-icon">
                                     <FontAwesomeIcon icon={faSuitcase} />
                                 </div>
@@ -100,18 +100,21 @@ Te mostramos algunos de los destinos de nuestro país que seguro te sorprenderá
                         <div className="suggestions-trips-1">
                             <div className="suggestions-trips-1-image">
                                 <img src={trip1} alt=""></img>
+                                <p>Comillas, una de las localidades más bonitas de Cantabria</p>
                             </div>
                             <div className="suggestions-trips-1-description"></div>
                         </div>
                         <div className="suggestions-trips-2">
                             <div className="suggestions-trips-2-image">
                                 <img src={trip2} alt=""></img>
+                                <p>Granada y su majestuosa Alhambra</p>
                             </div>
                             <div className="suggestions-trips-2-description"></div>
                         </div>
                         <div className="suggestions-trips-3">
                             <div className="suggestions-trips-3-image">
                                 <img src={trip3} alt=""></img>
+                                <p>Conoce la Rioja y sus bodegas</p>
                             </div>
                             <div className="suggestions-trips-3-description"></div>
                         </div>
