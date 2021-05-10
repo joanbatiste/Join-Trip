@@ -1,0 +1,780 @@
+@media screen and (min-width: 1001px) and ( max-width: 1439px ){
+    .container-home{
+        width: 100%;
+        .header-image{
+            width: 100%;
+            height: auto;
+            object-position: center;
+            img{
+                width: 100%;
+            }
+            
+            .header-container{
+                width: 100%;
+                height: auto;
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                .header-container-logued{
+                    width: 100%;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+                    margin-top: 5px;
+                    img{
+                        width: 100%;
+                    }
+                    .header-container-logued-logo{
+                        width: 20%;
+                        margin-right: 0;
+                        display: flex;
+                        justify-content: center;
+                        .logo-link{
+                            
+                            .logo-first{
+                                font-size: 50px;
+                               
+                            }
+                            .logo-second{
+                                font-size: 50px;
+                            }
+                        }
+                    }
+                    .header-container-header-links{
+                        width: 60%;
+                        font-size: 23px;
+                        margin-right: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        .header-container-header-links-inicio{
+                            margin-right: 0;
+                        }
+                        .header-container-header-links-viajes{
+                            margin-right: 0;
+                        }
+                        .header-container-header-links-actividades{
+                            margin-right: 0;
+                            
+                        }
+                        .header-container-header-linkscontacto{
+                            margin-right: 0;
+                        }
+                    }
+                    .header-container-header-userdata{
+                        width: 10%;
+                        display: flex;
+                        justify-content: center;
+                        display: flex;
+                        justify-content:center;
+                        font-size: 23px;
+                    }
+                    .header-container-header-logout{
+                        width: 10%;
+                        margin-left: 0;
+                        font-size: 23px;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+                
+                .header-container-header{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+
+                    .header-container-header-logo{
+                        display: flex;
+                        width: 25%;
+                        justify-content: center;
+                    }
+                    .header-container-header-slogan{
+                        font-size: 20px;
+                        width: 60%;
+                    }
+                    .header-container-header-register{
+                        width: 25%;
+                        margin-top: 20px;
+                        #register{
+                            width: 100%;
+                            font-size: 20px;
+                        }
+                    }
+                    .header-container-header-login{
+                        width: 25%;
+                        margin-top: 20px;
+                        #login{
+                            width: 100%;
+                            font-size: 20px;
+                        }
+                    }
+                }
+                
+            }
+        }
+        .last-trips{
+            width: 100%;
+            height: auto;
+            .last-trips-instructions{
+                width: 100%;
+                height: auto;
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                .last-trips-instructions-steps{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    .last-trips-instructions-steps-content{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 80%;
+                        .step-icon{
+                            font-size: 80px;
+                        }
+                        .step-description{
+                            width:40%;
+                            margin-left: 50px;
+                        }
+
+                    }
+                    
+                }
+            }
+            .last-trips-description{
+                .home-texts{
+                    font-size: 20px;
+                }
+            }
+            .last-trips-publications{
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+        }
+        .suggestions{
+            width: 100%;
+            height: auto;
+            .suggestions-trips{
+                display: flex;
+                flex-direction: row;
+            }
+        }
+        
+    }
+    //Vista Profile
+    .container-profile{
+        width: 100%;
+        height: auto;
+        .profile-image{
+            width: 100%;
+            height: auto;
+            img{
+                width: 100%;
+            }
+            .header-container{
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                
+                .header-container-logued{
+                    width: 100%;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+                    margin-top: 5px;
+                    img{
+                        width: 100%;
+                    }
+                    .header-container-logued-logo{
+                        width: 20%;
+                        margin-right: 0;
+                        display: flex;
+                        justify-content: center;
+                        .logo-link{
+                            
+                            .logo-first{
+                                font-size: 50px;
+                               
+                            }
+                            .logo-second{
+                                font-size: 50px;
+                            }
+                        }
+                    }
+                    .header-container-header-links{
+                        width: 60%;
+                        font-size: 23px;
+                        margin-right: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        .header-container-header-links-inicio{
+                            margin-right: 0;
+                        }
+                        .header-container-header-links-viajes{
+                            margin-right: 0;
+                        }
+                        .header-container-header-links-actividades{
+                            margin-right: 0;
+                            
+                        }
+                        .header-container-header-linkscontacto{
+                            margin-right: 0;
+                        }
+                    }
+                    .header-container-header-userdata{
+                        width: 10%;
+                        display: flex;
+                        justify-content: center;
+                        display: flex;
+                        justify-content:center;
+                        font-size: 23px;
+                    }
+                    .header-container-header-logout{
+                        width: 10%;
+                        margin-left: 0;
+                        font-size: 23px;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+        .profile-my-trips{
+            width: 100%;
+            height: auto;
+            .profile-my-trips-title{
+                margin-left: 0;
+                h2{
+                    font-size: 24px;
+                }
+            }
+            .profile-my-trips-resum{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                .no-trips-to-show{
+                    width: 80%;
+                    font-size: 20px;
+                    margin-bottom: 20px;
+                    .no-trips-to-show-button{
+                        width: 200px;
+                    }
+                }
+            }
+        }
+        .profile-my-jointrips{
+            width: 100%;
+            .profile-my-jointrips-title{
+                margin-left: 0;
+                h2{
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+    //Post Trip
+    .container-post-trip{
+        width: 100%;
+        .post-trip-image{
+            width: 100%;
+            .header-container{
+                width: 100%;
+                .header-container-logued{
+                    width: 100%;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+                    margin-top: 5px;
+                    img{
+                        width: 100%;
+                    }
+                    .header-container-logued-logo{
+                        width: 20%;
+                        margin-right: 0;
+                        display: flex;
+                        justify-content: center;
+                        .logo-link{
+                            
+                            .logo-first{
+                                font-size: 50px;
+                               
+                            }
+                            .logo-second{
+                                font-size: 50px;
+                            }
+                        }
+                    }
+                    .header-container-header-links{
+                        width: 60%;
+                        font-size: 23px;
+                        margin-right: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        .header-container-header-links-inicio{
+                            margin-right: 0;
+                        }
+                        .header-container-header-links-viajes{
+                            margin-right: 0;
+                        }
+                        .header-container-header-links-actividades{
+                            margin-right: 0;
+                            
+                        }
+                        .header-container-header-linkscontacto{
+                            margin-right: 0;
+                        }
+                    }
+                    .header-container-header-userdata{
+                        width: 10%;
+                        display: flex;
+                        justify-content: center;
+                        display: flex;
+                        justify-content:center;
+                        font-size: 23px;
+                    }
+                    .header-container-header-logout{
+                        width: 10%;
+                        margin-left: 0;
+                        font-size: 23px;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+        .post-form-container{
+            width: 100%;
+            .post-form-container-content{
+                width: 80%;
+            }
+        }
+    }
+    //Vista Trips
+    .container-trips{
+        width: 100%;
+        .trips-image{
+            width: 100%;
+            .header-container{
+                width: 100%;
+                .header-container-logued{
+                    width: 100%;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+                    margin-top: 5px;
+                    img{
+                        width: 100%;
+                    }
+                    .header-container-logued-logo{
+                        width: 20%;
+                        margin-right: 0;
+                        display: flex;
+                        justify-content: center;
+                        .logo-link{
+                            
+                            .logo-first{
+                                font-size: 50px;
+                               
+                            }
+                            .logo-second{
+                                font-size: 50px;
+                            }
+                        }
+                    }
+                    .header-container-header-links{
+                        width: 60%;
+                        font-size: 23px;
+                        margin-right: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        .header-container-header-links-inicio{
+                            margin-right: 0;
+                        }
+                        .header-container-header-links-viajes{
+                            margin-right: 0;
+                        }
+                        .header-container-header-links-actividades{
+                            margin-right: 0;
+                            
+                        }
+                        .header-container-header-linkscontacto{
+                            margin-right: 0;
+                        }
+                    }
+                    .header-container-header-userdata{
+                        width: 10%;
+                        display: flex;
+                        justify-content: center;
+                        display: flex;
+                        justify-content:center;
+                        font-size: 23px;
+                    }
+                    .header-container-header-logout{
+                        width: 10%;
+                        margin-left: 0;
+                        font-size: 23px;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+        .available-trips{
+            width: 100%;
+            height: 100%;
+            .last-trips-added{
+                width: 100%;
+                height: auto;
+                .trips-added-content{
+                    width: 100%;
+                    height: auto;
+                    margin-top: 10px;
+                    h2{
+                        font-size: 22px;
+                    }
+                    .trips-added-content-cards{
+                        width: 80%;
+                        height: 100%;
+                        .trips-added-content-cards{
+                            width: 100%;
+                            height: 100%;
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                        }
+                    }
+                }
+            }
+            .next-trips-to-be-done{
+                width: 100%;
+                height: auto;
+                .trips-added-content{
+                    width: 100%;
+                    height: auto;
+                    margin-top: 10px;
+                    h2{
+                        font-size: 22px;
+                    }
+                    .trips-added-content-cards{
+                        width: 80%;
+                        height: 100%;
+                        .trips-added-content-cards{
+                            width: 100%;
+                            height: 100%;
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                        }
+                    }
+                }
+            }
+            .all-trips{
+                width: 100%;
+                .trips-added-content{
+                    width: 100%;
+                    margin-top: 10px;
+                    h2{
+                        font-size: 22px;
+                    }
+                }
+                .swiper-container{
+                    width: 100%;
+                }
+            }
+        }
+        
+    }
+    //Trip View
+    .container-tripview{
+        width: 100%;
+        .tripview-image{
+            width: 100%;
+            .header-container{
+                width: 100%;
+                .header-container-logued{
+                    width: 100%;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+                    margin-top: 5px;
+                    img{
+                        width: 100%;
+                    }
+                    .header-container-logued-logo{
+                        width: 20%;
+                        margin-right: 0;
+                        display: flex;
+                        justify-content: center;
+                        .logo-link{
+                            
+                            .logo-first{
+                                font-size: 50px;
+                               
+                            }
+                            .logo-second{
+                                font-size: 50px;
+                            }
+                        }
+                    }
+                    .header-container-header-links{
+                        width: 60%;
+                        font-size: 23px;
+                        margin-right: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        .header-container-header-links-inicio{
+                            margin-right: 0;
+                        }
+                        .header-container-header-links-viajes{
+                            margin-right: 0;
+                        }
+                        .header-container-header-links-actividades{
+                            margin-right: 0;
+                            
+                        }
+                        .header-container-header-linkscontacto{
+                            margin-right: 0;
+                        }
+                    }
+                    .header-container-header-userdata{
+                        width: 10%;
+                        display: flex;
+                        justify-content: center;
+                        display: flex;
+                        justify-content:center;
+                        font-size: 23px;
+                    }
+                    .header-container-header-logout{
+                        width: 10%;
+                        margin-left: 0;
+                        font-size: 23px;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+        .trip-content{
+            width: 100%;
+            height: auto;
+            .trip-content-intro{
+                width: 100%;
+                h1{
+                    font-size: 25px;
+                }
+            }
+            .trip-content-global{
+                width: 90%;
+                height: 920px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                margin-left: auto;
+                margin-right: auto;
+                .trip-owner{
+                    width: 90%;
+                    height: 100px;
+                    display: flex;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .trip-info{
+                    width: 90%;
+                    display: flex;
+                    margin-left: auto;
+                    margin-right: auto;
+                    .trip-info-field{
+                        margin-top: 20px;
+                    }
+                    .trip-info-field-description{
+                        margin-top: 20px;
+                    }
+                }
+                .trip-joined-users{
+                    width: 90%;
+                    height: auto;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 20px;
+                    height: 100px;
+                    display: flex;
+                    .trip-joined-users-content{
+                        width: 100%;
+                        height: auto;
+                        margin-top: 20px;
+                    }
+                    .join-button{
+                        margin-top: 20px;
+                    }
+                }
+
+            }
+            #box-posted-messages{
+                width: 100%;
+                height: auto;
+                h1{
+                    font-size: 25px;
+                }
+                .container-message-box{
+                    width: 90%;
+                }
+            }
+            .trip-content-dude{
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                h1{
+                    font-size: 25px;
+                }
+                h4{
+                    width: 80%;
+                    font-size: 20px;
+                }
+            }
+            .trip-messages-box{
+                width: 90%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                .trip-messages-owner{
+                    margin-top: 20px;
+                }
+                .trip-message-text{
+                    margin-top: 20px;
+                }
+                .trip-message-button{
+                    width: 90%;
+                    margin-top: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .publish-message{
+                        margin-left: 0px;
+                        align-items: center;
+                    }
+                }
+            }
+
+        }
+    }
+    //User Data
+    .container-datauser{
+        width: 100%;
+        .datauser-image{
+            width: 100%;
+            height: auto;
+            img{
+                width: 100%;
+            }
+            .header-container{
+                width: 100%;
+                
+                .header-container-logued{
+                    width: 100%;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+                    margin-top: 5px;
+                    img{
+                        width: 100%;
+                    }
+                    .header-container-logued-logo{
+                        width: 20%;
+                        margin-right: 0;
+                        display: flex;
+                        justify-content: center;
+                        .logo-link{
+                            
+                            .logo-first{
+                                font-size: 50px;
+                               
+                            }
+                            .logo-second{
+                                font-size: 50px;
+                            }
+                        }
+                    }
+                    .header-container-header-links{
+                        width: 60%;
+                        font-size: 23px;
+                        margin-right: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        .header-container-header-links-inicio{
+                            margin-right: 0;
+                        }
+                        .header-container-header-links-viajes{
+                            margin-right: 0;
+                        }
+                        .header-container-header-links-actividades{
+                            margin-right: 0;
+                            
+                        }
+                        .header-container-header-linkscontacto{
+                            margin-right: 0;
+                        }
+                    }
+                    .header-container-header-userdata{
+                        width: 10%;
+                        display: flex;
+                        justify-content: center;
+                        display: flex;
+                        justify-content:center;
+                        font-size: 23px;
+                    }
+                    .header-container-header-logout{
+                        width: 10%;
+                        margin-left: 0;
+                        font-size: 23px;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+        .data-profile{
+            width: 100%;
+            margin-left: 0;
+            .data-profile-content{
+                width: 100%;
+                height: auto;
+                margin-left: 0;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                
+                .form-group{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}

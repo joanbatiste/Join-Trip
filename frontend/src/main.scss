@@ -22,4 +22,6 @@
 @import './views/PostTrip/PostTrip';
 
 /*RESPONSIVE DESIGN*/
-@import './sass/media-query/responsive-design';
+@import './sass/media-query/responsive-design-mobile';
+@import './sass/media-query/responsive-design-tablet';
+@import './sass/media-query/responsive-design-pc';
