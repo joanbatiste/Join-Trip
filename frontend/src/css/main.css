@@ -884,13 +884,35 @@ se transforma en
       object-position: center; }
       .container-home .header-image img {
         width: 100%; }
-      .container-home .header-image .header-container-logued {
-        width: 100%; }
       .container-home .header-image .header-container {
         width: 100%;
         height: auto;
         display: flex;
         flex-direction: column; }
+        .container-home .header-image .header-container .header-container-logued {
+          width: 70%;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column; }
+          .container-home .header-image .header-container .header-container-logued .header-container-logued-logo {
+            margin-right: 0; }
+            .container-home .header-image .header-container .header-container-logued .header-container-logued-logo .logo-link .logo-first {
+              font-size: 20px; }
+            .container-home .header-image .header-container .header-container-logued .header-container-logued-logo .logo-link .logo-second {
+              font-size: 20px; }
+          .container-home .header-image .header-container .header-container-logued .header-container-header-links {
+            width: 50%;
+            font-size: 10px;
+            margin-right: 0; }
+          .container-home .header-image .header-container .header-container-logued .header-container-header-userdata {
+            width: 20%;
+            font-size: 20px; }
+          .container-home .header-image .header-container .header-container-logued .header-container-header-logout {
+            width: 10%;
+            margin-left: 0;
+            font-size: 20px; }
         .container-home .header-image .header-container .header-container-header {
           width: 80%;
           height: auto;
@@ -941,9 +963,220 @@ se transforma en
             .container-home .last-trips .last-trips-instructions .last-trips-instructions-steps .last-trips-instructions-steps-content .step-description {
               width: 40%;
               margin-left: 50px; }
+      .container-home .last-trips .last-trips-description .home-texts {
+        font-size: 15px; }
+      .container-home .last-trips .last-trips-publications {
+        display: flex;
+        flex-direction: column; }
     .container-home .suggestions {
       width: 100%;
       height: auto; }
       .container-home .suggestions .suggestions-trips {
         display: flex;
-        flex-direction: column; } }
+        flex-direction: column; }
+  .container-profile {
+    width: 100%;
+    height: auto; }
+    .container-profile .profile-image {
+      width: 100%;
+      height: auto; }
+      .container-profile .profile-image .header-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column; }
+        .container-profile .profile-image .header-container .header-container-logued {
+          width: 100%;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          margin-top: 5px; }
+          .container-profile .profile-image .header-container .header-container-logued img {
+            width: 100%; }
+          .container-profile .profile-image .header-container .header-container-logued .header-container-logued-logo {
+            width: 10%;
+            margin-right: 0; }
+            .container-profile .profile-image .header-container .header-container-logued .header-container-logued-logo .logo-link .logo-first {
+              font-size: 20px; }
+            .container-profile .profile-image .header-container .header-container-logued .header-container-logued-logo .logo-link .logo-second {
+              font-size: 20px; }
+          .container-profile .profile-image .header-container .header-container-logued .header-container-header-links {
+            width: 70%;
+            font-size: 10px;
+            margin-right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+          .container-profile .profile-image .header-container .header-container-logued .header-container-header-userdata {
+            width: 15%;
+            font-size: 15px; }
+          .container-profile .profile-image .header-container .header-container-logued .header-container-header-logout {
+            width: 5%;
+            margin-left: 0;
+            font-size: 15px; }
+    .container-profile .profile-my-trips {
+      width: 100%;
+      height: auto; }
+      .container-profile .profile-my-trips .profile-my-trips-title {
+        margin-left: 0; }
+        .container-profile .profile-my-trips .profile-my-trips-title h2 {
+          font-size: 20px; }
+      .container-profile .profile-my-trips .profile-my-trips-resum {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center; }
+        .container-profile .profile-my-trips .profile-my-trips-resum .no-trips-to-show {
+          width: 80%;
+          font-size: 15px;
+          margin-bottom: 20px; }
+          .container-profile .profile-my-trips .profile-my-trips-resum .no-trips-to-show .no-trips-to-show-button {
+            width: 150px; }
+    .container-profile .profile-my-jointrips {
+      width: 100%; }
+      .container-profile .profile-my-jointrips .profile-my-jointrips-title {
+        margin-left: 0; }
+        .container-profile .profile-my-jointrips .profile-my-jointrips-title h2 {
+          font-size: 20px; }
+  .container-post-trip {
+    width: 600px; }
+    .container-post-trip .post-trip-image {
+      width: 100%; }
+      .container-post-trip .post-trip-image .header-container {
+        width: 100%; }
+        .container-post-trip .post-trip-image .header-container .header-container-logued {
+          width: 100%;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          margin-top: 5px; }
+          .container-post-trip .post-trip-image .header-container .header-container-logued img {
+            width: 100%; }
+          .container-post-trip .post-trip-image .header-container .header-container-logued .header-container-logued-logo {
+            width: 20%;
+            margin-right: 0; }
+            .container-post-trip .post-trip-image .header-container .header-container-logued .header-container-logued-logo .logo-link .logo-first {
+              font-size: 20px; }
+            .container-post-trip .post-trip-image .header-container .header-container-logued .header-container-logued-logo .logo-link .logo-second {
+              font-size: 20px; }
+          .container-post-trip .post-trip-image .header-container .header-container-logued .header-container-header-links {
+            width: 70%;
+            font-size: 10px;
+            margin-right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly; }
+            .container-post-trip .post-trip-image .header-container .header-container-logued .header-container-header-links .header-container-header-links-inicio {
+              margin-right: 0; }
+            .container-post-trip .post-trip-image .header-container .header-container-logued .header-container-header-links .header-container-header-links-viajes {
+              margin-right: 0; }
+            .container-post-trip .post-trip-image .header-container .header-container-logued .header-container-header-links .header-container-header-links-actividades {
+              margin-right: 0; }
+            .container-post-trip .post-trip-image .header-container .header-container-logued .header-container-header-links .header-container-header-linkscontacto {
+              margin-right: 0; }
+          .container-post-trip .post-trip-image .header-container .header-container-logued .header-container-header-userdata {
+            width: 15%;
+            font-size: 15px; }
+          .container-post-trip .post-trip-image .header-container .header-container-logued .header-container-header-logout {
+            width: 5%;
+            margin-left: 0;
+            font-size: 15px; }
+    .container-post-trip .post-form-container {
+      width: 100%; }
+      .container-post-trip .post-form-container .post-form-container-content {
+        width: 80%; }
+  .container-trips {
+    width: 600px; }
+    .container-trips .trips-image {
+      width: 100%; }
+      .container-trips .trips-image .header-container {
+        width: 100%; }
+        .container-trips .trips-image .header-container .header-container-logued {
+          width: 100%;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          margin-top: 5px; }
+          .container-trips .trips-image .header-container .header-container-logued img {
+            width: 100%; }
+          .container-trips .trips-image .header-container .header-container-logued .header-container-logued-logo {
+            width: 20%;
+            margin-right: 0; }
+            .container-trips .trips-image .header-container .header-container-logued .header-container-logued-logo .logo-link .logo-first {
+              font-size: 20px; }
+            .container-trips .trips-image .header-container .header-container-logued .header-container-logued-logo .logo-link .logo-second {
+              font-size: 20px; }
+          .container-trips .trips-image .header-container .header-container-logued .header-container-header-links {
+            width: 70%;
+            font-size: 10px;
+            margin-right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly; }
+            .container-trips .trips-image .header-container .header-container-logued .header-container-header-links .header-container-header-links-inicio {
+              margin-right: 0; }
+            .container-trips .trips-image .header-container .header-container-logued .header-container-header-links .header-container-header-links-viajes {
+              margin-right: 0; }
+            .container-trips .trips-image .header-container .header-container-logued .header-container-header-links .header-container-header-links-actividades {
+              margin-right: 0; }
+            .container-trips .trips-image .header-container .header-container-logued .header-container-header-links .header-container-header-linkscontacto {
+              margin-right: 0; }
+          .container-trips .trips-image .header-container .header-container-logued .header-container-header-userdata {
+            width: 15%;
+            font-size: 15px; }
+          .container-trips .trips-image .header-container .header-container-logued .header-container-header-logout {
+            width: 5%;
+            margin-left: 0;
+            font-size: 15px; }
+    .container-trips .available-trips {
+      width: 100%;
+      height: 100%; }
+      .container-trips .available-trips .last-trips-added {
+        width: 100%;
+        height: auto; }
+        .container-trips .available-trips .last-trips-added .trips-added-content {
+          width: 100%;
+          height: auto;
+          margin-top: 10px; }
+          .container-trips .available-trips .last-trips-added .trips-added-content h2 {
+            font-size: 17px; }
+          .container-trips .available-trips .last-trips-added .trips-added-content .trips-added-content-cards {
+            width: 80%;
+            height: 100%; }
+            .container-trips .available-trips .last-trips-added .trips-added-content .trips-added-content-cards .trips-added-content-cards {
+              width: 100%;
+              height: 100%;
+              display: grid;
+              grid-template-columns: repeat(2, 1fr); }
+      .container-trips .available-trips .next-trips-to-be-done {
+        width: 100%;
+        height: auto; }
+        .container-trips .available-trips .next-trips-to-be-done .trips-added-content {
+          width: 100%;
+          height: auto;
+          margin-top: 10px; }
+          .container-trips .available-trips .next-trips-to-be-done .trips-added-content h2 {
+            font-size: 17px; }
+          .container-trips .available-trips .next-trips-to-be-done .trips-added-content .trips-added-content-cards {
+            width: 80%;
+            height: 100%; }
+            .container-trips .available-trips .next-trips-to-be-done .trips-added-content .trips-added-content-cards .trips-added-content-cards {
+              width: 100%;
+              height: 100%;
+              display: grid;
+              grid-template-columns: repeat(2, 1fr); }
+      .container-trips .available-trips .all-trips {
+        width: 100%; }
+        .container-trips .available-trips .all-trips .trips-added-content {
+          width: 100%;
+          margin-top: 10px; }
+          .container-trips .available-trips .all-trips .trips-added-content h2 {
+            font-size: 17px; }
+        .container-trips .available-trips .all-trips .swiper-container {
+          width: 100%; } }
