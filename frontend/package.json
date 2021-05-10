@@ -32,7 +32,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "scss": "node-sass --watch ./src/main.scss -o ./src/css"
+    "scss": "node-sass --watch ./src/main.scss -o ./src/css",
+    "publishToHeroku": "cd ../ && git subtree push --prefix frontend heroku-join-trip-frontend master || true"
   },
   "eslintConfig": {
     "extends": [
