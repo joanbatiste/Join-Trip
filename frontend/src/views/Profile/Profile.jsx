@@ -16,7 +16,7 @@ const Profile = (props) => {
 
     //funcion para traerse los viajes publicados por el usuario
     const getTrips = async () => {
-        let endPointTrips = `http://127.0.0.1:8000/api/users/${props.user.id}/trips`;
+        let endPointTrips = `https://join-trip-backend.herokuapp.com/api/users/${props.user.id}/trips`;
         let tripsResponse = await axios.get(endPointTrips, { headers: { authorization: `Bearer ${props.user.api_token}` } });
         setTrips(tripsResponse.data)
     }
@@ -25,7 +25,7 @@ const Profile = (props) => {
     const [joinedtrips, setJoinedtrips] = useState([]);
     //Renderizar si se ha apuntado a viajes o no
     const joinedTripsQuery = async () => {
-        let endPointJoinedTrips = `http://127.0.0.1:8000/api/users/${props.user.id}/memberships`;
+        let endPointJoinedTrips = `https://join-trip-backend.herokuapp.com/api/users/${props.user.id}/memberships`;
         let joinedResponse = await axios.get(endPointJoinedTrips, { headers: { authorization: `Bearer ${props.user.api_token}` } });
         setJoinedtrips(joinedResponse.data)
     }

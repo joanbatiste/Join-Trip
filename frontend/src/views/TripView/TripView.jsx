@@ -28,14 +28,14 @@ function TripView(props) {
 
     //Funcion para traer los mensajes del viaje
     const getMessagesPosted = async () => {
-        let endPointGetMessages = `http://127.0.0.1:8000/api/messages/${dataTrip.id}`;
+        let endPointGetMessages = `https://join-trip-backend.herokuapp.com/api/messages/${dataTrip.id}`;
         let responseMessages = await axios.get(endPointGetMessages);
         setPostedMessages(responseMessages.data);
     }
 
     //Funcion para traerse los usuarios que se han unido al viaje
     const getUsersJoined = async ()=>{
-        let endPointUsersJoined = `http://127.0.0.1:8000/api/memberships/${dataTrip.id}`;
+        let endPointUsersJoined = `https://join-trip-backend.herokuapp.com/api/memberships/${dataTrip.id}`;
         let response = await axios.get(endPointUsersJoined);
         setJoinedUsers (response.data)
     }
@@ -49,7 +49,7 @@ function TripView(props) {
         }
 
         //EndPoint para crear el mensaje en bd
-        let endPointMessage = `http://127.0.0.1:8000/api/users/${props.user.id}/messages`;
+        let endPointMessage = `https://join-trip-backend.herokuapp.com/api/users/${props.user.id}/messages`;
         let response = await axios.post(endPointMessage, messagePost, { headers: { authorization: `Bearer ${props.user.api_token}` } })
         
         if (!response.data) {
@@ -73,7 +73,7 @@ function TripView(props) {
         }
 
         //endpoint para unirse al viaje
-        let endPointMembership = 'http://127.0.0.1:8000/api/trips/login';
+        let endPointMembership = 'https://join-trip-backend.herokuapp.com/api/trips/login';
         let response = await axios.post(endPointMembership,membership,{headers: { authorization: `Bearer ${props.user.api_token}` }})
         if (!response.data) {
             alert('Lo sentimos, el mensaje no te has podido unir al viaje');

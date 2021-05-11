@@ -127,7 +127,7 @@ const Header = (props) => {
             password: login_user.password
         }
         //Endpoin para login
-        let login_url = 'http://127.0.0.1:8000/api/users/login';
+        let login_url = 'https://join-trip-backend.herokuapp.com/api/users/login';
         let response = await axios.post(login_url, loginData);
         console.log(response);
         props.dispatch({type: LOGIN, payload: response.data[0]});
