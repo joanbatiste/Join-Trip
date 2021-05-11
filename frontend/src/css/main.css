@@ -1059,6 +1059,17 @@ se transforma en
         margin-left: 0; }
         .container-profile .profile-my-jointrips .profile-my-jointrips-title h2 {
           font-size: 20px; }
+    .container-profile .profile-my-jointrips-resum {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center; }
+      .container-profile .profile-my-jointrips-resum .no-joinedtrips-to-show {
+        width: 80%;
+        font-size: 15px;
+        margin-bottom: 20px; }
+        .container-profile .profile-my-jointrips-resum .no-joinedtrips-to-show .no-joinedtrips-to-show-button {
+          width: 150px; }
   .container-post-trip {
     width: 100%; }
     .container-post-trip .post-trip-image {
@@ -1496,6 +1507,8 @@ se transforma en
             .container-home .last-trips .last-trips-instructions .last-trips-instructions-steps .last-trips-instructions-steps-content .step-description {
               width: 40%;
               margin-left: 50px; }
+      .container-home .last-trips .last-trips-description h2 {
+        font-size: 18px; }
       .container-home .last-trips .last-trips-description .home-texts {
         font-size: 15px; }
       .container-home .last-trips .last-trips-publications {
@@ -1506,6 +1519,8 @@ se transforma en
     .container-home .suggestions {
       width: 100%;
       height: auto; }
+      .container-home .suggestions .suggestions-descriptions h2 {
+        font-size: 18px; }
       .container-home .suggestions .suggestions-trips {
         display: flex;
         flex-direction: column; }
@@ -1593,6 +1608,17 @@ se transforma en
         margin-left: 0; }
         .container-profile .profile-my-jointrips .profile-my-jointrips-title h2 {
           font-size: 22px; }
+      .container-profile .profile-my-jointrips .profile-my-jointrips-resum {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center; }
+        .container-profile .profile-my-jointrips .profile-my-jointrips-resum .no-joinedtrips-to-show {
+          width: 80%;
+          font-size: 17px;
+          margin-bottom: 20px; }
+          .container-profile .profile-my-jointrips .profile-my-jointrips-resum .no-joinedtrips-to-show .no-joinedtrips-to-show-button {
+            width: 150px; }
   .container-post-trip {
     width: 100%; }
     .container-post-trip .post-trip-image {
@@ -2072,6 +2098,8 @@ se transforma en
     .container-home .suggestions {
       width: 100%;
       height: auto; }
+      .container-home .suggestions .suggestions-descriptions h2 {
+        font-size: 18px; }
       .container-home .suggestions .suggestions-trips {
         display: flex;
         flex-direction: row; }

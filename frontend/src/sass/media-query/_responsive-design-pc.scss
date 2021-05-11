@@ -164,6 +164,11 @@
         .suggestions{
             width: 100%;
             height: auto;
+            .suggestions-descriptions{
+                h2{
+                    font-size: 18px;
+                }
+            }
             .suggestions-trips{
                 display: flex;
                 flex-direction: row;

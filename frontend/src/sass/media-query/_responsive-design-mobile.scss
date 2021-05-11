@@ -246,6 +246,7 @@
                     }
                 }
             }
+            
         }
         .profile-my-jointrips{
             width: 100%;
@@ -253,6 +254,20 @@
                 margin-left: 0;
                 h2{
                     font-size: 20px;
+                }
+            }
+        }
+        .profile-my-jointrips-resum{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            .no-joinedtrips-to-show{
+                width: 80%;
+                font-size: 15px;
+                margin-bottom: 20px;
+                .no-joinedtrips-to-show-button{
+                    width: 150px;
                 }
             }
         }
