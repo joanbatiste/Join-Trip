@@ -28,8 +28,6 @@ Route::get('/trips', [TripController::class, 'findAllTrips']);
 Route::get('/messages/{tripid}',[MessageController::class, 'findMessagesByTripId']);
 Route::get('/memberships/{tripid}',[MembershipController::class, 'findJoinedByTrip']);
 
-
-
 Route::middleware('auth:api')->group(function(){
     //Rutas que requieren autenticación de Users
     Route::put('/users/{id}', [UserController::class, 'userUpdate']);
