@@ -7,7 +7,6 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import MessageBox from '../../components/MessageBox/MessageBox';
 
-
 function TripView(props) {
 
     let dataTrip = JSON.parse(localStorage.getItem('trip'));
