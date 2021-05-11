@@ -8,17 +8,24 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 </div>
 
-# Proyect - Join Trip
+# Project - Join Trip
 
 
 ## 📝 Table of Contents
 
+- [Target](#target)
 - [Built With](#built)
 - [Testing with Postman](#testing)
-- [Prerequisites](#prerequisites)
 - [Start Project](#start-project)
 - [Author](#author)
-- [Git Flow](#gitFlow)
+- [Deploy](#deploy)
+- [Gratefulness](#gratefulness)
+
+## Target
+
+The objective of the project is to meet the needs of people who, due to circumstances, like to travel but have no one to do it with. 
+At the moment it is possible to register, log in, post a trip, send messages to the traveler who has published the trip and sign up for the trip.
+In the next review I will add more functionalities such as direct messages, save trips in favorites, etc ...
 
 ## ⛏️ Built With <a name = "built"></a>
 <p align="left"> 
@@ -36,47 +43,51 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <a href="https://www.figma.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a>
 </p>
 
-### Available Scripts <a name="prerequisites"></a>
+### Backend: Php - Laravel.
 
-### Install libraries with:
-### `npm i`
+### Frontend: React.
 
-### Start Project <a name="start-project"></a>
+### You can start the project in two ways <a name="prerequisites"></a>
 
-In the project directory, you can run:
-### `npm start`
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### With docker:
+- Clone this repo with the development environment: [https://github.com/davidpestana/laravel-react-docker-develop-environment](https://github.com/davidpestana/laravel-react-docker-develop-environment)
+- Create source folder and clone inside Join Trip repositorie.
+- Run ./bin/start.
+- Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-#### `docker-compose up`
+### Project deployed at heroku:
+- [https://join-trip-frontend.herokuapp.com/](https://join-trip-frontend.herokuapp.com/)
 
-## :dart: Git Flow <a name = "gitFlow"></a>
-![Grabación de pantalla 2021-04-05 a las 0 02 22](https://user-images.githubusercontent.com/56218293/113522618-6106ac80-95a2-11eb-9c46-43d869b0a426.gif)
+
+
 
 ## 🎈 Testing with Postman <a name="testing"></a>
 
 **Register**,  **Login** and **Update**.
+**Post Trip**, **Post Message**, **Join a trip**.
+
 - [Postman](https://www.postman.com/) - Api Development 
-![Grabación de pantalla 2021-04-04 a las 23 55 17](https://user-images.githubusercontent.com/74936966/113522555-be4e2e00-95a1-11eb-9943-fc993844dd9e.gif)
+
+![Captura de pantalla 2021-05-11 a las 23 38 19](https://user-images.githubusercontent.com/74936966/117888195-0d2e6800-b2b2-11eb-9d83-d943d0613029.png)
 
 
-- [Postman Documentation](https://documenter.getpostman.com/view/14677557/Tz5jfLn7) - Server Framework
-
-<!-- ![Grabación de pantalla 2021-03-07 a las 17 24 09](https://user-images.githubusercontent.com/56218293/110247046-74eecc80-7f6a-11eb-87fb-cedc016b14c2.gif) -->
-
-## :pushpin: Frontend Structure
-![image](https://user-images.githubusercontent.com/56218293/113520911-71b12580-9596-11eb-9064-f331c03ce836.png)
+- ![Captura de pantalla 2021-05-11 a las 23 37 38](https://user-images.githubusercontent.com/74936966/117888276-20d9ce80-b2b2-11eb-9223-e3eec9a4b50b.png)
 
 
-## :pushpin: Backend Structure
-![image](https://user-images.githubusercontent.com/56218293/113520712-66112f00-9595-11eb-8fb4-69fd50a97803.png)
 
 
-<!-- ![Grabación de pantalla 2021-03-08 a las 10 19 52](https://user-images.githubusercontent.com/56218293/110301700-ad3cec00-7ff8-11eb-8511-5abb09cd8c3b.gif) -->
+## Deploy
+![Captura de pantalla 2021-05-12 a las 0 08 15](https://user-images.githubusercontent.com/74936966/117890843-305b1680-b2b6-11eb-87e7-be83610b1441.png)
 
+![Captura de pantalla 2021-05-12 a las 0 09 20](https://user-images.githubusercontent.com/74936966/117890929-54b6f300-b2b6-11eb-9570-dbf7769ab1d7.png)
 
-## :zap: Deploy
-![Grabación de pantalla 2021-04-04 a las 22 45 14](https://user-images.githubusercontent.com/56218293/113521107-b38e9b80-9597-11eb-8053-3b10f6bcba14.gif)
+![Captura de pantalla 2021-05-12 a las 0 10 47](https://user-images.githubusercontent.com/74936966/117891040-84fe9180-b2b6-11eb-902f-96d1e6cab7e6.png)
 
 ## ✍️ Author <a name = "authors"></a>
 
 - [@Joan](https://github.com/joanbatiste)
+
+## Gratefulness
+
+To all my colleagues and friends from the Geeks Hubs Academy Full Stack Developer bootcamp. 
+Without them it would not have been possible...
