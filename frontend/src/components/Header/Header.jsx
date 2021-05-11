@@ -92,7 +92,7 @@ const Header = (props) => {
         
         
         //Endpoint para el registro de usuario
-        let endpointUserRegister = 'http://127.0.0.1:8000/api/users';
+        let endpointUserRegister = 'https://join-trip-backend.herokuapp.com/api/users';
 
         let response =  await axios.post(endpointUserRegister, userData);
         
