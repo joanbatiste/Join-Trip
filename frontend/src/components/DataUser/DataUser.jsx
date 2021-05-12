@@ -38,7 +38,7 @@ const ProfileHeader = (props) => {
             return;
         }
         
-        let endpointUserUpdate = `https://join-trip-backend.herokuapp.com/api/users/${props.user?.id}`
+        let endpointUserUpdate = `http://35.181.61.173/api/users/${props.user?.id}`
         let response = await axios.put(endpointUserUpdate, user, { headers: { authorization: props.user.api_token } });
 
         if (!response.data.error) {

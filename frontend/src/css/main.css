@@ -269,6 +269,12 @@ se transforma en
         border-radius: 6px;
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); }
 
+.modal-register {
+  font-family: "Questrial-Regular"; }
+
+.modal-login {
+  font-family: "Questrial-Regular"; }
+
 .modal-register-footer-bt-register {
   background-color: #119FDC;
   border-radius: 4px; }

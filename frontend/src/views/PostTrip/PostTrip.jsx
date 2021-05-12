@@ -59,7 +59,7 @@ function PostTrip(props) {
         }
 
         //Endpoint para crear trip
-        let endPoitCreateTrip = `https://join-trip-backend.herokuapp.com/api/users/${props.user.id}/trips`;
+        let endPoitCreateTrip = `http://35.181.61.173/api/users/${props.user.id}/trips`;
         let response = await axios.post(endPoitCreateTrip, postTripData,{headers: {authorization:`Bearer ${props.user.api_token}`}});
         
         if(!response.data){
@@ -67,7 +67,7 @@ function PostTrip(props) {
         }else{
             alert('Tu viaje se ha publicado. Podrás verlo en tu perfil de usuario')
             setTimeout(() => {
-                history.push('/profile')
+                history.push('/home')
 
             }, 1000)
         }
@@ -103,8 +103,13 @@ function PostTrip(props) {
                     </FormGroup>
                     <FormGroup>
                         <Label for='description'>Descripción</Label>
-                        <Input type='textarea' name='description' className='post-form-container-content-input' onChange={handleStatePostTrip} valid={validationResult.validated && !validationResult.description} invalid={validationResult.validated && validationResult.description}></Input>
+                        <Input type='text' name='description' className='post-form-container-content-input' onChange={handleStatePostTrip} valid={validationResult.validated && !validationResult.description} invalid={validationResult.validated && validationResult.description}></Input>
                         <FormFeedback>{validationResult.description}</FormFeedback>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for='link'>Links de interes</Label>
+                        <Input type='text' name='link' className='post-form-container-content-input' onChange={handleStatePostTrip} valid={validationResult.validated && !validationResult.link} invalid={validationResult.validated && validationResult.link}></Input>
+                        <FormFeedback>{validationResult.link}</FormFeedback>
                     </FormGroup>
                     <input type="button" value="Publicar viaje" className='post-form-container-content-button' onClick={sendDataTrip} />
                 </div>

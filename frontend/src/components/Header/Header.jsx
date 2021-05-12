@@ -92,7 +92,7 @@ const Header = (props) => {
         
         
         //Endpoint para el registro de usuario
-        let endpointUserRegister = 'https://join-trip-backend.herokuapp.com/api/users';
+        let endpointUserRegister = 'http://35.181.61.173/api/users';
 
         let response =  await axios.post(endpointUserRegister, userData);
         
@@ -127,7 +127,7 @@ const Header = (props) => {
             password: login_user.password
         }
         //Endpoin para login
-        let login_url = 'https://join-trip-backend.herokuapp.com/api/users/login';
+        let login_url = 'http://35.181.61.173/api/users/login';
         let response = await axios.post(login_url, loginData);
         console.log(response);
         props.dispatch({type: LOGIN, payload: response.data[0]});

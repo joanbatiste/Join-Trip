@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
-
+import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -8,6 +8,8 @@ import axios from 'axios';
 import MessageBox from '../../components/MessageBox/MessageBox';
 
 function TripView(props) {
+
+    let history = useHistory();
 
     let dataTrip = JSON.parse(localStorage.getItem('trip'));
     
@@ -27,14 +29,14 @@ function TripView(props) {
 
     //Funcion para traer los mensajes del viaje
     const getMessagesPosted = async () => {
-        let endPointGetMessages = `https://join-trip-backend.herokuapp.com/api/messages/${dataTrip.id}`;
+        let endPointGetMessages = `http://35.181.61.173/api/messages/${dataTrip.id}`;
         let responseMessages = await axios.get(endPointGetMessages);
         setPostedMessages(responseMessages.data);
     }
 
     //Funcion para traerse los usuarios que se han unido al viaje
     const getUsersJoined = async ()=>{
-        let endPointUsersJoined = `https://join-trip-backend.herokuapp.com/api/memberships/${dataTrip.id}`;
+        let endPointUsersJoined = `http://35.181.61.173/api/memberships/${dataTrip.id}`;
         let response = await axios.get(endPointUsersJoined);
         setJoinedUsers (response.data)
     }
@@ -44,18 +46,21 @@ function TripView(props) {
         let messagePost = {
             message: message.message,
             userId: props.user.id,
-            tripId: dataTrip.tripId
+            tripId: dataTrip.id
         }
 
         //EndPoint para crear el mensaje en bd
-        let endPointMessage = `https://join-trip-backend.herokuapp.com/api/users/${props.user.id}/messages`;
-        let response = await axios.post(endPointMessage, messagePost, { headers: { authorization: `Bearer ${props.user.api_token}` } })
+        let endPointMessage = `http://35.181.61.173/api/users/${props.user.id}/messages`;
+        let response = await axios.post(endPointMessage, messagePost, { headers: { authorization: `Bearer ${props.user?.api_token}` } })
         
         if (!response.data) {
             alert('Lo sentimos, el mensaje no ha podido publicarse');
         } else {
             alert('Tu mensaje se ha publicado correctamente');
+            setTimeout(() => {
+                history.push('/trips/view')
 
+            }, 1000)
         }
     }
 
@@ -72,13 +77,16 @@ function TripView(props) {
         }
 
         //endpoint para unirse al viaje
-        let endPointMembership = 'https://join-trip-backend.herokuapp.com/api/trips/login';
+        let endPointMembership = 'http://35.181.61.173/api/trips/login';
         let response = await axios.post(endPointMembership,membership,{headers: { authorization: `Bearer ${props.user.api_token}` }})
         if (!response.data) {
             alert('Lo sentimos, el mensaje no te has podido unir al viaje');
         } else {
             alert('¡Enhorabuena! Te has unido a este viaje. ¡Disfrútalo!');
+            setTimeout(() => {
+                history.push('/trips/view')
 
+            }, 1000)
         }
     }
 
@@ -87,7 +95,7 @@ function TripView(props) {
         getMessagesPosted()
         getUsersJoined()
         // eslint-disable-next-line
-    }, []);
+    }, [joinedUsers]);
 
     //Visualizar Mensajes posteados si los hay
     const messageTest = () => {

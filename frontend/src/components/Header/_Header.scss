@@ -5,6 +5,7 @@
     position: absolute;
     background-color: transparent;
     display: flex;
+    
    
     .header-container-header{
         width: 100%;
@@ -76,6 +77,12 @@
     };
     
 };
+.modal-register{
+    font-family: $font-Questrial-Regular;
+}
+.modal-login{
+    font-family: $font-Questrial-Regular;
+}
 .modal-register-footer-bt-register {
     background-color: #119FDC ;
     border-radius: 4px;

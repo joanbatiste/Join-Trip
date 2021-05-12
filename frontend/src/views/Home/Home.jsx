@@ -22,7 +22,7 @@ const Home = (props) => {
 
 
     const getTrips = async () => {
-        let endPointTrips = "https://join-trip-backend.herokuapp.com/api/trips";
+        let endPointTrips = "http://35.181.61.173/api/trips";
         let tripsResponse = await axios.get(endPointTrips);
 
         
