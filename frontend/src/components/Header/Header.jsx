@@ -98,7 +98,6 @@ const Header = (props) => {
         let endpointUserRegister = `${base_url}/api/users`;
 
         let response =  await axios.post(endpointUserRegister, userData);
-        console.log("response del register", response.data)
         
         
         if (!response.data.name) {

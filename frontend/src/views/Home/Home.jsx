@@ -17,7 +17,7 @@ import { faComments, faIdCard, faSearchLocation, faSuitcase } from '@fortawesome
 const Home = (props) => {
 
     //base url para hacer las peticiones a BD
-    let base_url = "https://127.0.0.1:8000";
+    let base_url = "http://127.0.0.1:8000";
 
     //Funcion para traerse todos los trips de la BD
     const [trip, setTrips] = useState([]);

@@ -12,7 +12,7 @@ const Profile = (props) => {
     let history = useHistory();
 
     //base url para hacer las peticiones a BD
-    let base_url = "https://127.0.0.1:8000";
+    let base_url = "http://127.0.0.1:8000";
 
     //hook de los viajes publicados por el usuario
     const [trip, setTrips] = useState([]);
@@ -26,6 +26,7 @@ const Profile = (props) => {
 
     //hook de los viajes a los que se ha unido el usuario
     const [joinedtrips, setJoinedtrips] = useState([]);
+
     //Renderizar si se ha apuntado a viajes o no
     const joinedTripsQuery = async () => {
         let endPointJoinedTrips = `${base_url}/api/users/${props.user.id}/memberships`;
@@ -51,6 +52,7 @@ const Profile = (props) => {
     useEffect(() => {
         getTrips();
         joinedTripsQuery();
+        
         // eslint-disable-next-line
     }, []);
 

@@ -12,7 +12,7 @@ function TripView(props) {
     let history = useHistory();
 
     //base url para hacer las peticiones a BD
-    let base_url = "https://127.0.0.1:8000";
+    let base_url = "http://127.0.0.1:8000";
 
     let dataTrip = JSON.parse(localStorage.getItem('trip'));
     
@@ -63,7 +63,7 @@ function TripView(props) {
             setTimeout(() => {
                 history.push('/trips/view')
 
-            }, 1000)
+            }, 1500)
         }
     }
 
@@ -98,7 +98,7 @@ function TripView(props) {
         getMessagesPosted()
         getUsersJoined()
         // eslint-disable-next-line
-    }, [joinedUsers]);
+    }, []);
 
     //Visualizar Mensajes posteados si los hay
     const messageTest = () => {

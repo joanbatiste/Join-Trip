@@ -10,7 +10,7 @@ function PostTrip(props) {
     let history = useHistory();
 
     //base url para hacer las peticiones a BD
-    let base_url = "https://127.0.0.1:8000";
+    let base_url = "http://127.0.0.1:8000";
 
     //Estado del contenido de los campos del form para postear un trip
     const [postTrip, setPostTrip] = useState({
