@@ -3,7 +3,7 @@ import React from 'react'
 function MessageBox(props) {
 
     let message = props.message;
-    console.log("soy lo que llega a message", message);
+    
     return (
         <div className="container-message-box">
              <div className="message-box-owner">

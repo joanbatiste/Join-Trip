@@ -52,15 +52,15 @@ const checkField = (inputName, inputValue) => {
 
             break;
 
-        case 'description':
+        // case 'description':
 
-            // eslint-disable-next-line
-            if (! /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/.test(inputValue)) {
+        //     // eslint-disable-next-line
+        //     if (! /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/.test(inputValue)) {
 
-                return "El campo descripción solo puede contener letras" || notEmpty(inputValue);
-            }
+        //         return "El campo descripción solo puede contener letras" || notEmpty(inputValue);
+        //     }
 
-            break;
+        //     break;
 
         case 'city':
 

@@ -11,6 +11,9 @@ function TripView(props) {
 
     let history = useHistory();
 
+    //base url para hacer las peticiones a BD
+    let base_url = "https://127.0.0.1:8000";
+
     let dataTrip = JSON.parse(localStorage.getItem('trip'));
     
     //Hook para traer mensajes ya publicados
@@ -29,14 +32,14 @@ function TripView(props) {
 
     //Funcion para traer los mensajes del viaje
     const getMessagesPosted = async () => {
-        let endPointGetMessages = `http://35.181.61.173/api/messages/${dataTrip.id}`;
+        let endPointGetMessages = `${base_url}/api/messages/${dataTrip.id}`;
         let responseMessages = await axios.get(endPointGetMessages);
         setPostedMessages(responseMessages.data);
     }
 
     //Funcion para traerse los usuarios que se han unido al viaje
     const getUsersJoined = async ()=>{
-        let endPointUsersJoined = `http://35.181.61.173/api/memberships/${dataTrip.id}`;
+        let endPointUsersJoined = `${base_url}/api/memberships/${dataTrip.id}`;
         let response = await axios.get(endPointUsersJoined);
         setJoinedUsers (response.data)
     }
@@ -50,7 +53,7 @@ function TripView(props) {
         }
 
         //EndPoint para crear el mensaje en bd
-        let endPointMessage = `http://35.181.61.173/api/users/${props.user.id}/messages`;
+        let endPointMessage = `${base_url}/api/users/${props.user.id}/messages`;
         let response = await axios.post(endPointMessage, messagePost, { headers: { authorization: `Bearer ${props.user?.api_token}` } })
         
         if (!response.data) {
@@ -77,7 +80,7 @@ function TripView(props) {
         }
 
         //endpoint para unirse al viaje
-        let endPointMembership = 'http://35.181.61.173/api/trips/login';
+        let endPointMembership = `${base_url}/api/trips/login`;
         let response = await axios.post(endPointMembership,membership,{headers: { authorization: `Bearer ${props.user.api_token}` }})
         if (!response.data) {
             alert('Lo sentimos, el mensaje no te has podido unir al viaje');

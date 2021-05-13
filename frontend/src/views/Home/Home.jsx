@@ -15,6 +15,10 @@ import { faComments, faIdCard, faSearchLocation, faSuitcase } from '@fortawesome
 
 
 const Home = (props) => {
+
+    //base url para hacer las peticiones a BD
+    let base_url = "https://127.0.0.1:8000";
+
     //Funcion para traerse todos los trips de la BD
     const [trip, setTrips] = useState([]);
     //Guardamos los datos de viajes en redux
@@ -22,7 +26,7 @@ const Home = (props) => {
 
 
     const getTrips = async () => {
-        let endPointTrips = "http://35.181.61.173/api/trips";
+        let endPointTrips =`${base_url}/api/trips`;
         let tripsResponse = await axios.get(endPointTrips);
 
         

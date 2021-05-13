@@ -9,6 +9,9 @@ import { LOGIN } from '../../redux/types/userTypes';
 
 const Header = (props) => {
 
+    //base url para hacer las peticiones a BD
+    let base_url = "http://127.0.0.1:8000";
+
     //Definimos el estado de la ventana modal para el registro y para el login
     const [registerModal, setRegisterModal] = useState({
         open: false,
@@ -92,9 +95,10 @@ const Header = (props) => {
         
         
         //Endpoint para el registro de usuario
-        let endpointUserRegister = 'http://35.181.61.173/api/users';
+        let endpointUserRegister = `${base_url}/api/users`;
 
         let response =  await axios.post(endpointUserRegister, userData);
+        console.log("response del register", response.data)
         
         
         if (!response.data.name) {
@@ -126,10 +130,9 @@ const Header = (props) => {
             username: login_user.username,
             password: login_user.password
         }
-        //Endpoin para login
-        let login_url = 'http://35.181.61.173/api/users/login';
+        //Endpoint para login
+        let login_url = `${base_url}/api/users/login`;
         let response = await axios.post(login_url, loginData);
-        console.log(response);
         props.dispatch({type: LOGIN, payload: response.data[0]});
         
         

@@ -9,6 +9,9 @@ import { FormGroup, Input, Label, FormFeedback } from 'reactstrap';
 function PostTrip(props) {
     let history = useHistory();
 
+    //base url para hacer las peticiones a BD
+    let base_url = "https://127.0.0.1:8000";
+
     //Estado del contenido de los campos del form para postear un trip
     const [postTrip, setPostTrip] = useState({
         title: "",
@@ -57,9 +60,9 @@ function PostTrip(props) {
             link: postTrip.link,
             userId: props.user.id
         }
-
+        
         //Endpoint para crear trip
-        let endPoitCreateTrip = `http://35.181.61.173/api/users/${props.user.id}/trips`;
+        let endPoitCreateTrip = `${base_url}/api/users/${props.user.id}/trips`;
         let response = await axios.post(endPoitCreateTrip, postTripData,{headers: {authorization:`Bearer ${props.user.api_token}`}});
         
         if(!response.data){
@@ -67,7 +70,7 @@ function PostTrip(props) {
         }else{
             alert('Tu viaje se ha publicado. Podrás verlo en tu perfil de usuario')
             setTimeout(() => {
-                history.push('/home')
+                history.push('/')
 
             }, 1000)
         }

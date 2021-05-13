@@ -12,6 +12,9 @@ const ProfileHeader = (props) => {
 
     let history = useHistory();
 
+    //base url para hacer las peticiones a BD
+    let base_url = "https://127.0.0.1:8000";
+
     const [user, setUser] = useState(props.user);
 
     //Estado de valicación de los componentes del form
@@ -38,7 +41,7 @@ const ProfileHeader = (props) => {
             return;
         }
         
-        let endpointUserUpdate = `http://35.181.61.173/api/users/${props.user?.id}`
+        let endpointUserUpdate = `${base_url}/api/users/${props.user?.id}`
         let response = await axios.put(endpointUserUpdate, user, { headers: { authorization: props.user.api_token } });
 
         if (!response.data.error) {

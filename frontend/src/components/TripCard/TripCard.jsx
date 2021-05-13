@@ -11,7 +11,7 @@ const TripCard = (props) => {
 
     let history = useHistory();
 
-    console.log("soy las props de tripCard", props);
+    
     const goToTripView = () => {
         localStorage.setItem('trip', JSON.stringify(props));
         setTimeout(() => {

@@ -11,12 +11,15 @@ const Profile = (props) => {
 
     let history = useHistory();
 
+    //base url para hacer las peticiones a BD
+    let base_url = "https://127.0.0.1:8000";
+
     //hook de los viajes publicados por el usuario
     const [trip, setTrips] = useState([]);
 
     //funcion para traerse los viajes publicados por el usuario
     const getTrips = async () => {
-        let endPointTrips = `http://35.181.61.173/api/users/${props.user.id}/trips`;
+        let endPointTrips = `${base_url}/api/users/${props.user.id}/trips`;
         let tripsResponse = await axios.get(endPointTrips, { headers: { authorization: `Bearer ${props.user.api_token}` } });
         setTrips(tripsResponse.data)
     }
@@ -25,7 +28,7 @@ const Profile = (props) => {
     const [joinedtrips, setJoinedtrips] = useState([]);
     //Renderizar si se ha apuntado a viajes o no
     const joinedTripsQuery = async () => {
-        let endPointJoinedTrips = `http://35.181.61.173/api/users/${props.user.id}/memberships`;
+        let endPointJoinedTrips = `${base_url}/api/users/${props.user.id}/memberships`;
         let joinedResponse = await axios.get(endPointJoinedTrips, { headers: { authorization: `Bearer ${props.user.api_token}` } });
         setJoinedtrips(joinedResponse.data)
     }
