@@ -1526,7 +1526,7 @@ se transforma en
       width: 100%;
       height: auto; }
       .container-home .suggestions .suggestions-descriptions h2 {
-        font-size: 18px; }
+        font-size: 20px; }
       .container-home .suggestions .suggestions-trips {
         display: flex;
         flex-direction: column; }
@@ -2105,7 +2105,7 @@ se transforma en
       width: 100%;
       height: auto; }
       .container-home .suggestions .suggestions-descriptions h2 {
-        font-size: 18px; }
+        font-size: 20px; }
       .container-home .suggestions .suggestions-trips {
         display: flex;
         flex-direction: row; }

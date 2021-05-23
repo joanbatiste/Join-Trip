@@ -52,7 +52,7 @@ const Home = (props) => {
                     <div className="last-trips-instructions">
                         <h2>¿Te gusta viajar?</h2>
                         <h5>Si te encanta viajar y no te gusta hacerlo sol@ estás en el lugar indicado</h5>
-                        <h5>Encontrar compañer@s de viaje es mut fácil:</h5>
+                        <h5>Encontrar compañer@s de viaje es muy fácil:</h5>
 
                         <div className="last-trips-instructions-steps">
                             <div className="last-trips-instructions-steps-content">
