@@ -28,8 +28,6 @@ const Home = (props) => {
     const getTrips = async () => {
         let endPointTrips =`${base_url}/api/trips`;
         let tripsResponse = await axios.get(endPointTrips);
-
-        
         setTrips(tripsResponse.data)
     }
 

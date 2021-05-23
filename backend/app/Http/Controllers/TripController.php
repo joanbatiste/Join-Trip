@@ -50,7 +50,9 @@ class TripController extends Controller
     //Traer todos los trips de un user
     public function findTripsByUserId($userid){
         try{
-            return Trip::all()->where('userId', '=', $userid);
+            return Trip::select()
+            ->where('userId', '=', $userid)
+            ->get();
             
         }catch(QueryException $error){
             return $error;

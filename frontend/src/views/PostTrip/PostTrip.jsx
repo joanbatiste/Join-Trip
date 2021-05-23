@@ -34,7 +34,7 @@ function PostTrip(props) {
             ...validationResult, [e.target.name]: checkField(e.target.name, e.target.value)
         });
         
-        setPostTrip({ ...postTrip, [e.target.name]: e.target.value });
+        setPostTrip({...postTrip, [e.target.name]: e.target.value });
    
     }
 

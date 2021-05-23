@@ -98,7 +98,7 @@ function TripView(props) {
         getMessagesPosted()
         getUsersJoined()
         // eslint-disable-next-line
-    }, []);
+    }, [joinedUsers,postedMessages]);
 
     //Visualizar Mensajes posteados si los hay
     const messageTest = () => {

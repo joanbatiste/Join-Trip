@@ -20,7 +20,8 @@ const Profile = (props) => {
     //funcion para traerse los viajes publicados por el usuario
     const getTrips = async () => {
         let endPointTrips = `${base_url}/api/users/${props.user.id}/trips`;
-        let tripsResponse = await axios.get(endPointTrips, { headers: { authorization: `Bearer ${props.user.api_token}` } });
+        let tripsResponse = await axios.get(endPointTrips,{headers:{authorization:`Bearer ${props.user.api_token}`}});
+        console.log(tripsResponse)
         setTrips(tripsResponse.data)
     }
 
@@ -31,6 +32,7 @@ const Profile = (props) => {
     const joinedTripsQuery = async () => {
         let endPointJoinedTrips = `${base_url}/api/users/${props.user.id}/memberships`;
         let joinedResponse = await axios.get(endPointJoinedTrips, { headers: { authorization: `Bearer ${props.user.api_token}` } });
+        console.log(joinedResponse)
         setJoinedtrips(joinedResponse.data)
     }
 
