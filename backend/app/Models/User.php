@@ -24,7 +24,8 @@ class User extends Authenticatable
         'city',
         'email',
         'password',
-        'token'
+        'token',
+        'avatar'
     ];
 
     /**

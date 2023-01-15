@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
     //Función encargada de registrar un nuevo usuario
     public function userRegister(Request $request)
     {
-
         //username, password, email
         $name = $request->input('name');
         $surname = $request->input('surname');
@@ -21,6 +21,15 @@ class UserController extends Controller
         $city = $request->input('city');
         $email = $request->input('email');
         $password = $request->input('password');
+        if ($request->hasFile('avatarFile')){
+            $avatarFile = $request->file("avatarFile");
+            $avatarName = Str::slug($username).".".$avatarFile->guessExtension();
+            $avatarPath = public_path("/img/avatar/");
+
+            copy($avatarFile->getRealPath(),$avatarPath.$avatarName);
+            $avatar = $avatarName;
+        }
+        
 
 
         //hasheo del password
@@ -33,7 +42,6 @@ class UserController extends Controller
             $validate_email = User::select('email')
                 ->where('username', 'LIKE', $username)
                 ->first();
-
             if($validate_username || $validate_email){
                 return response()->json([
                     'error' => 'Username o email ya existen'
@@ -46,8 +54,8 @@ class UserController extends Controller
                 'birthday' => $birthday,
                 'city' => $city,
                 'email' => $email,
-                'password' => $password
-
+                'password' => $password,
+                'avatar' => $avatar
             ]);
             
             

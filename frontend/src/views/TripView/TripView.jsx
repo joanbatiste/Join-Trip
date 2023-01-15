@@ -6,13 +6,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import MessageBox from '../../components/MessageBox/MessageBox';
+import {BASE_URL_LOCAL} from '../../utiles/utiles.js';
 
 function TripView(props) {
 
     let history = useHistory();
 
     //base url para hacer las peticiones a BD
-    let base_url = "http://127.0.0.1:8000";
+    let base_url = BASE_URL_LOCAL;
 
     let dataTrip = JSON.parse(localStorage.getItem('trip'));
     

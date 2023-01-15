@@ -2,7 +2,7 @@ import React,{ useState } from 'react'
 import LoguedHeader from '../../components/LoguedHeader/LoguedHeader.jsx';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import {checkField, validateFields, isValid} from '../../utiles/utiles';
+import {checkField, validateFields, isValid, BASE_URL_LOCAL} from '../../utiles/utiles';
 import axios from "axios";
 import { FormGroup, Input, Label, FormFeedback } from 'reactstrap';
 
@@ -10,7 +10,7 @@ function PostTrip(props) {
     let history = useHistory();
 
     //base url para hacer las peticiones a BD
-    let base_url = "http://127.0.0.1:8000";
+    let base_url = BASE_URL_LOCAL;
 
     //Estado del contenido de los campos del form para postear un trip
     const [postTrip, setPostTrip] = useState({

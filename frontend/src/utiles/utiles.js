@@ -1,5 +1,9 @@
 //FUNCIONES ÚTILES Y MISCELANEA.
 
+//Url producción o local
+const BASE_URL_LOCAL = 'http://127.0.0.1:8000';
+const BASE_URL_PRODUCTION = 'https://backend.lacasadebella.es';
+
 //Comprobación de campo vacío type text
 const notEmpty = (inputValue) => {
     return /^\s*$/.test(inputValue) ? 'Campo vacio' : null;
@@ -15,10 +19,6 @@ const notEmptyDate = (inputValue) =>{
 
 
 const checkField = (inputName, inputValue) => {
-
-
-
-
 
     switch (inputName) {
 
@@ -51,16 +51,6 @@ const checkField = (inputName, inputValue) => {
             }
 
             break;
-
-        // case 'description':
-
-        //     // eslint-disable-next-line
-        //     if (! /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/.test(inputValue)) {
-
-        //         return "El campo descripción solo puede contener letras" || notEmpty(inputValue);
-        //     }
-
-        //     break;
 
         case 'city':
 
@@ -203,4 +193,4 @@ const isValid = (validationResults) => {
     return true;
 }
 
-export { checkField, validateFields, isValid };
+export { checkField, validateFields, isValid, BASE_URL_LOCAL };

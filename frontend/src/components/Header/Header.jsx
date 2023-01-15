@@ -5,12 +5,13 @@ import axios from "axios";
 import {checkField, validateFields, isValid} from '../../utiles/utiles';
 import { connect } from 'react-redux';
 import { LOGIN } from '../../redux/types/userTypes';
+import {BASE_URL_LOCAL} from '../../utiles/utiles.js';
 // import LocationSearchInput from '../../components/InputLocation/InputLocation';
 
 const Header = (props) => {
 
     //base url para hacer las peticiones a BD
-    let base_url = "http://127.0.0.1:8000";
+    let base_url = BASE_URL_LOCAL;
 
     //Definimos el estado de la ventana modal para el registro y para el login
     const [registerModal, setRegisterModal] = useState({
@@ -44,8 +45,8 @@ const Header = (props) => {
         birthday: "",
         city: "",
         email: "",
-        password: ""
-
+        password: "",
+        avatarFile: ""
     });
 
     //Funcion para recoger datos de Login
@@ -90,9 +91,10 @@ const Header = (props) => {
             birthday: user.birthday,
             city: user.city,
             email: user.email,
-            password: user.password
+            password: user.password,
+            avatarFile: user.avatarFile
         }
-        
+        console.log(userData);
         
         //Endpoint para el registro de usuario
         let endpointUserRegister = `${base_url}/api/users`;
@@ -209,6 +211,11 @@ const Header = (props) => {
                         <Label for="password">Contraseña</Label>
                         <Input type="password" name="password" onChange={handleStateRegister} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password}></Input>
                         <FormFeedback>{validationResult.password}</FormFeedback>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="avatarFile">Avatar</Label>
+                        <Input type="file" name="avatarFile" onChange={handleStateRegister}></Input>
+                        <FormFeedback></FormFeedback>
                     </FormGroup>
 
                 </ModalBody>

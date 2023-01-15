@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/cmd', function($command) {
+    Artisan::call('key:generate');
+    dd($command);
+});

@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { SAVING } from '../../redux/types/tripTypes';
 import TripCard from '../../components/TripCard/TripCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {BASE_URL_LOCAL} from '../../utiles/utiles.js';
 
 import trip1 from '../../img/trip1.jpeg'
 import trip2 from '../../img/granada.jpg';
@@ -17,7 +18,7 @@ import { faComments, faIdCard, faSearchLocation, faSuitcase } from '@fortawesome
 const Home = (props) => {
 
     //base url para hacer las peticiones a BD
-    let base_url = "http://127.0.0.1:8000";
+    let base_url = BASE_URL_LOCAL;
 
     //Funcion para traerse todos los trips de la BD
     const [trip, setTrips] = useState([]);
@@ -29,6 +30,7 @@ const Home = (props) => {
         let endPointTrips =`${base_url}/api/trips`;
         let tripsResponse = await axios.get(endPointTrips);
         setTrips(tripsResponse.data)
+        console.log(trip);
     }
 
     //USEEFFECTS

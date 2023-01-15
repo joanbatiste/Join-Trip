@@ -12,7 +12,7 @@ const Profile = (props) => {
     let history = useHistory();
 
     //base url para hacer las peticiones a BD
-    let base_url = "http://127.0.0.1:8000";
+    let base_url = "https://backend.lacasadebella.es";
 
     //hook de los viajes publicados por el usuario
     const [trip, setTrips] = useState([]);
