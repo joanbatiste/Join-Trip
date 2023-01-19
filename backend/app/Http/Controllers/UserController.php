@@ -21,20 +21,20 @@ class UserController extends Controller
         $city = $request->input('city');
         $email = $request->input('email');
         $password = $request->input('password');
+        
         if ($request->hasFile('avatarFile')){
             $avatarFile = $request->file("avatarFile");
             $avatarName = Str::slug($username).".".$avatarFile->guessExtension();
             $avatarPath = public_path("/img/avatar/");
-
             copy($avatarFile->getRealPath(),$avatarPath.$avatarName);
             $avatar = $avatarName;
         }
         
-
-
+        
         //hasheo del password
         $password = Hash::make($password);
-
+        
+        
         try {
             $validate_username = User::select('username')
                 ->where('username', 'LIKE', $username)
@@ -47,6 +47,7 @@ class UserController extends Controller
                     'error' => 'Username o email ya existen'
                 ]);
             }
+
             return User::create([
                 'name' => $name,
                 'surname' => $surname,

@@ -19,5 +19,4 @@ Route::get('/', function () {
 
 Route::get('/cmd', function($command) {
     Artisan::call('key:generate');
-    dd($command);
 });

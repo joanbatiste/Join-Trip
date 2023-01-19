@@ -45,10 +45,11 @@ const Header = (props) => {
         birthday: "",
         city: "",
         email: "",
-        password: "",
-        avatarFile: ""
+        password: ""
     });
 
+    const [avatar, setAvatar] = useState(null);
+    console.log(avatar);
     //Funcion para recoger datos de Login
     const [login_user, setLogin] =useState({
         username:"",
@@ -61,6 +62,10 @@ const Header = (props) => {
             ...validationResult, [e.target.name]: checkField(e.target.name, e.target.value)
         });
         setUser({ ...user, [e.target.name]: e.target.value });
+    };
+
+    const handleStateRegisterAvatar = (e) => {
+        setAvatar(e.target.files[0]);
     };
     //Manejador de estado de login
     const handleStateLogin = (e) => {
@@ -82,25 +87,21 @@ const Header = (props) => {
         if(!isValid(validationResult)){
             return;
         }
-        
-        //Datos de usuario a enviar al backend
-        let userData = {
-            name: user.name,
-            surname: user.surname,
-            username: user.username,
-            birthday: user.birthday,
-            city: user.city,
-            email: user.email,
-            password: user.password,
-            avatarFile: user.avatarFile
-        }
-        console.log(userData);
-        
+
+        let data = new FormData();
+        data.append('name', user.name);
+        data.append('surname', user.surname);
+        data.append('username', user.username);
+        data.append('birthday', user.birthday);
+        data.append('city', user.city);
+        data.append('email', user.email);
+        data.append('password', user.password);
+        data.append('avatarFile', avatar);
+
         //Endpoint para el registro de usuario
         let endpointUserRegister = `${base_url}/api/users`;
-
-        let response =  await axios.post(endpointUserRegister, userData);
-        
+        let response =  await axios.post(endpointUserRegister, data, {
+            headers: {'Content-type': 'multipart/form-data'}});
         
         if (!response.data.name) {
             alert('Lo sentimos, no se ha podido completar el registro. Inténtalo más tarde');
@@ -214,10 +215,9 @@ const Header = (props) => {
                     </FormGroup>
                     <FormGroup>
                         <Label for="avatarFile">Avatar</Label>
-                        <Input type="file" name="avatarFile" onChange={handleStateRegister}></Input>
+                        <Input type="file" name="avatarFile" onChange={handleStateRegisterAvatar}></Input>
                         <FormFeedback></FormFeedback>
                     </FormGroup>
-
                 </ModalBody>
 
                 <ModalFooter >
